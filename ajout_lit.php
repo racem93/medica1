@@ -7,6 +7,7 @@
     VALUES ("."'".$nom."'".","."'".$ref_lit."'".","."'".$ref_moteur_p."'".","."'".$ref_moteur_s."'".","."'".$ref_telecommande."'".","."'".$etat_base."'".","."'".$etat_barriere."'".","."'".$etat_panneaux."'".","."'".$etat_moteur."'".","."'".$etat_variable."'".","."'".$etat_releve."'".","."'".$etat_telecommande."'".","."'".$etat_perroquet."'".","."'".$description."'".","."'".$etat_lit."'".")";
     $oPDOStatement=$connect->query($req1); // Le résultat est un objet de la classe PDOStatement
 
+
 } ?>
 
 
@@ -18,7 +19,7 @@
             <a href="acceuil.php">Accueil</a>
         </li>
         <li>
-            <a href="lit.php">Lit</a>
+            <a href="lit.php">Gestion des lits</a>
         </li>
         <li>
             <a href="ajout_lit.php">Ajout</a>
