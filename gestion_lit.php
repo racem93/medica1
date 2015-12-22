@@ -21,20 +21,19 @@ $oPDOStatement->setFetchMode(PDO::FETCH_OBJ);
         <div class="box col-md-12">
             <div class="box-inner">
                 <div class="box-header well" data-original-title="">
-                    <h2><i class="glyphicon glyphicon-user"></i> Responsive, Swipable Table</h2>
-
+                    <h2><i class="glyphicon glyphicon-user"></i> Datatable + Responsive</h2>
                 </div>
                 <div class="box-content">
                     <table class="table table-striped table-bordered bootstrap-datatable datatable responsive">
                         <thead>
                         <tr>
-                            <th>REF. DU LIT</th>
-                            <th>MODELE DU LIT</th>
-                            <th>REF. MOTEUR PRINCIPAL</th>
-                            <th>REF. MOTEUR R-B</th>
-                            <th>REF. TELECOMMANDE</th>
-                            <th>ETAT DU LIT</th>
-                            <th>ACTION</th>
+                            <th class="center-text">REF. DU LIT</th>
+                            <th class="center-text">MODELE DU LIT</th>
+                            <th class="center-text">REF. MOTEUR PRINCIPAL</th>
+                            <th class="center-text">REF. MOTEUR R-B</th>
+                            <th class="center-text">REF. TELECOMMANDE</th>
+                            <th class="center-text">ETAT DU LIT</th>
+                            <th class="center-text">ACTION</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -49,26 +48,26 @@ $oPDOStatement->setFetchMode(PDO::FETCH_OBJ);
                             $ref_telecommande=$row->ref_telecommande;
                         ?>
                         <tr>
-                            <td><?php echo $ref_lit ?></td>
-                            <td class="center"><?php echo  $nom ?></td>
-                            <td class="center"><?php echo $ref_moteur_p ?></td>
-                            <td class="center"><?php echo $ref_moteur_s ?></td>
-                            <td class="center"><?php echo $ref_telecommande ?></td>
-                            <td class="center">
+                            <td class="center-text"><?php echo $ref_lit ?></td>
+                            <td class="center-text"><?php echo  $nom ?></td>
+                            <td class="center-text"><?php echo $ref_moteur_p ?></td>
+                            <td class="center-text"><?php echo $ref_moteur_s ?></td>
+                            <td class="center-text"><?php echo $ref_telecommande ?></td>
+                            <td class="center-text">
                                 <span class="label-warning label label-default">Pending</span>
                             </td>
-                            <td class="center">
+                            <td class="center" width="30%">
                                 <a class="btn btn-success" href="details_lit.php?id=<?php echo $id; ?>" id="iframe">
                                     <i class="glyphicon glyphicon-zoom-in icon-white"></i>
-                                    View
+                                    Details
                                 </a>
                                 <a class="btn btn-info" href="#">
                                     <i class="glyphicon glyphicon-edit icon-white"></i>
-                                    Edit
+                                    Modifier
                                 </a>
                                 <a class="btn btn-danger" href="#">
                                     <i class="glyphicon glyphicon-trash icon-white"></i>
-                                    Delete
+                                    Supprimer
                                 </a>
                             </td>
                         </tr>
@@ -80,5 +79,7 @@ $oPDOStatement->setFetchMode(PDO::FETCH_OBJ);
                 </div>
             </div>
         </div>
+    </div>
+
 
 <?php require('footer.php'); ?>

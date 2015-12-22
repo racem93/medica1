@@ -57,7 +57,7 @@
     <script type="text/javascript">
         $(document).ready(function() {
             $("#iframe").fancybox({
-                'width'          : '60%',
+                'width'          : '70%',
                 'minHeight'   : 450,
                 'transitionIn'      : 'elastic',
                 'transitionOut'     : 'elastic',

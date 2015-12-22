@@ -62,7 +62,7 @@
 
 </div><!--/.fluid-container-->
 
-<!-- external javascript -->
+!-- external javascript -->
 
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
@@ -76,7 +76,7 @@
 <!-- select or dropdown enhancer -->
 <script src="bower_components/chosen/chosen.jquery.min.js"></script>
 <!-- plugin for gallery image view -->
-
+<script src="bower_components/colorbox/jquery.colorbox-min.js"></script>
 <!-- notification plugin -->
 <script src="js/jquery.noty.js"></script>
 <!-- library for making tables responsive -->
