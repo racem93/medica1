@@ -69,15 +69,14 @@
 <!-- library for cookie management -->
 <script src="js/jquery.cookie.js"></script>
 <!-- calender plugin -->
-<script src='bower_components/moment/min/moment.min.js'></script>
-<script src='bower_components/fullcalendar/dist/fullcalendar.min.js'></script>
+
 <!-- data table plugin -->
 <script src='js/jquery.dataTables.min.js'></script>
 
 <!-- select or dropdown enhancer -->
 <script src="bower_components/chosen/chosen.jquery.min.js"></script>
 <!-- plugin for gallery image view -->
-<script src="bower_components/colorbox/jquery.colorbox-min.js"></script>
+
 <!-- notification plugin -->
 <script src="js/jquery.noty.js"></script>
 <!-- library for making tables responsive -->
@@ -97,22 +96,6 @@
 <!-- application script for Charisma demo -->
 <script src="js/charisma.js"></script>
 
-<?php //Google Analytics code for tracking my demo site, you can remove this.
-if ($_SERVER['HTTP_HOST'] == 'usman.it') {
-    ?>
-    <script>
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-26532312-1']);
-        _gaq.push(['_trackPageview']);
-        (function () {
-            var ga = document.createElement('script');
-            ga.type = 'text/javascript';
-            ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
-        })();
-    </script>
-<?php } ?>
 
 </body>
 </html>

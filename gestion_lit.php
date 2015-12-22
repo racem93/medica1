@@ -41,6 +41,7 @@ $oPDOStatement->setFetchMode(PDO::FETCH_OBJ);
                         <?php
                         while ($row = $oPDOStatement->fetch())
                         {
+                            $id=$row->id;
                             $ref_lit=$row->ref_lit;
                             $nom=$row->nom;
                             $ref_moteur_p=$row->ref_moteur_p;
@@ -57,7 +58,7 @@ $oPDOStatement->setFetchMode(PDO::FETCH_OBJ);
                                 <span class="label-warning label label-default">Pending</span>
                             </td>
                             <td class="center">
-                                <a class="btn btn-success" href="#">
+                                <a class="btn btn-success" href="details_lit.php?id=<?php echo $id; ?>" id="iframe">
                                     <i class="glyphicon glyphicon-zoom-in icon-white"></i>
                                     View
                                 </a>
