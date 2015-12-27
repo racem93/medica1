@@ -4,10 +4,13 @@ if (isset($_POST["lit"])){
     extract($_POST);
     include_once("MyPDO.class.php");
     $connect=new MyPDO();
+    if (($etat_base=="fonctionne")&&($etat_variable=="fonctionne")&&($etat_panneaux=="fonctionne")&&($etat_barriere=="fonctionne")&&($etat_moteur=="fonctionne")&&($etat_perroquet=="fonctionne")&&($etat_releve=="fonctionne")&&($etat_telecommande=="fonctionne"))
+    {$etat_lit=1;}
+    else $etat_lit=0;
     $req2="UPDATE `lit` SET `ref_lit`='$ref_lit' ,`nom`='$nom' ,`ref_moteur_p`='$ref_moteur_p' ,`ref_moteur_s`='$ref_moteur_s',
 `ref_telecommande`='$ref_telecommande',`etat_base`='$etat_base',`etat_barriere`='$etat_barriere',`etat_panneaux`='$etat_panneaux',
 `etat_moteur`='$etat_moteur',`etat_variable`='$etat_variable',`etat_releve`='$etat_releve',`etat_telecommande`='$etat_telecommande',
-`etat_perroquet`='$etat_perroquet',`description`='$description' WHERE `id`=$id ";
+`etat_perroquet`='$etat_perroquet',`etat_lit`='$etat_lit',`description`='$description' WHERE `id`=$id ";
     $oPDOStatement=$connect->query($req2);
     echo "<SCRIPT LANGUAGE='JavaScript'>
 self.parent.location.href='gestion_lit.php';
