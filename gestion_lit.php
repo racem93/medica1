@@ -65,7 +65,7 @@ $oPDOStatement->setFetchMode(PDO::FETCH_OBJ);
                                     <i class="glyphicon glyphicon-edit icon-white"></i>
                                     Modifier
                                 </a>
-                                <a class="btn btn-danger" href="#">
+                                <a class="btn btn-danger" href='supprimer_lit.php?id=<?php echo $id; ?>' onclick="return(confirm('Etes-vous sûr de vouloir supprimer ce lit?'))"; >
                                     <i class="glyphicon glyphicon-trash icon-white"></i>
                                     Supprimer
                                 </a>

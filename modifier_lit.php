@@ -1,4 +1,5 @@
 <?php
+//début la modification du lit
 if (isset($_POST["lit"])){
     extract($_POST);
     include_once("MyPDO.class.php");
@@ -13,8 +14,10 @@ self.parent.location.href='gestion_lit.php';
 self.parent.$.fancybox.close();
 </SCRIPT> ";
 
-
 }
+// Fin Modification du lit
+
+//Début la remplissage des formulaires
 $id=$_GET['id'];
 include_once("MyPDO.class.php");
 $connect=new MyPDO();
@@ -39,6 +42,7 @@ while ($row = $oPDOStatement->fetch()) {
     $description= $row->description;
 
 }
+//Fin de la remplissage des formulaires
 ?>
 
 
