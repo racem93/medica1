@@ -61,7 +61,7 @@ $oPDOStatement->setFetchMode(PDO::FETCH_OBJ);
                                     <i class="glyphicon glyphicon-zoom-in icon-white"></i>
                                     Details
                                 </a>
-                                <a class="btn btn-info" href="#">
+                                <a class="btn btn-info" href="modifier_lit.php?id=<?php echo $id; ?>" id="iframe">
                                     <i class="glyphicon glyphicon-edit icon-white"></i>
                                     Modifier
                                 </a>
