@@ -127,7 +127,7 @@ if (isset($_POST["lit"])){
                                 <div class="row">
                                     <div class="col-md-4">ETAT DE LA BASE DU LIT</div>
                                     <div class="col-md-8">
-                                        <select id="selectError" data-rel="chosen" class="col-md-8" name="etat_base" style="width: 200px">
+                                        <select id="selectError" data-rel="chosen" class="col-md-8" name="etat_base" style="width: 400px">
                                             <option <?php if ($etat_base=="fonctionne"){ echo "selected"; } ?> value="fonctionne">Fonctionne</option>
                                             <option <?php if ($etat_base=="casse"){ echo "selected"; } ?> value="casse">Cassé</option>
                                             <option <?php if ($etat_base=="perdu"){ echo "selected"; } ?> value="perdu">Perdu</option>
@@ -140,10 +140,10 @@ if (isset($_POST["lit"])){
                                 <div class="row">
                                     <div class="col-md-4" width="30%">ETAT DES BARRIERES</div>
                                     <div class="col-md-8">
-                                        <select id="selectError" data-rel="chosen" class="col-md-8" name="etat_barriere" width="70%">
-                                            <option selected value="fonctionne">Fonctionne</option>
-                                            <option value="casse">Cassé</option>
-                                            <option value="perdu">Perdu</option>
+                                        <select id="selectError" data-rel="chosen" class="col-md-8" name="etat_barriere" style="width: 400px">
+                                            <option <?php if ($etat_barriere=="fonctionne"){ echo "selected"; } ?> value="fonctionne">Fonctionne</option>
+                                            <option <?php if ($etat_barriere=="casse"){ echo "selected"; } ?> value="casse">Cassé</option>
+                                            <option <?php if ($etat_barriere=="perdu"){ echo "selected"; } ?> value="perdu">Perdu</option>
                                         </select>
                                     </div>
                                 </div>
@@ -153,10 +153,10 @@ if (isset($_POST["lit"])){
                                 <div class="row">
                                     <div class="col-md-4">ETAT DES PANNEAUX</div>
                                     <div class="col-md-8">
-                                        <select id="selectError" data-rel="chosen" class="col-md-8" name="etat_panneaux">
-                                            <option selected value="fonctionne">Fonctionne</option>
-                                            <option value="casse">Cassé</option>
-                                            <option value="perdu">Perdu</option>
+                                        <select id="selectError" data-rel="chosen" class="col-md-8" name="etat_panneaux" style="width: 400px">
+                                            <option <?php if ($etat_panneaux=="fonctionne"){ echo "selected"; } ?> value="fonctionne">Fonctionne</option>
+                                            <option <?php if ($etat_panneaux=="casse"){ echo "selected"; } ?> value="casse">Cassé</option>
+                                            <option <?php if ($etat_panneaux=="perdu"){ echo "selected"; } ?> value="perdu">Perdu</option>
                                         </select>
                                     </div>
                                 </div>
@@ -166,10 +166,10 @@ if (isset($_POST["lit"])){
                                 <div class="row">
                                     <div class="col-md-4">ETAT MOTEUR CENTRAL</div>
                                     <div class="col-md-8">
-                                        <select id="selectError" data-rel="chosen" class="col-md-8" name="etat_moteur">
-                                            <option selected value="fonctionne">Fonctionne</option>
-                                            <option value="casse">Cassé</option>
-                                            <option value="perdu">Perdu</option>
+                                        <select id="selectError" data-rel="chosen" class="col-md-8" name="etat_moteur" style="width: 400px">
+                                            <option <?php if ($etat_moteur=="fonctionne"){ echo "selected"; } ?> value="fonctionne">Fonctionne</option>
+                                            <option <?php if ($etat_moteur=="casse"){ echo "selected"; } ?> value="casse">Cassé</option>
+                                            <option <?php if ($etat_moteur=="perdu"){ echo "selected"; } ?> value="perdu">Perdu</option>
                                         </select>
                                     </div>
                                 </div>
@@ -179,10 +179,10 @@ if (isset($_POST["lit"])){
                                 <div class="row">
                                     <div class="col-md-4">ETAT HAUT.VARIABLE</div>
                                     <div class="col-md-8">
-                                        <select id="selectError" data-rel="chosen" class="col-md-8" name="etat_variable">
-                                            <option selected value="fonctionne">Fonctionne</option>
-                                            <option value="casse">Cassé</option>
-                                            <option value="perdu">Perdu</option>
+                                        <select id="selectError" data-rel="chosen" class="col-md-8" name="etat_variable" style="width: 400px">
+                                            <option <?php if ($etat_variable=="fonctionne"){ echo "selected"; } ?> value="fonctionne">Fonctionne</option>
+                                            <option <?php if ($etat_variable=="casse"){ echo "selected"; } ?> value="casse">Cassé</option>
+                                            <option <?php if ($etat_variable=="perdu"){ echo "selected"; } ?> value="perdu">Perdu</option>
                                         </select>
                                     </div>
                                 </div>
@@ -192,10 +192,10 @@ if (isset($_POST["lit"])){
                                 <div class="row">
                                     <div class="col-md-4">ETAT RELEVE BUSTE</div>
                                     <div class="col-md-8">
-                                        <select id="selectError" data-rel="chosen" class="col-md-8" name="etat_releve">
-                                            <option selected value="fonctionne">Fonctionne</option>
-                                            <option value="casse">Cassé</option>
-                                            <option value="perdu">Perdu</option>
+                                        <select id="selectError" data-rel="chosen" class="col-md-8" name="etat_releve" style="width: 400px">
+                                            <option <?php if ($etat_releve=="fonctionne"){ echo "selected"; } ?> value="fonctionne">Fonctionne</option>
+                                            <option <?php if ($etat_releve=="casse"){ echo "selected"; } ?> value="casse">Cassé</option>
+                                            <option <?php if ($etat_releve=="perdu"){ echo "selected"; } ?> value="perdu">Perdu</option>
                                         </select>
                                     </div>
                                 </div>
@@ -205,10 +205,10 @@ if (isset($_POST["lit"])){
                                 <div class="row">
                                     <div class="col-md-4">ETAT TELECOMMANDE</div>
                                     <div class="col-md-8">
-                                        <select id="selectError" data-rel="chosen" class="col-md-8" name="etat_telecommande">
-                                            <option selected value="fonctionne">Fonctionne</option>
-                                            <option value="casse">Cassé</option>
-                                            <option value="perdu">Perdu</option>
+                                        <select id="selectError" data-rel="chosen" class="col-md-8" name="etat_telecommande" style="width: 400px">
+                                            <option <?php if ($etat_telecommande=="fonctionne"){ echo "selected"; } ?> value="fonctionne">Fonctionne</option>
+                                            <option <?php if ($etat_telecommande=="casse"){ echo "selected"; } ?> value="casse">Cassé</option>
+                                            <option <?php if ($etat_telecommande=="perdu"){ echo "selected"; } ?> value="perdu">Perdu</option>
                                         </select>
                                     </div>
                                 </div>
@@ -218,10 +218,10 @@ if (isset($_POST["lit"])){
                                 <div class="row">
                                     <div class="col-md-4">ETAT DU PERROQUET</div>
                                     <div class="col-md-6">
-                                        <select id="selectError" data-rel="chosen" class="col-md-6" name="etat_perroquet">
-                                            <option selected value="fonctionne">Fonctionne</option>
-                                            <option value="casse">Cassé</option>
-                                            <option value="perdu">Perdu</option>
+                                        <select id="selectError" data-rel="chosen" class="col-md-6" name="etat_perroquet" style="width: 400px">
+                                            <option <?php if ($etat_perroquet=="fonctionne"){ echo "selected"; } ?> value="fonctionne">Fonctionne</option>
+                                            <option <?php if ($etat_perroquet=="casse"){ echo "selected"; } ?> value="casse">Cassé</option>
+                                            <option <?php if ($etat_perroquet=="perdu"){ echo "selected"; } ?> value="perdu">Perdu</option>
                                         </select>
                                     </div>
                                 </div>
@@ -231,7 +231,7 @@ if (isset($_POST["lit"])){
                                 <div class="row">
                                     <div class="col-md-4">AUTRES ACCESSOIRES/DESCRIPTION</div>
                                     <div class="col-md-6">
-                                        <textarea class="form-control " name="description"></textarea>
+                                        <textarea class="form-control " name="description" value="<?php echo $description; ?>"><?php echo $description; ?></textarea>
                                     </div>
                                 </div>
                             </div>
