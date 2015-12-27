@@ -1,4 +1,20 @@
 <?php
+if (isset($_POST["lit"])){
+    extract($_POST);
+    include_once("MyPDO.class.php");
+    $connect=new MyPDO();
+    $req2="UPDATE `lit` SET `ref_lit`='$ref_lit' ,`nom`='$nom' ,`ref_moteur_p`='$ref_moteur_p' ,`ref_moteur_s`='$ref_moteur_s',
+`ref_telecommande`='$ref_telecommande',`etat_base`='$etat_base',`etat_barriere`='$etat_barriere',`etat_panneaux`='$etat_panneaux',
+`etat_moteur`='$etat_moteur',`etat_variable`='$etat_variable',`etat_releve`='$etat_releve',`etat_telecommande`='$etat_telecommande',
+`etat_perroquet`='$etat_perroquet',`description`='$description' WHERE `id`=$id ";
+    $oPDOStatement=$connect->query($req2);
+    echo "<SCRIPT LANGUAGE='JavaScript'>
+self.parent.location.href='gestion_lit.php';
+self.parent.$.fancybox.close();
+</SCRIPT> ";
+
+
+}
 $id=$_GET['id'];
 include_once("MyPDO.class.php");
 $connect=new MyPDO();
@@ -23,11 +39,7 @@ while ($row = $oPDOStatement->fetch()) {
     $description= $row->description;
 
 }
-if (isset($_POST["lit"])){
-    extract($_POST);
-
-
-} ?>
+?>
 
 
     <html xmlns="http://www.w3.org/1999/html">
@@ -239,6 +251,7 @@ if (isset($_POST["lit"])){
                             <div class="row">
                                 <div class="col-md-4"></div>
                                 <button type="submit" class="btn btn-primary" name="lit" style="width: 200px" >Modifier</button>
+                                <input type="hidden" name="id" value="<?php echo $id; ?>" >
                             </div>
                         </form>
                     </div>
