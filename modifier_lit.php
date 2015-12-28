@@ -45,6 +45,18 @@ if (isset($_GET["id"])) {
         $etat_perroquet = $row->etat_perroquet;
         $description = $row->description;
 
+        if ($ref_lit<10) {$ref_lit="00".$ref_lit;}
+        elseif (($ref_lit<100)&&($ref_lit>=10)) {$ref_lit="0".$ref_lit;}
+
+        if ($ref_moteur_p<10) {$ref_moteur_p="00".$ref_moteur_p;}
+        elseif (($ref_moteur_p<100)&&($ref_moteur_p>=10)) {$ref_moteur_p="0".$ref_moteur_p;}
+
+        if ($ref_moteur_s<10) {$ref_moteur_s="00".$ref_moteur_s;}
+        elseif (($ref_moteur_s<100)&&($ref_moteur_s>=10)) {$ref_moteur_s="0".$ref_moteur_s;}
+
+        if ($ref_telecommande<10) {$ref_telecommande="00".$ref_telecommande;}
+        elseif (($ref_telecommande<100)&&($ref_telecommande>=10)) {$ref_telecommande="0".$ref_telecommande;}
+
     }
 }
 //Fin de la remplissage des formulaires

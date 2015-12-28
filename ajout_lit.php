@@ -1,4 +1,28 @@
-<?php if (isset($_POST["lit"])){
+<?php
+include_once("MyPDO.class.php");
+$connect=new MyPDO();
+$req1="SELECT MAX(`ref_lit`)AS max_lit,MAX(`ref_moteur_p`)AS max_moteur_p, MAX(`ref_moteur_s`)AS max_moteur_s, MAX(`ref_telecommande`) AS max_telecommande FROM `lit`";
+$oPDOStatement=$connect->query($req1); // Le résultat est un objet de la classe PDOStatement
+$oPDOStatement->setFetchMode(PDO::FETCH_OBJ);
+while ($row = $oPDOStatement->fetch()) {
+    $max_lit = $row->max_lit+1;
+    $max_moteur_p = $row->max_moteur_p+1;
+    $max_moteur_s = $row->max_moteur_s+1;
+    $max_telecommande = $row->max_telecommande+1;
+}
+if ($max_lit<10) {$max_lit="00".$max_lit;}
+elseif (($max_lit<100)&&($max_lit>=10)) {$max_lit="0".$max_lit;}
+
+if ($max_moteur_p<10) {$max_moteur_p="00".$max_moteur_p;}
+elseif (($max_moteur_p<100)&&($max_moteur_p>=10)) {$max_moteur_p="0".$max_moteur_p;}
+
+if ($max_moteur_s<10) {$max_moteur_s="00".$max_moteur_s;}
+elseif (($max_moteur_s<100)&&($max_moteur_s>=10)) {$max_moteur_s="0".$max_moteur_s;}
+
+if ($max_telecommande<10) {$max_telecommande="00".$max_telecommande;}
+elseif (($max_telecommande<100)&&($max_telecommande>=10)) {$max_telecommande="0".$max_telecommande;}
+
+if (isset($_POST["lit"])){
     extract($_POST);
     include_once("MyPDO.class.php");
     $connect=new MyPDO();
@@ -52,7 +76,7 @@
                 <div class="row">
                     <div class="col-md-1"></div>
                     <div class="col-md-3"><label class="control-label"><h3 style="display:inline;"><b>MODELE DE LIT:</b></h3></label></div>
-                    <div class="col-md-8"> <input type="text" class="form-control" style="width: 500px;" name="nom" ></div>
+                    <div class="col-md-8"> <input type="text" class="form-control" style="width: 500px;" name="nom"  ></div>
                 </div>
             </div>
             <br>
@@ -61,25 +85,25 @@
                     <tr>
                     <td class="col-md-2" ><h4 style="display:inline;"><b>REF. DU LIT:</b></h4></td>
                     <td class="col-md-8" ><h1 style="display:inline;">MM2-L
-                    <input type="text" class="form-control" id="exampleInputEmail1"  style="width: 50px;" name="ref_lit" autofocus required>
+                    <input type="text" class="form-control" id="exampleInputEmail1"  style="width: 50px;" name="ref_lit" VALUE="<?php echo $max_lit ?>" autofocus required>
                     -S</h1></td>
                     </tr>
                     <tr>
                         <td class="col-md-2"><b>REF. MOTEUR PRINCIPAL:</b></td>
                         <td class="col-md-8" ><h3 style="display:inline;">MM2-L
-                                <input type="text" class="form-control" id="exampleInputEmail1"  style="width: 50px" name="ref_moteur_p">
+                                <input type="text" class="form-control" id="exampleInputEmail1"  style="width: 50px" name="ref_moteur_p" VALUE="<?php echo $max_moteur_p ?>">
                                 -MP</h3></td>
                     </tr>
                     <tr>
                         <td class="col-md-2"><b>REF. MOTEUR R-B:</b></td>
                         <td class="col-md-8" ><h3 style="display:inline;">MM2-L
-                                <input type="text" class="form-control" id="exampleInputEmail1"  style="width: 50px" name="ref_moteur_s">
+                                <input type="text" class="form-control" id="exampleInputEmail1"  style="width: 50px" name="ref_moteur_s" VALUE="<?php echo $max_moteur_s ?>">
                                 -MA</h3></td>
                     </tr>
                     <tr>
                         <td class="col-md-2"><b>REF. TELECOMMANDE:</b></td>
                         <td class="col-md-8" ><h3 style="display:inline;">MM2-L
-                                <input type="text" class="form-control" id="exampleInputEmail1"  style="width: 50px" name="ref_telecommande">
+                                <input type="text" class="form-control" id="exampleInputEmail1"  style="width: 50px" name="ref_telecommande" VALUE="<?php echo $max_telecommande ?>">
                                 -MC</h3></td>
                     </tr>
 

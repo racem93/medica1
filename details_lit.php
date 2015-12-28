@@ -20,7 +20,20 @@ while ($row = $oPDOStatement->fetch()) {
     $etat_releve = $row->etat_releve;
     $etat_telecommande = $row->etat_telecommande;
     $etat_perroquet = $row->etat_perroquet;
+    $etat_lit=$row->etat_lit;
     $description= $row->description;
+
+    if ($ref_lit<10) {$ref_lit="00".$ref_lit;}
+    elseif (($ref_lit<100)&&($ref_lit>=10)) {$ref_lit="0".$ref_lit;}
+
+    if ($ref_moteur_p<10) {$ref_moteur_p="00".$ref_moteur_p;}
+    elseif (($ref_moteur_p<100)&&($ref_moteur_p>=10)) {$ref_moteur_p="0".$ref_moteur_p;}
+
+    if ($ref_moteur_s<10) {$ref_moteur_s="00".$ref_moteur_s;}
+    elseif (($ref_moteur_s<100)&&($ref_moteur_s>=10)) {$ref_moteur_s="0".$ref_moteur_s;}
+
+    if ($ref_telecommande<10) {$ref_telecommande="00".$ref_telecommande;}
+    elseif (($ref_telecommande<100)&&($ref_telecommande>=10)) {$ref_telecommande="0".$ref_telecommande;}
 
 }
 
@@ -62,17 +75,32 @@ while ($row = $oPDOStatement->fetch()) {
 <body>
 <div class="box-content">
     <div class="control-group">
-
-        <div class="center"><h2>CONSTRAT LIT DE LOCATION</h2></div>
+        <div class="row">
+            <div class="col-md-8"><h2>CONSTRAT LIT DE LOCATION</h2></div>
+            <div class="col-md-3 col-sm-3 col-xs-6">
+                <a data-toggle="tooltip" title="" class="well top-block " >
+                    <?php if ($etat_lit==0){
+                                            echo'<i class="glyphicon glyphicon-warning-sign red"></i>
+                                            <div class="red">EN PANNE</div>';
+                                            }
+                        elseif ($etat_lit==1) {
+                                                echo'<i class="glyphicon glyphicon-thumbs-up green"></i>
+                                                <div class="green">EN MARCHE</div>';
+                                               }
+                    ?>
+                </a>
+            </div>
+        </div>
                 <div class="row">
                     <div class="col-md-1"></div>
                     <div class="col-md-3"><h3 style="display:inline;"><b>MODELE DE LIT:</b></h3></div>
-                    <div class="col-md-8"></div>
+                    <div class="col-md-8"><b><?php echo $nom; ?></b></div>
                 </div>
+        <br>
     <table class="table table-striped table-bordered responsive" border="">
         <tr>
             <td width="30%" ><h4 style="display:inline;"><b>REF. DU LIT:</b></h4></td>
-            <td width="70%" ><h1 style="display:inline;">MM2-L <?php echo $ref_lit; ?>
+            <td width="70%" ><h1 style="display:inline;">MM2-L<?php echo $ref_lit; ?>
                     -S</h1></td>
         </tr>
         <tr>
@@ -87,7 +115,7 @@ while ($row = $oPDOStatement->fetch()) {
         </tr>
         <tr>
             <td  width="30%"><b>REF. TELECOMMANDE:</b></td>
-            <td  width="70%" ><h3 style="display:inline;">MM2-L <?php echo $ref_telecommande; ?>
+            <td  width="70%" ><h3 style="display:inline;">MM2-L<?php echo $ref_telecommande; ?>
                     -MC</h3></td>
         </tr>
 
@@ -102,47 +130,48 @@ while ($row = $oPDOStatement->fetch()) {
             </tr>
 
             <tr>
-                <td width="30%" >ETAT DE LA BASE DE LIT</td>
+                <td width="30%" >ETAT DES BARRIERES</td>
                 <td width="70%" ><?php echo $etat_barriere; ?></td>
             </tr>
 
             <tr>
-                <td width="30%" >ETAT DE LA BASE DE LIT</td>
+                <td width="30%" >ETAT DES PANNEAUX</td>
                 <td width="70%" ><?php echo $etat_panneaux; ?></td>
             </tr>
 
             <tr>
-                <td width="30%" >ETAT DE LA BASE DE LIT</td>
+                <td width="30%" >ETAT MOTEUR CENTRAL</td>
                 <td width="70%" ><?php echo $etat_moteur; ?></td>
             </tr>
             <tr>
-                <td width="30%" >ETAT DE LA BASE DE LIT</td>
+                <td width="30%" >ETAT HAUT.VARIABLE</td>
                 <td width="70%" ><?php echo $etat_variable; ?></td>
             </tr>
 
             <tr>
-                <td width="30%" >ETAT DE LA BASE DE LIT</td>
+                <td width="30%" >ETAT RELEVE BUSTE</td>
                 <td width="70%" ><?php echo $etat_releve; ?></td>
             </tr>
             <tr>
-                <td width="30%" >ETAT DE LA BASE DE LIT</td>
+                <td width="30%" >ETAT TELECOMMANDE</td>
                 <td width="70%" ><?php echo $etat_telecommande; ?></td>
             </tr>
 
             <tr>
-                <td width="30%" >ETAT DE LA BASE DE LIT</td>
+                <td width="30%" >ETAT DU PERROQUET</td>
                 <td width="70%" ><?php echo $etat_perroquet; ?></td>
             </tr>
 
             <tr>
-                <td width="30%" >ETAT DE LA BASE DE LIT</td>
+                <td width="30%" >AUTRES ACCESSOIRES/DESCRIPTION</td>
                 <td width="70%" ><?php echo $description; ?></td>
             </tr>
 
         </table>
         <div class="row">
-            <div class="col-md-4"></div>
-            <button type="submit" class="btn btn-primary" name="imprimer" style="width: 200px" >Imprimer</button>
+            <div class="col-md-8"></div>
+            <a href="#" class="btn btn-info btn-lg">
+                <i class="glyphicon glyphicon-print"></i> IMPRIMER</a>
         </div>
     </div>
 </div>
