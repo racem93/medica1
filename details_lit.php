@@ -140,6 +140,10 @@ while ($row = $oPDOStatement->fetch()) {
             </tr>
 
         </table>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <button type="submit" class="btn btn-primary" name="imprimer" style="width: 200px" >Imprimer</button>
+        </div>
     </div>
 </div>
 

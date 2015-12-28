@@ -13,7 +13,7 @@ if (isset($_POST["lit"])){
 `etat_perroquet`='$etat_perroquet',`etat_lit`='$etat_lit',`description`='$description' WHERE `id`=$id ";
     $oPDOStatement=$connect->query($req2);
     echo "<SCRIPT LANGUAGE='JavaScript'>
-self.parent.location.href='gestion_lit.php';
+self.parent.location.href='gestion_lit.php?msg=modifier';
 self.parent.$.fancybox.close();
 </SCRIPT> ";
 
@@ -21,29 +21,31 @@ self.parent.$.fancybox.close();
 // Fin Modification du lit
 
 //Début la remplissage des formulaires
-$id=$_GET['id'];
-include_once("MyPDO.class.php");
-$connect=new MyPDO();
-$req1="SELECT * FROM `lit` WHERE  id= $id";
-$oPDOStatement=$connect->query($req1); // Le résultat est un objet de la classe PDOStatement
-$oPDOStatement->setFetchMode(PDO::FETCH_OBJ);
-while ($row = $oPDOStatement->fetch()) {
-    $id = $row->id;
-    $ref_lit = $row->ref_lit;
-    $nom = $row->nom;
-    $ref_moteur_p = $row->ref_moteur_p;
-    $ref_moteur_s = $row->ref_moteur_s;
-    $ref_telecommande = $row->ref_telecommande;
-    $etat_base = $row->etat_base;
-    $etat_barriere = $row->etat_barriere;
-    $etat_panneaux = $row->etat_panneaux;
-    $etat_moteur = $row->etat_moteur;
-    $etat_variable = $row->etat_variable;
-    $etat_releve = $row->etat_releve;
-    $etat_telecommande = $row->etat_telecommande;
-    $etat_perroquet = $row->etat_perroquet;
-    $description= $row->description;
+if (isset($_GET["id"])) {
+    $id = $_GET['id'];
+    include_once("MyPDO.class.php");
+    $connect = new MyPDO();
+    $req1 = "SELECT * FROM `lit` WHERE  id= $id";
+    $oPDOStatement = $connect->query($req1); // Le résultat est un objet de la classe PDOStatement
+    $oPDOStatement->setFetchMode(PDO::FETCH_OBJ);
+    while ($row = $oPDOStatement->fetch()) {
+        $id = $row->id;
+        $ref_lit = $row->ref_lit;
+        $nom = $row->nom;
+        $ref_moteur_p = $row->ref_moteur_p;
+        $ref_moteur_s = $row->ref_moteur_s;
+        $ref_telecommande = $row->ref_telecommande;
+        $etat_base = $row->etat_base;
+        $etat_barriere = $row->etat_barriere;
+        $etat_panneaux = $row->etat_panneaux;
+        $etat_moteur = $row->etat_moteur;
+        $etat_variable = $row->etat_variable;
+        $etat_releve = $row->etat_releve;
+        $etat_telecommande = $row->etat_telecommande;
+        $etat_perroquet = $row->etat_perroquet;
+        $description = $row->description;
 
+    }
 }
 //Fin de la remplissage des formulaires
 ?>
@@ -260,6 +262,7 @@ while ($row = $oPDOStatement->fetch()) {
                                 <button type="submit" class="btn btn-primary" name="lit" style="width: 200px" >Modifier</button>
                                 <input type="hidden" name="id" value="<?php echo $id; ?>" >
                             </div>
+
                         </form>
                     </div>
                 </div>

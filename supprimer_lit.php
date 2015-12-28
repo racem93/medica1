@@ -7,5 +7,6 @@ $oPDOStatement=$connect->query($req1);
 ?>
 
 <script language="javascript">
-    self.parent.location.href="gestion_lit.php";
+    self.parent.location.href="gestion_lit.php?msg=supprimer";
+
 </script>
