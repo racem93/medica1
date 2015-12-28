@@ -157,22 +157,22 @@
                         <li class="accordion">
                                                     <a href="#"><i class="glyphicon glyphicon-hdd"></i><span> Gestion des lits</span></a>
                                                     <ul class="nav nav-pills nav-stacked">
-                                                        <li><a href="#">Child Menu 1</a></li>
-                                                        <li><a href="#">Child Menu 2</a></li>
+                                                        <li><a href="gestion_lit.php">Liste des lits</a></li>
+                                                        <li><a href="ajout_lit.php">Ajouter un lit</a></li>
                                                     </ul>
                         </li>
                         <li class="accordion">
                                                        <a href="#"><i class="glyphicon glyphicon-briefcase"></i><span> Gestion des produits</span></a>
                                                        <ul class="nav nav-pills nav-stacked">
-                                                          <li><a href="#">Child Menu 1</a></li>
-                                                          <li><a href="#">Child Menu 2</a></li>
+                                                          <li><a href="#">Liste des produits</a></li>
+                                                          <li><a href="#">ajouter un produit</a></li>
                                                        </ul>
                         </li>
                         <li class="accordion">
                                                        <a href="#"><i class="glyphicon glyphicon-list-alt"></i><span> Gestion des contrats</span></a>
                                                        <ul class="nav nav-pills nav-stacked">
-                                                          <li><a href="#">Child Menu 1</a></li>
-                                                          <li><a href="#">Child Menu 2</a></li>
+                                                          <li><a href="#">Liste des contrats</a></li>
+                                                          <li><a href="#">Ajouter un contrat</a></li>
                                                        </ul>
                         </li>
 
