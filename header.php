@@ -176,9 +176,8 @@
                                                        </ul>
                         </li>
 
-                       <li class="ajax-link"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></li>
+                       <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                     </ul>
-                    <label id="for-is-ajax" for="is-ajax"><input id="is-ajax" type="checkbox"> Ajax on menu</label>
                 </div>
             </div>
         </div>
