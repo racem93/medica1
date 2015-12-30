@@ -170,7 +170,7 @@ while ($row = $oPDOStatement->fetch()) {
         </table>
         <div class="row">
             <div class="col-md-8"></div>
-            <a href="#" class="btn btn-info btn-lg">
+            <a href="lit_pdf.php" class="btn btn-info btn-lg">
                 <i class="glyphicon glyphicon-print"></i> IMPRIMER</a>
         </div>
     </div>
