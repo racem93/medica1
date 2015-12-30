@@ -17,7 +17,7 @@
         ===
     -->
     <meta charset="utf-8">
-    <title>Free HTML5 Bootstrap Admin Template</title>
+    <title>MEDICA</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
     <meta name="author" content="Muhammad Usman">
@@ -74,8 +74,8 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html"> <img alt="Charisma Logo" src="img/logo20.png" class="hidden-xs"/>
-                <span>Charisma</span></a>
+            <a class="navbar-brand" href="acceuil.php"> <img alt="Charisma Logo" src="img/logo20.png" class="hidden-xs"/>
+                <span>MEDICA</span> SHOP</a>
 
             <!-- user dropdown starts -->
             <div class="btn-group pull-right">
@@ -92,6 +92,7 @@
             <!-- user dropdown ends -->
 
             <!-- theme selector starts -->
+            <!--
             <div class="btn-group pull-right theme-container animated tada">
                 <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                     <i class="glyphicon glyphicon-tint"></i><span
@@ -110,8 +111,9 @@
                     <li><a data-value="united" href="#"><i class="whitespace"></i> United</a></li>
                 </ul>
             </div>
+            -->
             <!-- theme selector ends -->
-
+            <!--
             <ul class="collapse navbar-collapse nav navbar-nav top-menu">
                 <li><a href="#"><i class="glyphicon glyphicon-globe"></i> Visit Site</a></li>
                 <li class="dropdown">
@@ -134,6 +136,7 @@
                     </form>
                 </li>
             </ul>
+            !-->
 
         </div>
     </div>

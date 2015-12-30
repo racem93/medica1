@@ -39,7 +39,7 @@ if (isset($_GET["msg"])) {
 
             <div class="box-inner">
                 <div class="box-header well" data-original-title="">
-                    <h2><i class="glyphicon glyphicon-user"></i> Datatable + Responsive</h2>
+                    <h2><i class="glyphicon glyphicon-user"></i> Liste des lits</h2>
                 </div>
                 <div class="box-content">
                     <table class="table table-striped table-bordered bootstrap-datatable datatable responsive">
