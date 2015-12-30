@@ -5,7 +5,21 @@
 require('invoice.php');
 
 //************************//
-$today = date("d-m-y");
+$today = date("d-m-Y");
+$modellit=$_GET["modellit"];
+$reflit=$_GET["reflit"];
+$refmoteurpr=$_GET["refmoteurpr"];
+$refmoteursec=$_GET["refmoteursec"];
+$reftelecommande=$_GET["reftelecommande"];
+$etatbase=$_GET["etatbase"];
+$etatbarriere=$_GET["etatbarriere"];
+$etatpanneaux=$_GET["etatpanneaux"];
+$etatmoteur=$_GET["etatmoteur"];
+$etatvariable=$_GET["etatvariable"];
+$etatreleve=$_GET["etatreleve"];
+$etattelecommande=$_GET["etattelecommande"];
+$etatperroquet=$_GET["etatperroquet"];
+$description=$_GET["description"];
 
 //************************//
 

@@ -1,126 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1cd33de5-b4f5-4ceb-bd94-58d7afa57d5b" name="Default" comment="finalfirstcommit">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/tutorial/calligra.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/tutorial/calligra.z" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/tutorial/logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/FAQ.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/changelog.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/doc/__construct.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/doc/acceptpagebreak.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/doc/addfont.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/doc/addlink.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/doc/addpage.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/doc/aliasnbpages.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/doc/cell.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/doc/close.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/doc/error.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/doc/footer.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/doc/getpageheight.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/doc/getpagewidth.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/doc/getstringwidth.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/doc/getx.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/doc/gety.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/doc/header.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/doc/image.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/doc/index.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/doc/line.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/doc/link.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/doc/ln.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/doc/multicell.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/doc/output.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/doc/pageno.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/doc/rect.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/doc/setauthor.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/doc/setautopagebreak.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/doc/setcompression.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/doc/setcreator.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/doc/setdisplaymode.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/doc/setdrawcolor.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/doc/setfillcolor.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/doc/setfont.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/doc/setfontsize.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/doc/setkeywords.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/doc/setleftmargin.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/doc/setlinewidth.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/doc/setlink.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/doc/setmargins.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/doc/setrightmargin.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/doc/setsubject.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/doc/settextcolor.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/doc/settitle.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/doc/settopmargin.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/doc/setx.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/doc/setxy.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/doc/sety.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/doc/text.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/doc/write.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/font/courier.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/font/courierb.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/font/courierbi.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/font/courieri.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/font/helvetica.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/font/helveticab.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/font/helveticabi.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/font/helveticai.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/font/symbol.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/font/times.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/font/timesb.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/font/timesbi.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/font/timesi.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/font/zapfdingbats.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/fpdf.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/fpdf.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/install.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/license.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/makefont/cp1250.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/makefont/cp1251.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/makefont/cp1252.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/makefont/cp1253.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/makefont/cp1254.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/makefont/cp1255.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/makefont/cp1257.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/makefont/cp1258.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/makefont/cp874.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/makefont/iso-8859-1.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/makefont/iso-8859-11.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/makefont/iso-8859-15.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/makefont/iso-8859-16.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/makefont/iso-8859-2.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/makefont/iso-8859-4.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/makefont/iso-8859-5.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/makefont/iso-8859-7.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/makefont/iso-8859-9.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/makefont/koi8-r.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/makefont/koi8-u.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/makefont/makefont.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/makefont/ttfparser.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/tutorial/20k_c1.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/tutorial/20k_c2.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/tutorial/calligra.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/tutorial/countries.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/tutorial/index.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/tutorial/makefont.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/tutorial/tuto1.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/tutorial/tuto1.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/tutorial/tuto2.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/tutorial/tuto2.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/tutorial/tuto3.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/tutorial/tuto3.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/tutorial/tuto4.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/tutorial/tuto4.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/tutorial/tuto5.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/tutorial/tuto5.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/tutorial/tuto6.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/tutorial/tuto6.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/tutorial/tuto7.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/fpdf/tutorial/tuto7.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/invoice.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lit_pdf.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+    <list default="true" id="1cd33de5-b4f5-4ceb-bd94-58d7afa57d5b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/details_lit.php" afterPath="$PROJECT_DIR$/details_lit.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lit_pdf.php" afterPath="$PROJECT_DIR$/lit_pdf.php" />
     </list>
     <ignored path="medica.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -145,7 +29,7 @@
       <file leaf-file-name="footer.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/footer.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="-0.65384614">
               <caret line="163" column="26" selection-start-line="163" selection-start-column="26" selection-end-line="163" selection-end-column="26" />
               <folding />
             </state>
@@ -192,28 +76,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="details_lit.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/details_lit.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="172" column="34" selection-start-line="172" selection-start-column="34" selection-end-line="172" selection-end-column="34" />
-              <folding>
-                <marker date="1451403031426" expanded="true" signature="102:133" placeholder="SELECT * FRO..lit..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="lit_pdf.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lit_pdf.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7768817">
-              <caret line="17" column="43" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="invoice.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/invoice.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -237,13 +99,35 @@
       <file leaf-file-name="ajout_lit.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ajout_lit.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="-0.65384614">
               <caret line="67" column="41" selection-start-line="67" selection-start-column="41" selection-end-line="67" selection-end-column="41" />
               <folding>
                 <marker date="1451399375318" expanded="true" signature="68:226" placeholder="SELECT MAX(`..lit..." />
                 <marker date="1451399375318" expanded="true" signature="1572:2212" placeholder="INSERT INTO `lit`..." />
                 <marker date="1451399375318" expanded="true" signature="2351:2426" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="details_lit.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/details_lit.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.076923">
+              <caret line="175" column="113" selection-start-line="175" selection-start-column="109" selection-end-line="175" selection-end-column="120" />
+              <folding>
+                <marker date="1451472951618" expanded="true" signature="102:133" placeholder="SELECT * FRO..lit..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lit_pdf.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lit_pdf.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.5994624">
+              <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -271,8 +155,8 @@
         <option value="$PROJECT_DIR$/header.php" />
         <option value="$PROJECT_DIR$/ajout_lit.php" />
         <option value="$PROJECT_DIR$/../../medica1/invoice.php" />
-        <option value="$PROJECT_DIR$/details_lit.php" />
         <option value="$PROJECT_DIR$/invoice.php" />
+        <option value="$PROJECT_DIR$/details_lit.php" />
         <option value="$PROJECT_DIR$/lit_pdf.php" />
       </list>
     </option>
@@ -460,16 +344,23 @@
       <option name="project" value="LOCAL" />
       <updated>1450452680177</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="addpdf">
+      <created>1451471107596</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1451471107596</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30966324" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32913387" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -477,7 +368,6 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -525,7 +415,8 @@
     <MESSAGE value="first commit" />
     <MESSAGE value="first commit2" />
     <MESSAGE value="finalfirstcommit" />
-    <option name="LAST_COMMIT_MESSAGE" value="finalfirstcommit" />
+    <MESSAGE value="addpdf" />
+    <option name="LAST_COMMIT_MESSAGE" value="addpdf" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -825,7 +716,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/footer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="-0.65384614">
           <caret line="163" column="26" selection-start-line="163" selection-start-column="26" selection-end-line="163" selection-end-column="26" />
           <folding />
         </state>
@@ -862,18 +753,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ajout_lit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="67" column="41" selection-start-line="67" selection-start-column="41" selection-end-line="67" selection-end-column="41" />
-          <folding>
-            <marker date="1451399375318" expanded="true" signature="68:226" placeholder="SELECT MAX(`..lit..." />
-            <marker date="1451399375318" expanded="true" signature="1572:2212" placeholder="INSERT INTO `lit`..." />
-            <marker date="1451399375318" expanded="true" signature="2351:2426" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Downloads/invoice/invoice.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7258065">
@@ -897,16 +776,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/details_lit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="172" column="34" selection-start-line="172" selection-start-column="34" selection-end-line="172" selection-end-column="34" />
-          <folding>
-            <marker date="1451403031426" expanded="true" signature="102:133" placeholder="SELECT * FRO..lit..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/invoice.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -915,10 +784,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ajout_lit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.65384614">
+          <caret line="67" column="41" selection-start-line="67" selection-start-column="41" selection-end-line="67" selection-end-column="41" />
+          <folding>
+            <marker date="1451399375318" expanded="true" signature="68:226" placeholder="SELECT MAX(`..lit..." />
+            <marker date="1451399375318" expanded="true" signature="1572:2212" placeholder="INSERT INTO `lit`..." />
+            <marker date="1451399375318" expanded="true" signature="2351:2426" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/details_lit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.076923">
+          <caret line="175" column="113" selection-start-line="175" selection-start-column="109" selection-end-line="175" selection-end-column="120" />
+          <folding>
+            <marker date="1451472951618" expanded="true" signature="102:133" placeholder="SELECT * FRO..lit..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lit_pdf.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7768817">
-          <caret line="17" column="43" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="43" />
+        <state vertical-scroll-proportion="-1.5994624">
+          <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
           <folding />
         </state>
       </provider>

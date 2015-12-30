@@ -170,7 +170,10 @@ while ($row = $oPDOStatement->fetch()) {
         </table>
         <div class="row">
             <div class="col-md-8"></div>
-            <a href="lit_pdf.php" class="btn btn-info btn-lg">
+            <a href="lit_pdf.php?modellit=<?php echo $nom; ?>&reflit=<?php echo $ref_lit; ?>&refmoteurpr=<?php echo $ref_moteur_p; ?>&refmoteursec=<?php echo $ref_moteur_s; ?>
+            &reftelecommande=<?php echo $ref_telecommande; ?>&etatbase=<?php echo $etat_base; ?>&etatbarriere=<?php echo $etat_barriere; ?>
+            &etatpanneaux=<?php echo $etat_panneaux; ?>&etatmoteur=<?php echo $etat_moteur; ?>&etatvariable=<?php echo $etat_variable; ?>&etatreleve=<?php echo $etat_releve; ?>
+            &etattelecommande=<?php echo $etat_telecommande; ?>&etatperroquet=<?php echo $etat_perroquet; ?>&description=<?php echo $description; ?>" class="btn btn-info btn-lg">
                 <i class="glyphicon glyphicon-print"></i> IMPRIMER</a>
         </div>
     </div>
