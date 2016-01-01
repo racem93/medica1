@@ -29,18 +29,18 @@ $pdf->addSociete( "MedicA Shop",
                   "MonAdresse\n" .
                   "75000 PARIS\n".
                   "R.C.S. PARIS B 000 000 007\n" .
-                  "Capital : 18000 " . EURO );
+                  "Capital : 18000" );
 //$pdf->fact_dev( "Constrat ", "TEMPO" );
 $pdf->fact_dev( "CONSTRAT LIT DE LOCATION" );
 $pdf->temporaire( "Devis temporaire" );
 $pdf->addDate( "$today");
 //$pdf->addClient("CL01");
 //$pdf->addPageNumber("1");
-$pdf->addClientAdresse("Ste\nM. XXXX\n3�me �tage\n33, rue d'ailleurs\n75000 PARIS");
-$pdf->addReglement("Ch�que � r�ception de facture");
-$pdf->addEcheance("03/12/2003");
-$pdf->addNumTVA("FR888777666");
-$pdf->addReference("Devis ... du ....");
+//$pdf->addClientAdresse("Ste\nM. XXXX\n3�me �tage\n33, rue d'ailleurs\n75000 PARIS");
+//$pdf->addReglement("Ch�que � r�ception de facture");
+//$pdf->addEcheance("03/12/2003");
+//$pdf->addNumTVA("FR888777666");
+//$pdf->addReference("Devis ... du ....");
 $cols=array( "REFERENCE"    => 23,
              "DESIGNATION"  => 78,
              "QUANTITE"     => 22,
