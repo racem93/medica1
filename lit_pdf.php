@@ -22,17 +22,29 @@ $etatperroquet=$_GET["etatperroquet"];
 $description=$_GET["description"];
 
 //************************//
-
+$repconstratlit="constratlits";
+if (!is_dir($repconstratlit))
+{
+    mkdir($repconstratlit);
+}
+//************************//
 $pdf = new PDF_Invoice( 'P', 'mm', 'A4' );
 $pdf->AddPage();
-$pdf->addSociete( "MedicA Shop",
+/*$pdf->addSociete( "MedicA Shop",
                   "MonAdresse\n" .
                   "75000 PARIS\n".
                   "R.C.S. PARIS B 000 000 007\n" .
-                  "Capital : 18000" );
+                  "Capital : 18000" );*/
+$pdf->addreflit( "REF. DU LIT : "."MM2- L".$reflit." - S",
+    "REF. MOTEUR PRINCIPAL : "."MM2- L".$refmoteurpr." - MP" ,
+    "REF. MOTEUR R-B : "."MM2- L". $refmoteurpr." - MA",
+    "REF. TELECOMMANDE : "."MM2- L".$reftelecommande." - MC"
+
+
+);
 //$pdf->fact_dev( "Constrat ", "TEMPO" );
 $pdf->fact_dev( "CONSTRAT LIT DE LOCATION" );
-$pdf->temporaire( "Devis temporaire" );
+$pdf->temporaire( "Technique" );
 $pdf->addDate( "$today");
 //$pdf->addClient("CL01");
 //$pdf->addPageNumber("1");
@@ -118,5 +130,9 @@ $params  = array( "RemiseGlobale" => 1,
 
 $pdf->addTVAs( $params, $tab_tva, $tot_prods);
 $pdf->addCadreEurosFrancs();
+
+/*
+$pdf->Output("$repconstratlit\CL"."_"."$today.pdf",'F');
+*/
 $pdf->Output();
 ?>

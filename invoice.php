@@ -153,6 +153,41 @@ function addSociete( $nom, $adresse )
 	$this->MultiCell($length, 4, $adresse);
 }
 
+	function addreflit( $nom, $refmotp,$refmotrb,$reftel )
+	{
+		$x1 = 10;
+		$y1 = 40;
+		//Positionnement en bas
+		$this->SetXY( $x1, $y1 );
+		$this->SetFont('Arial','B',24);
+		$length = $this->GetStringWidth( $nom );
+		$this->Cell( $length, 2, $nom);
+
+
+		$this->SetXY( $x1, $y1 + 14 );
+		$this->SetFont('Arial','B',18);
+		$length = $this->GetStringWidth( $refmotp );
+		$this->Cell( $length, 2, $refmotp);
+
+		/*$this->SetXY( $x1, $y1 + 4 );
+		$this->SetFont('Arial','',10);
+		$length = $this->GetStringWidth( $refmotp );
+		//Coordonn�es de la soci�t�
+		$lignes = $this->sizeOfText( $refmotp, $length) ;
+		$this->MultiCell($length, 4, $refmotp);*/
+
+		$this->SetXY( $x1, $y1 + 22 );
+		$this->SetFont('Arial','B',18);
+		$length = $this->GetStringWidth( $refmotrb );
+		$this->Cell( $length, 2, $refmotrb);
+
+		$this->SetXY( $x1, $y1 + 30 );
+		$this->SetFont('Arial','B',18);
+		$length = $this->GetStringWidth( $reftel );
+		$this->Cell( $length, 2, $reftel);
+
+	}
+
 // Label and number of invoice/estimate
 function fact_dev( $libelle/*, $num */)
 {
