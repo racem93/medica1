@@ -19,8 +19,11 @@ $etatvariable=$_GET["etatvariable"];
 $etatreleve=$_GET["etatreleve"];
 $etattelecommande=$_GET["etattelecommande"];
 $etatperroquet=$_GET["etatperroquet"];
+if ($_GET["description"]!=""){
 $description=$_GET["description"];
-
+}else{
+    $description="-";
+}
 //************************//
 $repconstratlit="constratlits";
 if (!is_dir($repconstratlit))
@@ -53,42 +56,73 @@ $pdf->addDate( "$today");
 //$pdf->addEcheance("03/12/2003");
 //$pdf->addNumTVA("FR888777666");
 //$pdf->addReference("Devis ... du ....");
-$cols=array( "REFERENCE"    => 23,
-             "DESIGNATION"  => 78,
-             "QUANTITE"     => 22,
-             "P.U. HT"      => 26,
-             "MONTANT H.T." => 30,
-             "TVA"          => 11 );
+$cols=array( "ETATS"    => 67,
+             "OBSERVATIONS"  => 142,
+);
 $pdf->addCols( $cols);
-$cols=array( "REFERENCE"    => "L",
-             "DESIGNATION"  => "L",
-             "QUANTITE"     => "C",
-             "P.U. HT"      => "R",
-             "MONTANT H.T." => "R",
-             "TVA"          => "C" );
+$cols=array( "ETATS"    => "L",
+             "OBSERVATIONS"  => "C",
+
+             );
 $pdf->addLineFormat( $cols);
 $pdf->addLineFormat($cols);
 
 $y    = 109;
-$line = array( "REFERENCE"    => "REF1",
-               "DESIGNATION"  => "Carte M�re MSI 6378\n" .
-                                 "Processeur AMD 1Ghz\n" .
-                                 "128Mo SDRAM, 30 Go Disque, CD-ROM, Floppy, Carte vid�o",
-               "QUANTITE"     => "1",
-               "P.U. HT"      => "600.00",
-               "MONTANT H.T." => "600.00",
-               "TVA"          => "1" );
+$line = array( "ETATS"    => "ETAT DE LA BASE DU LIT",
+               "OBSERVATIONS"  => "$etatbase",
+               );
 $size = $pdf->addLine( $y, $line );
-$y   += $size + 2;
+$y   += $size + 12;
 
-$line = array( "REFERENCE"    => "REF2",
-               "DESIGNATION"  => "C�ble RS232",
-               "QUANTITE"     => "1",
-               "P.U. HT"      => "10.00",
-               "MONTANT H.T." => "60.00",
-               "TVA"          => "1" );
+$line = array( "ETATS"    => "ETAT DES BARRIERES",
+               "OBSERVATIONS"  => "$etatbarriere",
+                );
 $size = $pdf->addLine( $y, $line );
-$y   += $size + 2;
+$y   += $size + 12;
+
+
+$line = array( "ETATS"    => "ETAT DES PANNEAUX",
+    "OBSERVATIONS"  => "$etatpanneaux",
+);
+$size = $pdf->addLine( $y, $line );
+$y   += $size + 12;
+
+$line = array( "ETATS"    => "ETAT MOTEUR CENTRAL",
+    "OBSERVATIONS"  => "$etatmoteur",
+);
+$size = $pdf->addLine( $y, $line );
+$y   += $size + 12;
+
+$line = array( "ETATS"    => "MOTEUR HAUT.VARIABLE",
+    "OBSERVATIONS"  => "$etatvariable",
+);
+$size = $pdf->addLine( $y, $line );
+$y   += $size + 12;
+
+
+$line = array( "ETATS"    => "MOTEUR RELEVE BUSTE",
+    "OBSERVATIONS"  => "$etatreleve",
+);
+$size = $pdf->addLine( $y, $line );
+$y   += $size + 12;
+
+$line = array( "ETATS"    => "ETAT TELECOMMANDE",
+    "OBSERVATIONS"  => "$etattelecommande",
+);
+$size = $pdf->addLine( $y, $line );
+$y   += $size + 12;
+
+$line = array( "ETATS"    => "ETAT DU PERROQUET",
+    "OBSERVATIONS"  => "$etatperroquet",
+);
+$size = $pdf->addLine( $y, $line );
+$y   += $size + 12;
+
+$line = array( "ETATS"    => "AUTRES ACCESSOIRES",
+    "OBSERVATIONS"  => "$description",
+);
+$size = $pdf->addLine( $y, $line );
+$y   += $size + 4;
 
 $pdf->addCadreTVAs();
         

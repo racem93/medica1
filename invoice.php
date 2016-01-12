@@ -424,6 +424,7 @@ function addLine( $ligne, $tab )
 
 	$ordonnee     = 10;
 	$maxSize      = $ligne;
+	$this->SetFont( "Arial", "", 14.2);
 
 	reset( $colonnes );
 	while ( list( $lib, $pos ) = each ($colonnes) )
