@@ -49,6 +49,8 @@ $pdf->addreflit( "REF. DU LIT : "."MM2- L".$reflit." - S",
 $pdf->fact_dev( "CONSTRAT LIT DE LOCATION" );
 $pdf->temporaire( "Technique" );
 $pdf->addDate( "$today");
+$pdf->Image('img/logo.png',10,10,-300);
+
 //$pdf->addClient("CL01");
 //$pdf->addPageNumber("1");
 //$pdf->addClientAdresse("Ste\nM. XXXX\n3�me �tage\n33, rue d'ailleurs\n75000 PARIS");
