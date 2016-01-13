@@ -13,7 +13,7 @@ $oPDOStatement->setFetchMode(PDO::FETCH_OBJ);
                 <a href="acceuil.php">Accueil</a>
             </li>
             <li>
-                <a href="lit.php">Gestion des lits</a>
+                <a href="gestion_lit.php">Gestion des lits</a>
             </li>
         </ul>
     </div>

@@ -4,6 +4,7 @@ $connect=new MyPDO();
 $req1="SELECT MAX(`ref_lit`)AS max_lit,MAX(`ref_moteur_p`)AS max_moteur_p, MAX(`ref_moteur_s`)AS max_moteur_s, MAX(`ref_telecommande`) AS max_telecommande FROM `lit`";
 $oPDOStatement=$connect->query($req1); // Le résultat est un objet de la classe PDOStatement
 $oPDOStatement->setFetchMode(PDO::FETCH_OBJ);
+
 while ($row = $oPDOStatement->fetch()) {
     $max_lit = $row->max_lit+1;
     $max_moteur_p = $row->max_moteur_p+1;
@@ -35,7 +36,15 @@ if (isset($_POST["lit"])){
     echo "<SCRIPT LANGUAGE='JavaScript'>
     self.parent.location.href='gestion_lit.php?msg=ajouter';
     </SCRIPT> ";
-    } ?>
+    }
+
+// select les modele de lit
+$req2="SELECT * FROM `produit` where `type`=1";
+$oPDOStatement2=$connect->query($req2); // Le résultat est un objet de la classe PDOStatement
+$oPDOStatement2->setFetchMode(PDO::FETCH_OBJ);
+
+//Fin select
+?>
 
 
 
@@ -46,7 +55,7 @@ if (isset($_POST["lit"])){
             <a href="acceuil.php">Accueil</a>
         </li>
         <li>
-            <a href="lit.php">Gestion des lits</a>
+            <a href="gestion_lit.php">Gestion des lits</a>
         </li>
         <li>
             <a href="ajout_lit.php">Ajout</a>
@@ -60,14 +69,7 @@ if (isset($_POST["lit"])){
             <div class="box-header well" data-original-title="">
                 <h2><i class="glyphicon glyphicon-edit"></i> Constrat lit de location</h2>
 
-                <div class="box-icon">
-                    <a href="#" class="btn btn-setting btn-round btn-default"><i
-                            class="glyphicon glyphicon-cog"></i></a>
-                    <a href="#" class="btn btn-minimize btn-round btn-default"><i
-                            class="glyphicon glyphicon-chevron-up"></i></a>
-                    <a href="#" class="btn btn-close btn-round btn-default"><i
-                            class="glyphicon glyphicon-remove"></i></a>
-                </div>
+
             </div>
 <div class="box-content">
     <div class="control-group">
@@ -76,7 +78,16 @@ if (isset($_POST["lit"])){
                 <div class="row">
                     <div class="col-md-1"></div>
                     <div class="col-md-3"><label class="control-label"><h3 style="display:inline;"><b>MODELE DE LIT:</b></h3></label></div>
-                    <div class="col-md-8"> <input type="text" class="form-control" style="width: 500px;" name="nom"  ></div>
+                    <div class="col-md-8">
+
+                        <select id="selectError" data-rel="chosen" class="col-md-8" name="nom">
+                            <?php echo'
+                            <option selected value="fonctionne">Fonctionne</option>
+                            <option value="casse">Cassé</option>';
+                            ?>
+                        </select>
+
+                    </div>
                 </div>
             </div>
             <br>

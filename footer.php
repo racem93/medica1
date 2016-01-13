@@ -69,7 +69,11 @@
 <script type="text/javascript" src="js/jquery.fancybox.js?v=2.1.5"></script>
 <link rel="stylesheet" type="text/css" href="css/jquery.fancybox.css?v=2.1.5" media="screen" />
 <script type="text/javascript">
-    $(document).ready(function() {
+
+
+
+
+$(document).ready(function() {
         $("#iframe").fancybox({
             'width'          : '80%',
             'minHeight'   : 450,
@@ -83,6 +87,16 @@
         /*
          *  Simple image gallery. Uses default settings
          */
+
+            $("input[name=type]:radio").click(function() { // attack a click event on all radio buttons with name 'radiogroup'
+                if($(this).val() == '2') {//check which radio button is clicked
+                    $("#qte").show();
+                } else if($(this).val() == '1') {
+                    $("#qte").hide();
+                }
+            });
+
+        $("#qte").hide();
 
         $('.fancybox').fancybox();
 
