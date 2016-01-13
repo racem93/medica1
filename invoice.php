@@ -155,8 +155,8 @@ function addSociete( $nom, $adresse )
 
 	function addreflit( $nom, $refmotp,$refmotrb,$reftel )
 	{
-		$x1 = 10;
-		$y1 = 40;
+		$x1 = 12;
+		$y1 = 50;
 		//Positionnement en bas
 		$this->SetXY( $x1, $y1 );
 		$this->SetFont('Arial','B',24);
@@ -235,7 +235,7 @@ function addFacture( $numfact )
 
 function addDate( $date )
 {
-	$r1  = $this->w - 61;
+	$r1  = $this->w - 41;
 	$r2  = $r1 + 30;
 	$y1  = 17;
 	$y2  = $y1 ;
@@ -250,7 +250,26 @@ function addDate( $date )
 	$this->Cell(10,5,$date, 0,0, "C");
 }
 
-function addClient( $ref )
+
+	function addEtat( $date )
+	{
+		$r1  = $this->w - 80;
+		$r2  = $r1 + 30;
+		$y1  = 17;
+		$y2  = $y1 ;
+		$mid = $y1 + ($y2 / 2);
+		$this->RoundedRect($r1, $y1, ($r2 - $r1), $y2, 3.5, 'D');
+		$this->Line( $r1, $mid, $r2, $mid);
+		$this->SetXY( $r1 + ($r2-$r1)/2 - 5, $y1+3 );
+		$this->SetFont( "Arial", "B", 10);
+		$this->Cell(10,5, "ETAT DU LIT", 0, 0, "C");
+		$this->SetXY( $r1 + ($r2-$r1)/2 - 5, $y1+9 );
+		$this->SetFont( "Arial", "", 10);
+		$this->Cell(10,5,$date, 0,0, "C");
+	}
+
+
+	function addClient( $ref )
 {
 	$r1  = $this->w - 31;
 	$r2  = $r1 + 19;
@@ -488,6 +507,43 @@ function addCadreTVAs()
 	$this->SetXY( $r1+93, $y2 - 3 );
 	$this->Cell(6,0, "T.V.A. :");
 }
+
+
+	function addsignature()
+	{
+		$r1  = $this->w - 160;
+		$r2  = $r1 + 150;
+		$y1  = $this->h - 40;
+		$y2  = $y1+30;
+		$this->RoundedRect($r1, $y1, ($r2 - $r1), ($y2-$y1), 2.5, 'D');
+		$this->Line( $r1+20,  $y1, $r1+20, $y2); // avant EUROS
+		$this->Line( $r1+20, $y1+12, $r2, $y1+12); // Sous Euros & Francs
+		$this->Line( $r1+60,  $y1, $r1+60, $y2); // Entre Euros & Francs
+		$this->Line( $r1+100,  $y1, $r1+100, $y2); // Entre Euros & Francs
+
+		$this->SetFont( "Arial", "B", 9);
+		$this->SetXY( $r1+32, $y1 );
+		$this->Cell(15,4, "Nom Magasignier:", 0, 0, "C");
+		$this->SetFont( "Arial", "B", 9);
+		$this->SetXY( $r1+72, $y1 );
+		$this->Cell(15,4, "Nom Verificateur:", 0, 0, "C");
+
+		$this->SetFont( "Arial", "B", 9);
+		$this->SetXY( $r1+116, $y1 );
+		$this->Cell(15,4, "Nom Responsable:", 0, 0, "C");
+
+
+		$this->SetFont( "Arial", "B", 8);
+
+		$this->SetXY( $r1, $y1+5 );
+		//$this->Cell(20,4, "TOTAL TTC", 0, 0, "C");
+		$this->SetXY( $r1, $y1+11 );
+		$this->Cell(20,8, "Signatures", 0, 0, "C");
+		$this->SetXY( $r1, $y1+15 );
+		//$this->Cell(20,4, "NET A PAYER", 0, 0, "C");
+	}
+
+
 
 function addCadreEurosFrancs()
 {
