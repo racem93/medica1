@@ -82,11 +82,11 @@ $oPDOStatement2->setFetchMode(PDO::FETCH_OBJ);
 
                         <select id="selectError" data-rel="chosen" class="col-md-8" name="nom">
                             <?php
-                        while ($row = $oPDOStatement->fetch()) {
+                        while ($row = $oPDOStatement2->fetch()) {
                             $id = $row->id;
                             $nom = $row->nom;
                            ?>
-                            <option selected value="<?php echo $id; ?>"><?php echo $nom; ?></option>
+                            <option  value="<?php echo $id; ?>"><?php echo $nom; ?></option>
 
                        <?php  }?>
                         </select>
