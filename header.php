@@ -167,8 +167,8 @@
                         <li class="accordion">
                                                        <a href="#"><i class="glyphicon glyphicon-briefcase"></i><span> Gestion des produits</span></a>
                                                        <ul class="nav nav-pills nav-stacked">
-                                                          <li><a href="#">Liste des produits</a></li>
-                                                          <li><a href="#">ajouter un produit</a></li>
+                                                          <li><a href="gestion_produit.php">Liste des produits</a></li>
+                                                          <li><a href="ajout_produit.php">ajouter un produit</a></li>
                                                        </ul>
                         </li>
                         <li class="accordion">
