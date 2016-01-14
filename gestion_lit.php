@@ -1,5 +1,6 @@
+
 <?php extract($_POST);
-include_once("MyPDO.class.php");
+include_once("config/MyPDO.class.php");
 $connect=new MyPDO();
 $req1="SELECT * FROM `lit`";
 $oPDOStatement=$connect->query($req1); // Le résultat est un objet de la classe PDOStatement

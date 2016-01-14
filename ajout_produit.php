@@ -1,8 +1,9 @@
+
 <?php
 if (isset($_POST["produit"])) {
     $qte=0;
     extract($_POST);
-    include_once("MyPDO.class.php");
+    include_once("config/MyPDO.class.php");
     $connect = new MyPDO();
     $msg1="";$a=0;
     $msg2="";$b=0;

@@ -1,8 +1,17 @@
 <?php
+ini_set('session.save_path',realpath(dirname($_SERVER['DOCUMENT_ROOT']) . '/temp'));
+session_start();
+if(!isset($_SESSION['admin']))
+{
+    header("location:login.html");
+}
+
+?>
+<?php
 //début la modification du lit
 if (isset($_POST["lit"])){
     extract($_POST);
-    include_once("MyPDO.class.php");
+    include_once("config/MyPDO.class.php");
     $connect=new MyPDO();
     if (($etat_base=="fonctionne")&&($etat_variable=="fonctionne")&&($etat_panneaux=="fonctionne")&&($etat_barriere=="fonctionne")&&($etat_moteur=="fonctionne")&&($etat_perroquet=="fonctionne")&&($etat_releve=="fonctionne")&&($etat_telecommande=="fonctionne"))
     {$etat_lit=1;}
@@ -23,7 +32,7 @@ self.parent.$.fancybox.close();
 //Début la remplissage des formulaires
 if (isset($_GET["id"])) {
     $id = $_GET['id'];
-    include_once("MyPDO.class.php");
+    include_once("config/MyPDO.class.php");
     $connect = new MyPDO();
     $req1 = "SELECT * FROM `lit` WHERE  id= $id";
     $oPDOStatement = $connect->query($req1); // Le résultat est un objet de la classe PDOStatement

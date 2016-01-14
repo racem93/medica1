@@ -1,6 +1,8 @@
 <?php /**
 * Classe de manipulation de base MySQL
-**/ 
+**/
+
+
 class MyPDO extends PDO
 {
 private $connection = false; //Instance PDO
