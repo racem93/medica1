@@ -23,11 +23,99 @@ elseif (($max_moteur_s<100)&&($max_moteur_s>=10)) {$max_moteur_s="0".$max_moteur
 if ($max_telecommande<10) {$max_telecommande="00".$max_telecommande;}
 elseif (($max_telecommande<100)&&($max_telecommande>=10)) {$max_telecommande="0".$max_telecommande;}
 
+//Début d'ajout d'un nouveau lit
 if (isset($_POST["lit"])){
     extract($_POST);
     include_once("MyPDO.class.php");
     $connect=new MyPDO();
-    if (($etat_base=="fonctionne")&&($etat_variable=="fonctionne")&&($etat_panneaux=="fonctionne")&&($etat_barriere=="fonctionne")&&($etat_moteur=="fonctionne")&&($etat_perroquet=="fonctionne")&&($etat_releve=="fonctionne")&&($etat_telecommande=="fonctionne"))
+
+    // Début test ref lit
+
+    $msg1='';
+    $msg2='';
+    $msg3='';
+    $msg4='';
+    $req1="SELECT * FROM `lit` WHERE `ref_lit`='$ref_lit'";
+    $oPDOStatement=$connect->query($req1);
+    $oPDOStatement->setFetchMode(PDO::FETCH_OBJ);
+    $a=0;
+    while ($row = $oPDOStatement->fetch())
+    {
+        $a++;
+        $id=$row->id;
+    }
+    if ($a==1) {
+
+        $msg1 = 'la REF. DU LIT est déja existe \n ';
+    }
+
+
+
+
+    //Fin test ref lit
+
+    // Début test ref lit
+    $req1="SELECT * FROM `lit` WHERE `ref_moteur_p`='$ref_moteur_p'";
+    $oPDOStatement=$connect->query($req1);
+    $oPDOStatement->setFetchMode(PDO::FETCH_OBJ);
+    $b=0;
+    while ($row = $oPDOStatement->fetch())
+    {
+        $b++;
+        $id=$row->id;
+    }
+
+    if ($b==1){
+
+                    $msg2='la REF.MOTEUR PRINCIPAL est déja existe \n ';
+                    }
+
+    //Fin test ref lit
+
+    // Début test ref lit
+    $req1="SELECT * FROM `lit` WHERE `ref_moteur_s`='$ref_moteur_s'";
+    $oPDOStatement=$connect->query($req1);
+    $oPDOStatement->setFetchMode(PDO::FETCH_OBJ);
+    $c=0;
+    while ($row = $oPDOStatement->fetch())
+    {
+        $c++;
+        $id=$row->id;
+    }
+    if ($c==1){
+
+                    $msg3='la REF. MOTEUR R-B est déja existe \n ' ;
+                   }
+    //Fin test ref lit
+
+    // Début test ref lit
+    $req1="SELECT * FROM `lit` WHERE `ref_telecommande`='$ref_telecommande'";
+    $oPDOStatement=$connect->query($req1);
+    $oPDOStatement->setFetchMode(PDO::FETCH_OBJ);
+    $d=0;
+    while ($row = $oPDOStatement->fetch())
+    {
+        $d++;
+        $id=$row->id;
+    }
+    if ($d==1) {
+
+        $msg4= 'la REF. TELECOMMANDE de lit est déja existe  ';
+    }
+
+    //Fin test ref lit
+
+    if (($a == 1)||($b == 1)||($c == 1)||($d == 1)) { ?>
+        <SCRIPT LANGUAGE='JavaScript'>
+                    alert('<?php echo $msg1.$msg2.$msg3.$msg4 ?>');
+                    //location='ajout_lit.php';
+                    history.go(-1);
+                    </SCRIPT>
+        <?php }
+    else {
+
+
+    if (($etat_base=="fonctionne")&&($etat_variable=="fonctionne")&&($etat_panneaux=="fonctionne")&&($etat_barriere=="fonctionne")&&($etat_moteur=="fonctionne")&&($etat_releve=="fonctionne")&&($etat_telecommande=="fonctionne"))
     {$etat_lit=1;}
     else $etat_lit=0;
     $req1 = "INSERT INTO `lit`( `nom`,`ref_lit`, `ref_moteur_p`, `ref_moteur_s`, `ref_telecommande`, `etat_base`, `etat_barriere`, `etat_panneaux`, `etat_moteur`, `etat_variable`, `etat_releve`, `etat_telecommande`, `etat_perroquet`, `description`, `etat_lit`)
@@ -37,6 +125,8 @@ if (isset($_POST["lit"])){
     self.parent.location.href='gestion_lit.php?msg=ajouter';
     </SCRIPT> ";
     }
+}
+//Fin l'ajout d'un nouveau lit
 
 // select les modele de lit
 $req2="SELECT * FROM `produit` where `type`=1";
