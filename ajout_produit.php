@@ -4,13 +4,66 @@ if (isset($_POST["produit"])) {
     extract($_POST);
     include_once("MyPDO.class.php");
     $connect = new MyPDO();
+    $msg1="";$a=0;
+    $msg2="";$b=0;
+    $msg3="";$c=0;
+    $msg4="";$d=0;
+    $msg5="";$e=0;
+    $req="SELECT * FROM `produit` WHERE ref='$ref'";
+    $oPDOStatement=$connect->query($req);
+    $oPDOStatement->setFetchMode(PDO::FETCH_OBJ);
+    $a=0;
+    while ($row = $oPDOStatement->fetch())
+    {
+        $a++;
+        $id=$row->id;
+    }
+    if ($a != 0) {
+        $msg1='La RRFERENCE du produit est déja existe \n';
+        $a=1;
 
-    $req1 = "INSERT INTO `produit`( `type`,`nom`,`ref`, `prix_unit`, `qte`, `caution`, `tva_produit`)
-    VALUES ("."'".$type."'".","."'".$nom."'".","."'".$ref."'".","."'".$prix_unit."'".","."'".$qte."'".","."'".$caution."'".","."'".$tva_produit."'".")";
-    $oPDOStatement=$connect->query($req1); // Le résultat est un objet de la classe PDOStatement
-    echo "<SCRIPT LANGUAGE='JavaScript'>
+
+    }
+    if(!preg_match('/^[[:digit:]]+((\.[[:digit:]]{1,3})?)$/',$prix_unit))
+        { $msg2='Le PRIX n est pas valide \n';
+          $b=1;
+
+        }
+
+    if(!preg_match('/^[[:digit:]]*$/',$qte))
+    { $msg3='La QUANTITE n est pas valide \n' ;
+        $c=1;
+
+
+    }
+
+    if(!preg_match('/^[[:digit:]]+((\.[[:digit:]]{1,3})?)$/',$caution))
+    { $msg4='Le CAUTION n est pas valide \n';
+        $d=1;
+
+        }
+
+    if(!preg_match('/^[[:digit:]]+$/',$tva_produit))
+    { $msg5='La QUANTITE n est pas valide ';
+        $e=1;
+
+        }
+
+    if (($a == 1) || ($b == 1) ||($c == 1)||($d == 1)||($e == 1)) { ?>
+        <SCRIPT LANGUAGE='JavaScript'>
+            alert('<?php echo $msg1.$msg2.$msg3.$msg4.$msg5 ?>');
+            //location='ajout_lit.php';
+            history.go(-1);
+        </SCRIPT>
+    <?php }
+    else {
+        $req1 = "INSERT INTO `produit`( `type`,`nom`,`ref`, `prix_unit`, `qte`, `caution`, `tva_produit`)
+    VALUES (" . "'" . $type . "'" . "," . "'" . $nom . "'" . "," . "'" . $ref . "'" . "," . "'" . $prix_unit . "'" . "," . "'" . $qte . "'" . "," . "'" . $caution . "'" . "," . "'" . $tva_produit . "'" . ")";
+        $oPDOStatement = $connect->query($req1); // Le résultat est un objet de la classe PDOStatement
+        echo "<SCRIPT LANGUAGE='JavaScript'>
     self.parent.location.href='gestion_produit.php?msg=ajouter';
     </SCRIPT> ";
+    }
 }
 ?>
 
