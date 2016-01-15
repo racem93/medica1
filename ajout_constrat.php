@@ -29,6 +29,7 @@ if (isset($_GET["msg"])) {
 }
 ?>
 
+    <a href=".php" id="iframe" align="lepht"> <div align="right"><button type="submit" class="btn btn-lg btn-primary" style="background-color:#0C6;"><i class="glyphicon glyphicon-th-large"></i> Consulter Les Models Séléctionnés </button></div> </a>
 <div class="row">
     <div class="box col-md-6">
 

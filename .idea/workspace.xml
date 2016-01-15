@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1cd33de5-b4f5-4ceb-bd94-58d7afa57d5b" name="Default" comment="test">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ajout_constrat.php" />
+    <list default="true" id="1cd33de5-b4f5-4ceb-bd94-58d7afa57d5b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/header.php" afterPath="$PROJECT_DIR$/header.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajout_constrat.php" afterPath="$PROJECT_DIR$/ajout_constrat.php" />
     </list>
     <ignored path="medica.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -118,11 +117,12 @@
       <file leaf-file-name="ajout_constrat.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ajout_constrat.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.58870965">
-              <caret line="80" column="26" selection-start-line="80" selection-start-column="26" selection-end-line="80" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.68010753">
+              <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
               <folding>
-                <marker date="1452898320207" expanded="true" signature="93:131" placeholder="SELECT * FRO..produit..." />
-                <marker date="1452898320207" expanded="true" signature="676:886" placeholder="..." />
+                <element signature="e#1016#1046#0#HTML" expanded="true" />
+                <marker date="1452899145760" expanded="true" signature="93:131" placeholder="SELECT * FRO..produit..." />
+                <marker date="1452899145760" expanded="true" signature="676:886" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -429,7 +429,13 @@
       <option name="project" value="LOCAL" />
       <updated>1452815175731</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="ajoutconstrat">
+      <created>1452898425326</created>
+      <option name="number" value="00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1452898425326</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -439,6 +445,7 @@
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30087847" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32913387" sideWeight="0.5087848" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32913387" sideWeight="0.49121523" order="8" side_tool="false" content_ui="tabs" />
@@ -446,7 +453,6 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -478,7 +484,8 @@
     <MESSAGE value="updatedetailslitpdf2" />
     <MESSAGE value="addimage" />
     <MESSAGE value="addauthentification" />
-    <option name="LAST_COMMIT_MESSAGE" value="addauthentification" />
+    <MESSAGE value="ajoutconstrat" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajoutconstrat" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -883,11 +890,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ajout_constrat.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.58870965">
-          <caret line="80" column="26" selection-start-line="80" selection-start-column="26" selection-end-line="80" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.68010753">
+          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
           <folding>
-            <marker date="1452898320207" expanded="true" signature="93:131" placeholder="SELECT * FRO..produit..." />
-            <marker date="1452898320207" expanded="true" signature="676:886" placeholder="..." />
+            <element signature="e#1016#1046#0#HTML" expanded="true" />
+            <marker date="1452899145760" expanded="true" signature="93:131" placeholder="SELECT * FRO..produit..." />
+            <marker date="1452899145760" expanded="true" signature="676:886" placeholder="..." />
           </folding>
         </state>
       </provider>
