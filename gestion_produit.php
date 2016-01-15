@@ -22,15 +22,15 @@ if (isset($_GET["msg"])) {
     $msg=$_GET["msg"];
     if ($msg=="supprimer") { echo '<div class="alert alert-danger">
                             <button type="button" class="close" data-dismiss="alert">&times;</button>
-                             Le lit a été supprimer avec succés!!
+                             Le produit a été supprimer avec succés!!
                                     </div>';}
     elseif ($msg=="modifier") { echo '<div class="alert alert-success">
                             <button type="button" class="close" data-dismiss="alert">&times;</button>
-                            Le lit a été modifier avec succés!!
+                            Le produit a été modifier avec succés!!
                                     </div>';}
     elseif ($msg=="ajouter") { echo '<div class="alert alert-info">
                                     <button type="button" class="close" data-dismiss="alert">&times;</button>
-                                    Le lit a été ajouter avec succés!!
+                                    Le produit a été ajouter avec succés!!
                                     </div>';}
 }
 ?>

@@ -149,7 +149,7 @@ if (isset($_POST["produit"])) {
                                 <div class="row">
                                     <div class="col-md-1"></div>
                                     <div class="col-md-1"><label >TVA </label></div>
-                                    <input type="text" name="tva_produit" class="form-control" id="exampleInputEmail1" placeholder="Entrer la TVA" autofocus required>&nbsp %
+                                    <input type="text" name="tva_produit" value="18" class="form-control" id="exampleInputEmail1" placeholder="Entrer la TVA" autofocus required>&nbsp %
                                 </div>
                             </div>
                             <br>
