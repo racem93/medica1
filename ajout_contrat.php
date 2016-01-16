@@ -2,7 +2,7 @@
 <?php extract($_POST);
 include_once("config/MyPDO.class.php");
 $connect=new MyPDO();
-$req1="SELECT * FROM `produit` where `type`=1";
+$req1="SELECT * FROM `produit`";
 $oPDOStatement=$connect->query($req1); // Le résultat est un objet de la classe PDOStatement
 $oPDOStatement->setFetchMode(PDO::FETCH_OBJ);
 ?>
@@ -14,7 +14,7 @@ $oPDOStatement->setFetchMode(PDO::FETCH_OBJ);
                 <a href="acceuil.php">Accueil</a>
             </li>
             <li>
-                <a href="ajout_contrat.php">Ajout Constrat</a>
+                <a href="ajout_contrat.php">Ajout Contrat</a>
             </li>
         </ul>
     </div>
@@ -29,7 +29,7 @@ if (isset($_GET["msg"])) {
 }
 ?>
 
-    <a href=".php" id="iframe" align="lepht"> <div align="right"><button type="submit" class="btn btn-lg btn-primary" style="background-color:#0C6;"><i class="glyphicon glyphicon-th-large"></i> Consulter Les Models Séléctionnés </button></div> </a>
+    <a href="prod_select.php" id="iframe" align="lepht"> <div align="right"><button type="submit" class="btn btn-lg btn-primary" style="background-color:#0C6;"><i class="glyphicon glyphicon-th-large"></i> Consulter Les Models Séléctionnés </button></div> </a>
 <div class="row">
     <div class="box col-md-6">
 
@@ -60,19 +60,19 @@ if (isset($_GET["msg"])) {
                 <br>
                     <div class="row">
                         <div class="col-md-1"><label >Tel: </label></div>
-                        <div class="col-md-5"><input type="text" name="tel_client" class="form-control"  id="exampleInputEmail1" placeholder="Entrer le nom du client"  autofocus required>
+                        <div class="col-md-5"><input type="text" name="tel_client" class="form-control"  id="exampleInputEmail1"   autofocus required>
                     </div>
                         <div class="col-md-1"><label >Gsm: </label></div>
-                        <div class="col-md-5"><input type="text" name="gsm_client" class="form-control"  id="exampleInputEmail1" placeholder="Entrer le nom du client"  autofocus required>
+                        <div class="col-md-5"><input type="text" name="gsm_client" class="form-control"  id="exampleInputEmail1"   autofocus required>
                         </div>
                     </div>
                 <br>
                 <div class="row">
                     <div class="col-md-2"><label >CIN N: </label></div>
-                    <div class="col-md-4"><input type="text" name="cin_client" class="form-control"  id="exampleInputEmail1" placeholder="Entrer le nom du client"  autofocus required>
+                    <div class="col-md-4"><input type="text" name="cin_client" class="form-control"  id="exampleInputEmail1"   autofocus required>
                     </div>
                     <div class="col-md-2"><label >Tunis,le: </label></div>
-                    <div class="col-md-4"><input type="text" name="date_cin" class="form-control"  id="exampleInputEmail1" placeholder="Entrer le nom du client"  autofocus required>
+                    <div class="col-md-4"><input type="text" name="date_cin" class="form-control"  id="exampleInputEmail1"   autofocus required>
                     </div>
                 </div>
 
@@ -83,7 +83,6 @@ if (isset($_GET["msg"])) {
     </div>
 
     <div class="box col-md-6">
-
         <div class="box-inner">
             <div class="box-header well" data-original-title="">
                 <h2><i class="glyphicon glyphicon-user"></i>Cordonnées du beneficiare</h2>
@@ -97,28 +96,28 @@ if (isset($_GET["msg"])) {
                 <div class="form-inline">
                     <div class="row">
                         <div class="col-md-2"><label >Nom: </label></div>
-                        <input type="text" name="nom_ben" class="form-control" style="width: 400px;" id="exampleInputEmail1" placeholder="Entrer le nom du client"  autofocus required>
+                        <input type="text" name="nom_ben" class="form-control" style="width: 400px;" id="exampleInputEmail1" placeholder="Entrer le nom du beneficiare"  autofocus required>
                     </div>
                 </div>
                 <br>
                 <div class="form-inline">
                     <div class="row">
                         <div class="col-md-2"><label >Adresse: </label></div>
-                        <textarea class="form-control " name="adresse_ben" cols="51" placeholder="Entrer l'adresse du client"  autofocus required ></textarea>
+                        <textarea class="form-control " name="adresse_ben" cols="51" placeholder="Entrer l'adresse du beneficiare"  autofocus required ></textarea>
                     </div>
                 </div>
                 <br>
                 <div class="form-inline">
                     <div class="row">
                         <div class="col-md-2"><label >Tel:</label></div>
-                        <input type="text" name="tel_ben" class="form-control" style="width: 400px;" id="exampleInputEmail1" placeholder="Entrer le nom du client"  autofocus required>
+                        <input type="text" name="tel_ben" class="form-control" style="width: 400px;" id="exampleInputEmail1" placeholder="Entrer le tel du beneficiare"  autofocus required>
                     </div>
                 </div>
                 <br>
                 <div class="form-inline">
                     <div class="row">
                         <div class="col-md-2"><label >CIN N:</label></div>
-                        <input type="text" name="cin_ben" class="form-control" style="width: 400px;" id="exampleInputEmail1" placeholder="Entrer le nom du client"  autofocus required>
+                        <input type="text" name="cin_ben" class="form-control" style="width: 400px;" id="exampleInputEmail1" placeholder="Entrer le cin du benefecirae"  autofocus required>
                     </div>
                 </div>
 
@@ -172,7 +171,7 @@ if (isset($_GET["msg"])) {
                             ?>
                             <td class="center" width="30%">
 
-                                <a class="btn btn-info center-block" href=".php?id=<?php echo $id; ?>" id="iframe" >
+                                <a class="btn btn-info center-block" href="ajout_selection.php?id=<?php echo $id; ?>" id="iframe" >
                                     <i class="glyphicon glyphicon-plus-sign icon-white"></i>
                                     Ajouter à la séléction
                                 </a>
