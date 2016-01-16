@@ -14,7 +14,7 @@ $oPDOStatement->setFetchMode(PDO::FETCH_OBJ);
                 <a href="acceuil.php">Accueil</a>
             </li>
             <li>
-                <a href="ajout_constrat.php">Ajout Constrat</a>
+                <a href="ajout_contrat.php">Ajout Constrat</a>
             </li>
         </ul>
     </div>
@@ -23,7 +23,7 @@ if (isset($_GET["msg"])) {
     $msg=$_GET["msg"];
     if ($msg=="ajout") { echo '<div class="alert alert-info">
                             <button type="button" class="close" data-dismiss="alert">&times;</button>
-                             Le constrat a été cré avec succés!!
+                             Le contrat a été crée avec succés!!
                                     </div>';}
 
 }
@@ -35,7 +35,7 @@ if (isset($_GET["msg"])) {
 
         <div class="box-inner">
             <div class="box-header well" data-original-title="">
-                <h2><i class="glyphicon glyphicon-user"></i> Liste des models</h2>
+                <h2><i class="glyphicon glyphicon-user"></i>Cordonnées du client</h2>
                 <div class="box-icon">
 
                     <a href="#" class="btn btn-minimize btn-round btn-default"><i
@@ -44,6 +44,39 @@ if (isset($_GET["msg"])) {
             </div>
 
             <div class="box-content">
+                <div class="form-inline">
+                    <div class="row">
+                        <div class="col-md-2"><label >Nom: </label></div>
+                        <input type="text" name="nom_client" class="form-control" style="width: 400px;" id="exampleInputEmail1" placeholder="Entrer le nom du client"  autofocus required>
+                    </div>
+                </div>
+                <br>
+                <div class="form-inline">
+                    <div class="row">
+                        <div class="col-md-2"><label >Adresse: </label></div>
+                        <textarea class="form-control " name="adresse_client" cols="51" placeholder="Entrer l'adresse du client"  autofocus required ></textarea>
+                    </div>
+                </div>
+                <br>
+                    <div class="row">
+                        <div class="col-md-1"><label >Tel: </label></div>
+                        <div class="col-md-5"><input type="text" name="tel_client" class="form-control"  id="exampleInputEmail1" placeholder="Entrer le nom du client"  autofocus required>
+                    </div>
+                        <div class="col-md-1"><label >Gsm: </label></div>
+                        <div class="col-md-5"><input type="text" name="gsm_client" class="form-control"  id="exampleInputEmail1" placeholder="Entrer le nom du client"  autofocus required>
+                        </div>
+                    </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-2"><label >CIN N: </label></div>
+                    <div class="col-md-4"><input type="text" name="cin_client" class="form-control"  id="exampleInputEmail1" placeholder="Entrer le nom du client"  autofocus required>
+                    </div>
+                    <div class="col-md-2"><label >Tunis,le: </label></div>
+                    <div class="col-md-4"><input type="text" name="date_cin" class="form-control"  id="exampleInputEmail1" placeholder="Entrer le nom du client"  autofocus required>
+                    </div>
+                </div>
+
+
 
             </div>
         </div>
@@ -53,7 +86,7 @@ if (isset($_GET["msg"])) {
 
         <div class="box-inner">
             <div class="box-header well" data-original-title="">
-                <h2><i class="glyphicon glyphicon-user"></i> Liste des models</h2>
+                <h2><i class="glyphicon glyphicon-user"></i>Cordonnées du beneficiare</h2>
                 <div class="box-icon">
 
                     <a href="#" class="btn btn-minimize btn-round btn-default"><i
@@ -61,6 +94,34 @@ if (isset($_GET["msg"])) {
                 </div>
             </div>
             <div class="box-content">
+                <div class="form-inline">
+                    <div class="row">
+                        <div class="col-md-2"><label >Nom: </label></div>
+                        <input type="text" name="nom_ben" class="form-control" style="width: 400px;" id="exampleInputEmail1" placeholder="Entrer le nom du client"  autofocus required>
+                    </div>
+                </div>
+                <br>
+                <div class="form-inline">
+                    <div class="row">
+                        <div class="col-md-2"><label >Adresse: </label></div>
+                        <textarea class="form-control " name="adresse_ben" cols="51" placeholder="Entrer l'adresse du client"  autofocus required ></textarea>
+                    </div>
+                </div>
+                <br>
+                <div class="form-inline">
+                    <div class="row">
+                        <div class="col-md-2"><label >Tel:</label></div>
+                        <input type="text" name="tel_ben" class="form-control" style="width: 400px;" id="exampleInputEmail1" placeholder="Entrer le nom du client"  autofocus required>
+                    </div>
+                </div>
+                <br>
+                <div class="form-inline">
+                    <div class="row">
+                        <div class="col-md-2"><label >CIN N:</label></div>
+                        <input type="text" name="cin_ben" class="form-control" style="width: 400px;" id="exampleInputEmail1" placeholder="Entrer le nom du client"  autofocus required>
+                    </div>
+                </div>
+
 
             </div>
         </div>

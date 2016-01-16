@@ -184,7 +184,7 @@ if(!isset($_SESSION['admin']))
                                                        <a href="#"><i class="glyphicon glyphicon-list-alt"></i><span> Gestion des contrats</span></a>
                                                        <ul class="nav nav-pills nav-stacked">
                                                           <li><a href="#">Liste des contrats</a></li>
-                                                          <li><a href="ajout_constrat.php">Ajouter un contrat</a></li>
+                                                          <li><a href="ajout_contrat.php">Ajouter un contrat</a></li>
                                                        </ul>
                         </li>
 
