@@ -101,7 +101,7 @@ $oPDOStatements->setFetchMode(PDO::FETCH_ASSOC);;//retourne true on success, fal
 
 
 
-      <td> <a href='supp_prodfact.php?id=$idd' onclick=\"return(confirm('Etes-vous sûr de vouloir supprimer ce produit?'));\"><img src='images/icons/cross.png' ></a> </td>
+      <td> <a href='supp_prodfact.php?id=$idd' onclick=\"return(confirm('Etes-vous sûr de vouloir supprimer ce produit?'));\"><img src='img/cross.png' ></a> </td>
 
       </tr>";//Lecture des résultats
 
