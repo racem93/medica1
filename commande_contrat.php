@@ -1,7 +1,10 @@
 <?php
 ini_set('session.save_path',realpath(dirname($_SERVER['DOCUMENT_ROOT']) . '/temp'));
 session_start();
-
+if (isset($_POST["contrat"])) {
+    extract($_POST);
+    echo $nom_client;
+}
 ?>
 <html xmlns="http://www.w3.org/1999/html">
 <head>

@@ -207,6 +207,6 @@ if (isset($_GET["msg"])) {
     </div>
 </div>
 
-<a href="commande_contrat.php" id="iframe" align="lepht"> <div align="lepht"><button type="submit"  class="btn btn-lg btn-primary" style="background-color:#0C6;"><i class="glyphicon glyphicon-shopping-cart"></i> Enregitrer la contrat </button></div> </a>
+<a href="commande_contrat.php" id="iframe" align="lepht"> <div align="lepht"><button type="submit" name="contrat"  class="btn btn-lg btn-primary" style="background-color:#0C6;"><i class="glyphicon glyphicon-shopping-cart"></i> Enregitrer la contrat </button></div> </a>
 </form>
 <?php require('footer.php'); ?>
