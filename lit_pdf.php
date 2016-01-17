@@ -61,7 +61,7 @@ $pdf->fact_dev( "CONSTRAT LIT DE LOCATION" );
 $pdf->temporaire( "Technique" );
 $pdf->addDate( "$today");
 $pdf->addEtat("$etatlitdesc");
-$pdf->Image('img/logo.png',10,10,-300);
+$pdf->Image('img/Sigle.jpg',10,10,-360);
 
 //$pdf->addClient("CL01");
 //$pdf->addPageNumber("1");

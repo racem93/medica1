@@ -189,5 +189,27 @@ if (isset($_GET["msg"])) {
     </div>
 <a href="commande_contrat.php" id="iframe" align="lepht"> <div align="lepht"><button type="submit"  class="btn btn-lg btn-primary" style="background-color:#0C6;"><i class="glyphicon glyphicon-shopping-cart"></i> Enregitrer la contrat </button></div> </a>
 
+<div class="row">
+    <div class="box col-md-12">
+
+        <div class="box-inner">
+            <div class="box-header well" data-original-title="">
+                <h2><i class="glyphicon glyphicon-user"></i> Autres Informations</h2>
+                <div class="box-icon">
+
+                    <a href="#" class="btn btn-minimize btn-round btn-default"><i
+                            class="glyphicon glyphicon-chevron-up"></i></a>
+                </div>
+            </div>
+            <div class="box-content">
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 <?php require('footer.php'); ?>

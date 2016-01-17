@@ -1,5 +1,5 @@
 <?php
-ini_set('session.save_path',realpath(dirname($_SERVER['DOCUMENT_ROOT']) . '/temp'));
+//ini_set('session.save_path',realpath(dirname($_SERVER['DOCUMENT_ROOT']) . '/temp'));
 session_start();
 if(!isset($_SESSION['admin']))
 {
@@ -183,7 +183,7 @@ if(!isset($_SESSION['admin']))
                         <li class="accordion">
                                                        <a href="#"><i class="glyphicon glyphicon-list-alt"></i><span> Gestion des contrats</span></a>
                                                        <ul class="nav nav-pills nav-stacked">
-                                                          <li><a href="#">Liste des contrats</a></li>
+                                                          <li><a href="gestion_contrat.php">Liste des contrats</a></li>
                                                           <li><a href="ajout_contrat.php">Ajouter un contrat</a></li>
                                                        </ul>
                         </li>
