@@ -1,5 +1,5 @@
 <?php
-//ini_set('session.save_path',realpath(dirname($_SERVER['DOCUMENT_ROOT']) . '/temp'));
+ini_set('session.save_path',realpath(dirname($_SERVER['DOCUMENT_ROOT']) . '/temp'));
 
 session_start();
 //On pr�pare l'utilisation des variables de fonctions (variable qui sont stock�es sur le serveur pour chaque session ouverte)
