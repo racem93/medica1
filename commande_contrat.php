@@ -105,7 +105,7 @@ session_start();
                             <div class="panel-body">
                                 <?php
                                 //On prépare l'utilisation des variables de fonctions (variable qui sont stockées sur le serveur pour chaque session ouverte)
-
+                                //test
                                 include_once("config/MyPDO.class.php");
                                 $connect=new MyPDO();
 
