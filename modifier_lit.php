@@ -106,7 +106,7 @@ if (isset($_GET["id"])) {
         <![endif]-->
 
         <!-- The fav icon -->
-        <link rel="shortcut icon" href="img/favicon.ico">
+        <link rel="shortcut icon" href="img/favicon.jpg">
 
 
 

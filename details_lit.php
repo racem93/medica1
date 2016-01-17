@@ -1,4 +1,6 @@
 <?php
+ini_set('session.save_path',realpath(dirname($_SERVER['DOCUMENT_ROOT']) . '/temp'));
+//
 
 session_start();
 if(!isset($_SESSION['admin']))
@@ -77,7 +79,7 @@ while ($row = $oPDOStatement->fetch()) {
     <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
 
     <!-- The fav icon -->
-    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="shortcut icon" href="img/favicon.jpg">
 
 
 </head>

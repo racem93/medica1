@@ -1,10 +1,130 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1cd33de5-b4f5-4ceb-bd94-58d7afa57d5b" name="Default" comment="updatefooter">
+    <list default="true" id="1cd33de5-b4f5-4ceb-bd94-58d7afa57d5b" name="Default" comment="updategeneral3">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/favicon.ico" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajout_selection.php" afterPath="$PROJECT_DIR$/ajout_selection.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/footer.php" afterPath="$PROJECT_DIR$/footer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blank.html" afterPath="$PROJECT_DIR$/blank.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/advanced_init/column_render.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/advanced_init/column_render.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/advanced_init/complex_header.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/advanced_init/complex_header.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/advanced_init/defaults.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/advanced_init/defaults.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/advanced_init/dom_multiple_elements.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/advanced_init/dom_multiple_elements.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/advanced_init/dom_toolbar.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/advanced_init/dom_toolbar.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/advanced_init/dt_events.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/advanced_init/dt_events.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/advanced_init/events_live.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/advanced_init/events_live.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/advanced_init/events_post_init.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/advanced_init/events_post_init.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/advanced_init/events_pre_init.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/advanced_init/events_pre_init.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/advanced_init/footer_callback.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/advanced_init/footer_callback.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/advanced_init/highlight.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/advanced_init/highlight.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/advanced_init/html_sort.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/advanced_init/html_sort.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/advanced_init/language_file.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/advanced_init/language_file.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/advanced_init/length_menu.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/advanced_init/length_menu.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/advanced_init/localstorage.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/advanced_init/localstorage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/advanced_init/row_callback.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/advanced_init/row_callback.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/advanced_init/row_grouping.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/advanced_init/row_grouping.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/advanced_init/sorting_control.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/advanced_init/sorting_control.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/ajax/ajax.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/ajax/ajax.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/ajax/custom_data_property.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/ajax/custom_data_property.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/ajax/deep.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/ajax/deep.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/ajax/defer_render.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/ajax/defer_render.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/ajax/null_data_source.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/ajax/null_data_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/ajax/objects.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/ajax/objects.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/ajax/objects_subarrays.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/ajax/objects_subarrays.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/api/add_row.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/api/add_row.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/api/api_in_init.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/api/api_in_init.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/api/counter_column.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/api/counter_column.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/api/editable.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/api/editable.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/api/form.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/api/form.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/api/highlight.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/api/highlight.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/api/multi_filter.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/api/multi_filter.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/api/multi_filter_select.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/api/multi_filter_select.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/api/regex.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/api/regex.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/api/row_details.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/api/row_details.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/api/select_row.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/api/select_row.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/api/select_single_row.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/api/select_single_row.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/api/show_hide.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/api/show_hide.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/api/tabs_and_scrolling.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/api/tabs_and_scrolling.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/basic_init/alt_pagination.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/basic_init/alt_pagination.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/basic_init/base.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/basic_init/base.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/basic_init/base_themeroller.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/basic_init/base_themeroller.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/basic_init/complex_header.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/basic_init/complex_header.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/basic_init/dom.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/basic_init/dom.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/basic_init/filter_only.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/basic_init/filter_only.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/basic_init/flexible_width.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/basic_init/flexible_width.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/basic_init/hidden_columns.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/basic_init/hidden_columns.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/basic_init/language.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/basic_init/language.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/basic_init/multi_col_sort.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/basic_init/multi_col_sort.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/basic_init/multiple_tables.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/basic_init/multiple_tables.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/basic_init/scroll_x.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/basic_init/scroll_x.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/basic_init/scroll_xy.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/basic_init/scroll_xy.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/basic_init/scroll_y.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/basic_init/scroll_y.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/basic_init/scroll_y_infinite.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/basic_init/scroll_y_infinite.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/basic_init/scroll_y_theme.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/basic_init/scroll_y_theme.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/basic_init/state_save.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/basic_init/state_save.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/basic_init/table_sorting.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/basic_init/table_sorting.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/basic_init/themes.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/basic_init/themes.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/basic_init/zero_config.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/basic_init/zero_config.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/data_sources/ajax.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/data_sources/ajax.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/data_sources/dom.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/data_sources/dom.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/data_sources/js_array.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/data_sources/js_array.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/data_sources/server_side.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/data_sources/server_side.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/index.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/plug-ins/dom_sort.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/plug-ins/dom_sort.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/plug-ins/html_sort.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/plug-ins/html_sort.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/plug-ins/paging_plugin.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/plug-ins/paging_plugin.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/plug-ins/plugin_api.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/plug-ins/plugin_api.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/plug-ins/range_filtering.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/plug-ins/range_filtering.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/plug-ins/sorting_plugin.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/plug-ins/sorting_plugin.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/plug-ins/sorting_sType.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/plug-ins/sorting_sType.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/server_side/custom_vars.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/server_side/custom_vars.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/server_side/defer_loading.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/server_side/defer_loading.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/server_side/editable.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/server_side/editable.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/server_side/ids.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/server_side/ids.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/server_side/jsonp.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/server_side/jsonp.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/server_side/object_data.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/server_side/object_data.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/server_side/pipeline.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/server_side/pipeline.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/server_side/post.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/server_side/post.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/server_side/row_details.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/server_side/row_details.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/server_side/select_rows.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/server_side/select_rows.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/examples/server_side/server_side.html" afterPath="$PROJECT_DIR$/bower_components/datatables/examples/server_side/server_side.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/media/unit_testing/performance/draw.html" afterPath="$PROJECT_DIR$/bower_components/datatables/media/unit_testing/performance/draw.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/media/unit_testing/performance/large.php" afterPath="$PROJECT_DIR$/bower_components/datatables/media/unit_testing/performance/large.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/media/unit_testing/performance/page.html" afterPath="$PROJECT_DIR$/bower_components/datatables/media/unit_testing/performance/page.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/media/unit_testing/performance/sort.html" afterPath="$PROJECT_DIR$/bower_components/datatables/media/unit_testing/performance/sort.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/media/unit_testing/templates/-complex_header.php" afterPath="$PROJECT_DIR$/bower_components/datatables/media/unit_testing/templates/-complex_header.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/media/unit_testing/templates/2512.php" afterPath="$PROJECT_DIR$/bower_components/datatables/media/unit_testing/templates/2512.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/media/unit_testing/templates/6776.php" afterPath="$PROJECT_DIR$/bower_components/datatables/media/unit_testing/templates/6776.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/media/unit_testing/templates/complex_header_2.php" afterPath="$PROJECT_DIR$/bower_components/datatables/media/unit_testing/templates/complex_header_2.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/media/unit_testing/templates/deferred_table.php" afterPath="$PROJECT_DIR$/bower_components/datatables/media/unit_testing/templates/deferred_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/media/unit_testing/templates/dom_data.php" afterPath="$PROJECT_DIR$/bower_components/datatables/media/unit_testing/templates/dom_data.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/media/unit_testing/templates/dom_data_th.php" afterPath="$PROJECT_DIR$/bower_components/datatables/media/unit_testing/templates/dom_data_th.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/media/unit_testing/templates/dom_data_two_headers.php" afterPath="$PROJECT_DIR$/bower_components/datatables/media/unit_testing/templates/dom_data_two_headers.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/media/unit_testing/templates/dymanic_table.php" afterPath="$PROJECT_DIR$/bower_components/datatables/media/unit_testing/templates/dymanic_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/media/unit_testing/templates/empty_table.php" afterPath="$PROJECT_DIR$/bower_components/datatables/media/unit_testing/templates/empty_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/media/unit_testing/templates/html_table.php" afterPath="$PROJECT_DIR$/bower_components/datatables/media/unit_testing/templates/html_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/media/unit_testing/templates/js_data.php" afterPath="$PROJECT_DIR$/bower_components/datatables/media/unit_testing/templates/js_data.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/media/unit_testing/templates/js_data_mixed_types.php" afterPath="$PROJECT_DIR$/bower_components/datatables/media/unit_testing/templates/js_data_mixed_types.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/datatables/media/unit_testing/templates/two_tables.php" afterPath="$PROJECT_DIR$/bower_components/datatables/media/unit_testing/templates/two_tables.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calendar.html" afterPath="$PROJECT_DIR$/calendar.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chart.html" afterPath="$PROJECT_DIR$/chart.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commande_contrat.php" afterPath="$PROJECT_DIR$/commande_contrat.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/details_lit.php" afterPath="$PROJECT_DIR$/details_lit.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/form.html" afterPath="$PROJECT_DIR$/form.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gallery.html" afterPath="$PROJECT_DIR$/gallery.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grid.html" afterPath="$PROJECT_DIR$/grid.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/header.php" afterPath="$PROJECT_DIR$/header.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/icon.html" afterPath="$PROJECT_DIR$/icon.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/login.html" afterPath="$PROJECT_DIR$/login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modifier_lit.php" afterPath="$PROJECT_DIR$/modifier_lit.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modifier_produit.php" afterPath="$PROJECT_DIR$/modifier_produit.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php-version/header.php" afterPath="$PROJECT_DIR$/php-version/header.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prod_select.php" afterPath="$PROJECT_DIR$/prod_select.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/table.html" afterPath="$PROJECT_DIR$/table.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tour.html" afterPath="$PROJECT_DIR$/tour.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/typography.html" afterPath="$PROJECT_DIR$/typography.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui.html" afterPath="$PROJECT_DIR$/ui.html" />
     </list>
     <ignored path="medica.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,42 +149,10 @@
       <file leaf-file-name="details_lit.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/details_lit.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.3076923">
-              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+            <state vertical-scroll-proportion="-9.153846">
+              <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
               <folding>
-                <marker date="1453054761958" expanded="true" signature="207:238" placeholder="SELECT * FRO..lit..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="lit_pdf.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lit_pdf.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.8461537">
-              <caret line="59" column="2" selection-start-line="59" selection-start-column="2" selection-end-line="59" selection-end-column="2" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="supp_prodfact.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/supp_prodfact.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.65384614">
-              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="supprimer_lit.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/supprimer_lit.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.769231">
-              <caret line="18" column="42" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="42" />
-              <folding>
-                <marker date="1452814954320" expanded="true" signature="276:301" placeholder="DELETE FROM ..." />
+                <marker date="1453064481258" expanded="true" signature="295:326" placeholder="SELECT * FRO..lit..." />
               </folding>
             </state>
           </provider>
@@ -73,7 +161,7 @@
       <file leaf-file-name="gestion_contrat.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gestion_contrat.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.384615">
+            <state vertical-scroll-proportion="-66.03846">
               <caret line="101" column="31" selection-start-line="101" selection-start-column="31" selection-end-line="101" selection-end-column="31" />
               <folding>
                 <marker date="1453058493403" expanded="true" signature="93:117" placeholder="SELECT * FRO..commande..." />
@@ -85,24 +173,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="footer.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/footer.php">
+      <file leaf-file-name="ajout_contrat.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ajout_contrat.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.769231">
-              <caret line="53" column="22" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
-              <folding />
+            <state vertical-scroll-proportion="-136.0">
+              <caret line="208" column="0" selection-start-line="208" selection-start-column="0" selection-end-line="208" selection-end-column="0" />
+              <folding>
+                <marker date="1453063424231" expanded="true" signature="93:116" placeholder="SELECT * FRO..produit..." />
+                <marker date="1453063424231" expanded="true" signature="659:869" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ajout_contrat.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ajout_contrat.php">
+      <file leaf-file-name="modifier_lit.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modifier_lit.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.576923">
-              <caret line="209" column="4" selection-start-line="209" selection-start-column="4" selection-end-line="209" selection-end-column="4" />
+            <state vertical-scroll-proportion="-4.576923">
+              <caret line="30" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
               <folding>
-                <marker date="1453058994595" expanded="true" signature="93:116" placeholder="SELECT * FRO..produit..." />
-                <marker date="1453058994595" expanded="true" signature="659:869" placeholder="..." />
+                <marker date="1453064480052" expanded="true" signature="650:1129" placeholder="UPDATE `lit`..." />
+                <marker date="1453064480052" expanded="true" signature="1218:1318" placeholder="..." />
+                <marker date="1453064480052" expanded="true" signature="1527:1558" placeholder="SELECT * FRO..lit..." />
               </folding>
             </state>
           </provider>
@@ -111,11 +203,11 @@
       <file leaf-file-name="prod_select.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/prod_select.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.65384614">
+            <state vertical-scroll-proportion="-18.307692">
               <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
               <folding>
-                <marker date="1453055680501" expanded="true" signature="2397:2450" placeholder="select id,no..produit..." />
-                <marker date="1453055680501" expanded="true" signature="3243:3635" placeholder="..." />
+                <marker date="1453064481020" expanded="true" signature="2397:2450" placeholder="select id,no..produit..." />
+                <marker date="1453064481020" expanded="true" signature="3243:3635" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -124,21 +216,50 @@
       <file leaf-file-name="ajout_selection.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ajout_selection.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7311828">
-              <caret line="95" column="12" selection-start-line="95" selection-start-column="12" selection-end-line="95" selection-end-column="12" />
+            <state vertical-scroll-proportion="0.33333334">
+              <caret line="64" column="47" selection-start-line="64" selection-start-column="40" selection-end-line="64" selection-end-column="47" />
               <folding>
-                <element signature="n#style#0;n#input#0;n#h4#0;n#center#0;n#center#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1453060079829" expanded="true" signature="309:344" placeholder="SELECT * FRO..produit..." />
+                <marker date="1453064481453" expanded="true" signature="309:344" placeholder="SELECT * FRO..produit..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="header.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/header.php">
+      <file leaf-file-name="blank.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/blank.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.65384614">
-              <caret line="105" column="29" selection-start-line="105" selection-start-column="29" selection-end-line="105" selection-end-column="29" />
+            <state vertical-scroll-proportion="-5.076923">
+              <caret line="50" column="40" selection-start-line="50" selection-start-column="40" selection-end-line="50" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="column_render.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bower_components/datatables/examples/advanced_init/column_render.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.6153846">
+              <caret line="4" column="96" selection-start-line="4" selection-start-column="96" selection-end-line="4" selection-end-column="96" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="complex_header.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bower_components/datatables/examples/advanced_init/complex_header.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.6153846">
+              <caret line="4" column="83" selection-start-line="4" selection-start-column="83" selection-end-line="4" selection-end-column="83" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="defaults.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bower_components/datatables/examples/advanced_init/defaults.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.6153846">
+              <caret line="4" column="83" selection-start-line="4" selection-start-column="83" selection-end-line="4" selection-end-column="83" />
               <folding />
             </state>
           </provider>
@@ -177,16 +298,20 @@
         <option value="$PROJECT_DIR$/test.php" />
         <option value="$PROJECT_DIR$/ajout_constrat.php" />
         <option value="$PROJECT_DIR$/ajout_lit.php" />
-        <option value="$PROJECT_DIR$/details_lit.php" />
         <option value="$PROJECT_DIR$/lit_pdf.php" />
         <option value="$PROJECT_DIR$/supprimer_lit.php" />
         <option value="$PROJECT_DIR$/prod_select.php" />
         <option value="$PROJECT_DIR$/supp_prodfact.php" />
-        <option value="$PROJECT_DIR$/header.php" />
         <option value="$PROJECT_DIR$/gestion_contrat.php" />
         <option value="$PROJECT_DIR$/ajout_contrat.php" />
         <option value="$PROJECT_DIR$/footer.php" />
+        <option value="$PROJECT_DIR$/header.php" />
+        <option value="$PROJECT_DIR$/details_lit.php" />
         <option value="$PROJECT_DIR$/ajout_selection.php" />
+        <option value="$PROJECT_DIR$/blank.html" />
+        <option value="$PROJECT_DIR$/bower_components/datatables/examples/advanced_init/column_render.html" />
+        <option value="$PROJECT_DIR$/bower_components/datatables/examples/advanced_init/complex_header.html" />
+        <option value="$PROJECT_DIR$/bower_components/datatables/examples/advanced_init/defaults.html" />
       </list>
     </option>
   </component>
@@ -251,7 +376,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -273,6 +397,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -305,8 +430,8 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ajout_contrat.php</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/auth_admin.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/header.php</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -314,13 +439,7 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ajax.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ajax/ajax.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ajax/supp_prodfact.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ajout_contrat.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ajout_selection.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/prod_select.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/supp_prodfact.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/commande_contrat.php</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -328,7 +447,6 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="true" />
           <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ajout_constrat.php</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Restored" />
@@ -559,7 +677,13 @@
       <option name="project" value="LOCAL" />
       <updated>1453059197697</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="updategeneral2">
+      <created>1453060136913</created>
+      <option name="number" value="00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1453060136913</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -567,23 +691,23 @@
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3001464" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29941434" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32913387" sideWeight="0.511713" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32913387" sideWeight="0.5146413" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32913387" sideWeight="0.48828697" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32913387" sideWeight="0.48535872" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32913387" sideWeight="0.48535872" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32913387" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -612,34 +736,14 @@
     <MESSAGE value="ajoutconstratupdate" />
     <MESSAGE value="updateGenerale" />
     <MESSAGE value="addphotos" />
-    <option name="LAST_COMMIT_MESSAGE" value="addphotos" />
+    <MESSAGE value="updategeneral2" />
+    <option name="LAST_COMMIT_MESSAGE" value="updategeneral2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/php-version/footer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/php-version/acceuil.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="2" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/php-version/footer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/php-version/acceuil.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -700,13 +804,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blank.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="42" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="42" />
         </state>
       </provider>
     </entry>
@@ -829,13 +926,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/acceuil.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.3076923">
-          <caret line="2" column="7" selection-start-line="0" selection-start-column="0" selection-end-line="8" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0">
@@ -843,18 +933,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/auth_admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.65384614">
-          <caret line="1" column="76" selection-start-line="1" selection-start-column="76" selection-end-line="1" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/invoice.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="147" column="0" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -862,26 +944,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1452814954253" expanded="true" signature="93:112" placeholder="SELECT * FRO..lit..." />
-            <marker date="1452814954253" expanded="true" signature="662:873" placeholder="..." />
-            <marker date="1452814954253" expanded="true" signature="948:1157" placeholder="..." />
-            <marker date="1452814954253" expanded="true" signature="1228:1452" placeholder="..." />
-            <marker date="1452814954253" expanded="true" signature="4368:4539" placeholder="..." />
-            <marker date="1452814954253" expanded="true" signature="4721:4886" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modifier_lit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding>
-            <marker date="1452814954317" expanded="true" signature="650:1129" placeholder="UPDATE `lit`..." />
-            <marker date="1452814954317" expanded="true" signature="1218:1318" placeholder="..." />
-            <marker date="1452814954317" expanded="true" signature="1527:1558" placeholder="SELECT * FRO..lit..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -889,14 +951,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="30" column="65" selection-start-line="30" selection-start-column="49" selection-end-line="30" selection-end-column="65" />
-          <folding>
-            <marker date="1452870608102" expanded="true" signature="93:116" placeholder="SELECT * FRO..produit..." />
-            <marker date="1452870608102" expanded="true" signature="633:769" placeholder="..." />
-            <marker date="1452870608102" expanded="true" signature="633:848" placeholder="..." />
-            <marker date="1452870608102" expanded="true" signature="923:1136" placeholder="..." />
-            <marker date="1452870608102" expanded="true" signature="1207:1435" placeholder="..." />
-            <marker date="1452870608102" expanded="true" signature="1363:1435" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -912,11 +966,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1452870608087" expanded="true" signature="249:289" placeholder="SELECT * FRO..produit..." />
-            <marker date="1452870608087" expanded="true" signature="1421:1716" placeholder="INSERT INTO `produit`..." />
-            <marker date="1452870608087" expanded="true" signature="1865:1944" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -924,32 +973,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1452814954238" expanded="true" signature="77:235" placeholder="SELECT MAX(`..lit..." />
-            <marker date="1452814954238" expanded="true" signature="1395:1441" placeholder="SELECT * FRO..lit..." />
-            <marker date="1452814954238" expanded="true" signature="1781:1837" placeholder="SELECT * FRO..lit..." />
-            <marker date="1452814954238" expanded="true" signature="2209:2265" placeholder="SELECT * FRO..lit..." />
-            <marker date="1452814954238" expanded="true" signature="2630:2694" placeholder="SELECT * FRO..lit..." />
-            <marker date="1452814954238" expanded="true" signature="3593:4233" placeholder="INSERT INTO `lit`..." />
-            <marker date="1452814954238" expanded="true" signature="4372:4447" placeholder="..." />
-            <marker date="1452814954238" expanded="true" signature="4527:4565" placeholder="SELECT * FRO..produit..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/details_lit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.3076923">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding>
-            <marker date="1453054761958" expanded="true" signature="207:238" placeholder="SELECT * FRO..lit..." />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lit_pdf.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.8461537">
+        <state vertical-scroll-proportion="0.0">
           <caret line="59" column="2" selection-start-line="59" selection-start-column="2" selection-end-line="59" selection-end-column="2" />
           <folding />
         </state>
@@ -959,15 +988,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-13.0">
           <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding>
-            <marker date="1452870608221" expanded="true" signature="276:305" placeholder="DELETE FROM ..." />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/supp_prodfact.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.65384614">
+        <state vertical-scroll-proportion="0.0">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
@@ -975,7 +1001,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/supprimer_lit.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.769231">
+        <state vertical-scroll-proportion="0.0">
           <caret line="18" column="42" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="42" />
           <folding>
             <marker date="1452814954320" expanded="true" signature="276:301" placeholder="DELETE FROM ..." />
@@ -983,28 +1009,77 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/auth_admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="15.115385">
+          <caret line="1" column="76" selection-start-line="1" selection-start-column="76" selection-end-line="1" selection-end-column="76" />
+          <folding>
+            <marker date="1453063424242" expanded="true" signature="734:809" placeholder="SELECT COUNT..users..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/acceuil.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.9615384">
+          <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.307692">
+          <caret line="53" column="22" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/header.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.65384614">
-          <caret line="105" column="29" selection-start-line="105" selection-start-column="29" selection-end-line="105" selection-end-column="29" />
+          <caret line="1" column="20" selection-start-line="1" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/prod_select.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.307692">
+          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+          <folding>
+            <marker date="1453064481020" expanded="true" signature="2397:2450" placeholder="select id,no..produit..." />
+            <marker date="1453064481020" expanded="true" signature="3243:3635" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modifier_lit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.576923">
+          <caret line="30" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding>
+            <marker date="1453064480052" expanded="true" signature="650:1129" placeholder="UPDATE `lit`..." />
+            <marker date="1453064480052" expanded="true" signature="1218:1318" placeholder="..." />
+            <marker date="1453064480052" expanded="true" signature="1527:1558" placeholder="SELECT * FRO..lit..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ajout_contrat.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.576923">
-          <caret line="209" column="4" selection-start-line="209" selection-start-column="4" selection-end-line="209" selection-end-column="4" />
+        <state vertical-scroll-proportion="-136.0">
+          <caret line="208" column="0" selection-start-line="208" selection-start-column="0" selection-end-line="208" selection-end-column="0" />
           <folding>
-            <marker date="1453058994595" expanded="true" signature="93:116" placeholder="SELECT * FRO..produit..." />
-            <marker date="1453058994595" expanded="true" signature="659:869" placeholder="..." />
+            <marker date="1453063424231" expanded="true" signature="93:116" placeholder="SELECT * FRO..produit..." />
+            <marker date="1453063424231" expanded="true" signature="659:869" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gestion_contrat.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.384615">
+        <state vertical-scroll-proportion="-66.03846">
           <caret line="101" column="31" selection-start-line="101" selection-start-column="31" selection-end-line="101" selection-end-column="31" />
           <folding>
             <marker date="1453058493403" expanded="true" signature="93:117" placeholder="SELECT * FRO..commande..." />
@@ -1015,32 +1090,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/footer.php">
+    <entry file="file://$PROJECT_DIR$/details_lit.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.769231">
-          <caret line="53" column="22" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
+        <state vertical-scroll-proportion="-9.153846">
+          <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+          <folding>
+            <marker date="1453064481258" expanded="true" signature="295:326" placeholder="SELECT * FRO..lit..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blank.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.076923">
+          <caret line="50" column="40" selection-start-line="50" selection-start-column="40" selection-end-line="50" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/prod_select.php">
+    <entry file="file://$PROJECT_DIR$/bower_components/datatables/examples/advanced_init/column_render.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.65384614">
-          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-          <folding>
-            <marker date="1453055680501" expanded="true" signature="2397:2450" placeholder="select id,no..produit..." />
-            <marker date="1453055680501" expanded="true" signature="3243:3635" placeholder="..." />
-          </folding>
+        <state vertical-scroll-proportion="-2.6153846">
+          <caret line="4" column="96" selection-start-line="4" selection-start-column="96" selection-end-line="4" selection-end-column="96" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bower_components/datatables/examples/advanced_init/complex_header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.6153846">
+          <caret line="4" column="83" selection-start-line="4" selection-start-column="83" selection-end-line="4" selection-end-column="83" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bower_components/datatables/examples/advanced_init/defaults.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.6153846">
+          <caret line="4" column="83" selection-start-line="4" selection-start-column="83" selection-end-line="4" selection-end-column="83" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ajout_selection.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7311828">
-          <caret line="95" column="12" selection-start-line="95" selection-start-column="12" selection-end-line="95" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="64" column="47" selection-start-line="64" selection-start-column="40" selection-end-line="64" selection-end-column="47" />
           <folding>
-            <element signature="n#style#0;n#input#0;n#h4#0;n#center#0;n#center#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1453060079829" expanded="true" signature="309:344" placeholder="SELECT * FRO..produit..." />
+            <marker date="1453064481453" expanded="true" signature="309:344" placeholder="SELECT * FRO..produit..." />
           </folding>
         </state>
       </provider>

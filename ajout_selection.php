@@ -62,7 +62,7 @@ while ($row = $oPDOStatement->fetch()) {
     <![endif]-->
 
     <!-- The fav icon -->
-    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="shortcut icon" href="img/favicon.jpg">
 
 
 

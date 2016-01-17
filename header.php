@@ -1,5 +1,5 @@
 <?php
-//ini_set('session.save_path',realpath(dirname($_SERVER['DOCUMENT_ROOT']) . '/temp'));
+ini_set('session.save_path',realpath(dirname($_SERVER['DOCUMENT_ROOT']) . '/temp'));
 session_start();
 if(!isset($_SESSION['admin']))
 {
@@ -65,7 +65,7 @@ if(!isset($_SESSION['admin']))
     <![endif]-->
 
     <!-- The fav icon -->
-    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="shortcut icon" href="img/favicon.jpg">
 
 
 
