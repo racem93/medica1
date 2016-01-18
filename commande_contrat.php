@@ -105,17 +105,17 @@ $oPDOStatement=$connect->query($req1); // Le résultat est un objet de la classe
                                 //On prépare l'utilisation des variables de fonctions (variable qui sont stockées sur le serveur pour chaque session ouverte)
                                 //test
 
-                                if(!empty($_SESSION['panier']))
+                                if(!empty($_SESSION['id']))
                                 {
                                 // on extrait les id du caddie
-                                $id_liste=implode(',',array_keys($_SESSION['panier']));
+                                $id_liste=$_SESSION['id'];
 
 
                                 // on fait notre requête
-                                $req="select id,nom from produit where id IN(".$id_liste.")";
+                                /*$req="select id,nom from produit where id IN(".$id_liste.")";
                                 $oPDOStatements=$connect->query($req); // Le r&eacute;sultat est un objet de la classe PDOStatement
-                                $oPDOStatements->setFetchMode(PDO::FETCH_ASSOC);;//retourne true on success, false otherwise.
-
+                                $oPDOStatements->setFetchMode(PDO::FETCH_ASSOC);;//retourne true on success, false otherwise.*/
+                                $i=0;
                                 $total_htva=0;
                                 $total_caution=0;
                                 ?>
@@ -135,34 +135,39 @@ $oPDOStatement=$connect->query($req1); // Le résultat est un objet de la classe
                                         </tr>
                                         </thead>
 
-                                        <?php while ($data=$oPDOStatements->fetch())//Récupère la ligne suivante d'un jeu de résultat PDO
+                                        <?php foreach($id_liste as $val){
+                                        $i++;
+                                        $req="select id,nom from produit where id =$val";
+                                        $oPDOStatements=$connect->query($req); // Le r&eacute;sultat est un objet de la classe PDOStatement
+                                        $oPDOStatements->setFetchMode(PDO::FETCH_ASSOC);;//retourne true on success, false otherwise.
+                                        while ($data=$oPDOStatements->fetch())//Récupère la ligne suivante d'un jeu de résultat PDO
                                         {
                                             $idd=$data['id'];
-                                            $prix_total=$_SESSION['prix'][$idd]*$_SESSION['panier'][$idd];
+                                            $prix_total=$_SESSION['prix'][$i]*$_SESSION['panier'][$i];
 
                                             $total_htva=$total_htva+$prix_total;
-                                            $total_caution=$total_caution+$_SESSION['caution'][$idd];
+                                            $total_caution=$total_caution+$_SESSION['caution'][$i];
                                             echo "<tr>
 
                                           <td>".$data['nom']."</td>
-                                          <td>".$_SESSION['periode'][$idd]."</td>
-                                          <td>".$_SESSION['panier'][$idd]."</td>
-                                          <td>".$_SESSION['prix'][$idd]."</td>
+                                          <td>".$_SESSION['periode'][$i]."</td>
+                                          <td>".$_SESSION['panier'][$i]."</td>
+                                          <td>".$_SESSION['prix'][$i]."</td>
                                           <td>".$prix_total."</td>
-                                          <td>".$_SESSION['caution'][$idd]."</td>
+                                          <td>".$_SESSION['caution'][$i]."</td>
 
                                           </tr>";//Lecture des résultats
                                         //insertion  dans ligne commande
                                             if(isset($_POST['ajout']))
                                             {
                                                 $req = "INSERT INTO ligne_commande ( id_commande,id_produit,periode,qte,prix_unit_ht,prix_caution)
-                                                VALUES ("."'".$iddernier."'".","."'".$idd."'".","."'".$_SESSION['periode'][$idd]."'".","."'".$_SESSION['panier'][$idd]."'".","."'".$_SESSION['prix'][$idd]."'".","."'".$_SESSION['caution'][$idd]."'".")";
+                                                VALUES ("."'".$iddernier."'".","."'".$idd."'".","."'".$_SESSION['periode'][$i]."'".","."'".$_SESSION['panier'][$i]."'".","."'".$_SESSION['prix'][$i]."'".","."'".$_SESSION['caution'][$i]."'".")";
                                                 $oPDOStatement4=$connect->query($req); // Le résultat est un objet de la classe PDOStatement
 
 
 
                                             }
-                                        }
+                                        }}
                                         ?>
 
                                     </table>
@@ -174,7 +179,7 @@ $oPDOStatement=$connect->query($req1); // Le résultat est un objet de la classe
                         </div>
 
                         <?php
-                        if(!empty($_SESSION['panier']))
+                        if(!empty($_SESSION['id']))
                         {
                             $total_tva=$total_htva*0.18;
                             $totat_ttc=$total_htva+$total_tva;
@@ -186,7 +191,7 @@ $oPDOStatement=$connect->query($req1); // Le résultat est un objet de la classe
                              <b>TOTAL TTC </b>&nbsp;<input type='text' class='form-control' value='".$totat_ttc."&nbsp Dt' disabled><br><br>
                              <b>TOTAL CAUTION</b> &nbsp;<input type='text' class='form-control' value='".$total_caution."&nbsp Dt' disabled></div></div>
                             </div>";
-                        }
+
 
                         ?>
                         <form action="commande_contrat.php" method="post">
@@ -206,23 +211,30 @@ $oPDOStatement=$connect->query($req1); // Le résultat est un objet de la classe
                             <input type="hidden" name="total_caution" value="<?php echo $total_caution; ?>" >
                             <input type="hidden" name="ref" value="<?php echo $ref; ?>" >
                             <input type="hidden" name="date_commande" value="<?php echo $date_commande; ?>" >
-
+                            <?php }?>
                         <div class="row">
-                            <div class="col-md-1"><a href="javascript:history.go(-1)"><button type="submit" class="btn btn-default" name="retour" style="width: 200px" ><i class="glyphicon glyphicon-fast-backward"></i> &nbsp;Retour</button></a></div>
+                            <div class="col-md-1"><a href="javascript:history.go(-1)"><button type="button" class="btn btn-default" name="retour" style="width: 200px" ><i class="glyphicon glyphicon-fast-backward"></i> &nbsp;Retour</button></a></div>
                             <div class="col-md-3"></div>
                             <button type="submit" class="btn btn-primary" name="ajout" style="width: 200px" >Ajouter</button>
                         </div>
                             </form>
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
 <?php require('footer.php'); ?>
 <?php
 if(isset($_POST['ajout'])) {
 echo "<SCRIPT LANGUAGE='JavaScript'>
     self.parent.location.href='gestion_contrat.php?msg=ajouter';
 </SCRIPT> ";
-unset($_SESSION['panier']);}
+    unset($_SESSION['id']);
+    unset($_SESSION['panier']);
+    unset($_SESSION['prix']);
+    unset($_SESSION['periode']);
+    unset($_SESSION['caution']);
+}
 ?>

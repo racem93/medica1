@@ -11,22 +11,23 @@ $periode=$_GET["periode"];
 
 if($_POST['action'] == 'ajout') {
 
-  if (!isset ($_SESSION['panier']) ){
+  if (!isset ($_SESSION['id']) ){
+	$_SESSION['id']=array();
 	$_SESSION['panier']=array();
 	}
 		
-			
+	$i=count($_SESSION['id'])+1;
 	$id_article=$id_prod;
 	$quantite_article=$qte;
 	$prix_article=$prix_ht;
 	$caution_article=$caution;
 	$periode_article=$periode;
 
-
-	$_SESSION['panier'][$id_article]=$quantite_article;
-	$_SESSION['prix'][$id_article]=$prix_article;
-	$_SESSION['caution'][$id_article]=$caution_article;
-	$_SESSION['periode'][$id_article]=$periode_article;
+	$_SESSION['id'][$i]=$id_article;
+	$_SESSION['panier'][$i]=$quantite_article;
+	$_SESSION['prix'][$i]=$prix_article;
+	$_SESSION['caution'][$i]=$caution_article;
+	$_SESSION['periode'][$i]=$periode_article;
 
 	print("Le produit a ete ajoute avec succes");
 

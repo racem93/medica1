@@ -59,18 +59,18 @@
     include_once("config/MyPDO.class.php");
     $connect=new MyPDO();
 
-if(!empty($_SESSION['panier']))
+if(!empty($_SESSION['id']))
 {
 // on extrait les id du caddie
-$id_liste=implode(',',array_keys($_SESSION['panier']));
-
+$id_liste=$_SESSION['id'];
+echo var_dump($id_liste);
 
 // on fait notre requête
-$req="select id,nom from produit where id IN(".$id_liste.")";
+/*$req="select id,nom from produit where id IN(".$id_liste.")";
 $oPDOStatements=$connect->query($req); // Le r&eacute;sultat est un objet de la classe PDOStatement
-$oPDOStatements->setFetchMode(PDO::FETCH_ASSOC);;//retourne true on success, false otherwise.
+$oPDOStatements->setFetchMode(PDO::FETCH_ASSOC);;//retourne true on success, false otherwise.*/
 
-
+$i=0;
 			   ?>
 			   <div class="table-responsive">
 				<table class="table table-bordered table-hover" >
@@ -87,26 +87,33 @@ $oPDOStatements->setFetchMode(PDO::FETCH_ASSOC);;//retourne true on success, fal
 					</tr>
 					</thead>
 
- <?php while ($data=$oPDOStatements->fetch())//Récupère la ligne suivante d'un jeu de résultat PDO
+ <?php /*while ($data=$oPDOStatements->fetch())//Récupère la ligne suivante d'un jeu de résultat PDO
      {
-	 $idd=$data['id'];
-
+	 $idd=$data['id'];*/
+ foreach($id_liste as $val){
+      $i++;
+     $req="select id,nom from produit where id =$val";
+     $oPDOStatements=$connect->query($req); // Le r&eacute;sultat est un objet de la classe PDOStatement
+     $oPDOStatements->setFetchMode(PDO::FETCH_ASSOC);;//retourne true on success, false otherwise.
+ while ($data=$oPDOStatements->fetch())//Récupère la ligne suivante d'un jeu de résultat PDO
+ {
+     $idd=$data['id'];
       echo "<tr>
-
       <td>".$data['nom']."</td>
-      <td>".$_SESSION['panier'][$idd]."</td>
-      <td>".$_SESSION['prix'][$idd]."</td>
-      <td>".$_SESSION['periode'][$idd]."</td>
-      <td>".$_SESSION['caution'][$idd]."</td>
+      <td>".$_SESSION['panier'][$i]."</td>
+      <td>".$_SESSION['prix'][$i]."</td>
+      <td>".$_SESSION['periode'][$i]."</td>
+      <td>".$_SESSION['caution'][$i]."</td>
 
 
 
-      <td> <a href='supp_prodfact.php?id=$idd' onclick=\"return(confirm('Etes-vous sûr de vouloir supprimer ce produit?'));\"><img src='img/cross.png' ></a> </td>
+      <td> <a href='supp_prodfact.php?id=$i' onclick=\"return(confirm('Etes-vous sûr de vouloir supprimer ce produit?'));\"><img src='img/cross.png' ></a> </td>
 
       </tr>";//Lecture des résultats
 
+         //unset($_SESSION['id']);
 	  
-}
+}}
 ?>
                       
 </table>
