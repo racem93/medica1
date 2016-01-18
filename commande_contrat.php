@@ -1,54 +1,33 @@
+
+
 <?php
-ini_set('session.save_path',realpath(dirname($_SERVER['DOCUMENT_ROOT']) . '/temp'));
-session_start();
+include_once("config/MyPDO.class.php");
+$connect=new MyPDO();
 if (isset($_POST["contrat"])) {
+    $nom_client="";
+    $adresse_client="";
+    $tel_client="";
+    $gsm_client="";
+    $cin_client="";
+    $date_cin="";
+    $nom_ben="";
+    $adresse_ben="";
+    $tel_ben="";
+    $cin_ben="";
     extract($_POST);
-    echo $nom_client;
+}
+if (isset($_POST["ajout"])) {
+    $cin_client="";
+    extract($_POST);
+$date_creation=date("Y-m-d");
+$req1 = "INSERT INTO commande (nom_client,adresse_client,tel_client,gsm_client,cin_client,date_cin,nom_ben,adresse_ben,tel_ben,cin_ben,total_htva,total_tva,total_ttc,total_caution,date_commande)
+VALUES (" ."'".$nom_client."'".","."'".$adresse_client."'".","."'".$tel_client."'".","."'".$gsm_client."'".","."'".$cin_client."'".","."'".$date_cin."'".",
+"."'".$nom_ben."'".","."'".$adresse_ben."'".","."'".$tel_ben."'".","."'".$cin_ben."'".",
+"."'".$total_htva."'".","."'".$total_tva."'".","."'".$total_ttc."'".","."'".$total_caution."'".","."'".$date_creation."'".")";
+$oPDOStatement=$connect->query($req1); // Le résultat est un objet de la classe PDOStatement
 }
 ?>
-<html xmlns="http://www.w3.org/1999/html">
-<head>
-    <meta charset="utf-8">
-    <title>Free HTML5 Bootstrap Admin Template</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
-    <meta name="author" content="Muhammad Usman">
-
-
-    <!-- The styles -->
-    <link id="bs-css" href="css/bootstrap-cerulean.min.css" rel="stylesheet">
-
-    <link href="css/charisma-app.css" rel="stylesheet">
-    <link href='bower_components/chosen/chosen.min.css' rel='stylesheet'>
-    <link href='bower_components/colorbox/example3/colorbox.css' rel='stylesheet'>
-    <link href='bower_components/responsive-tables/responsive-tables.css' rel='stylesheet'>
-    <link href='bower_components/bootstrap-tour/build/css/bootstrap-tour.min.css' rel='stylesheet'>
-    <link href='css/jquery.noty.css' rel='stylesheet'>
-    <link href='css/noty_theme_default.css' rel='stylesheet'>
-    <link href='css/elfinder.min.css' rel='stylesheet'>
-    <link href='css/elfinder.theme.css' rel='stylesheet'>
-    <link href='css/jquery.iphone.toggle.css' rel='stylesheet'>
-    <link href='css/uploadify.css' rel='stylesheet'>
-    <link href='css/animate.min.css' rel='stylesheet'>
-
-    <!-- jQuery -->
-    <script src="bower_components/jquery/jquery.min.js"></script>
-
-    <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-    <!-- The fav icon -->
-    <link rel="shortcut icon" href="img/favicon.jpg">
-
-
-
-
-</head>
-<body>
-<div id="content" class="col-lg-12 col-sm-12">
-
+<?php require('header.php'); ?>
     <div class="row">
         <div class="box col-md-12">
             <div class="box-inner">
@@ -64,18 +43,18 @@ if (isset($_POST["contrat"])) {
                                         <th colspan="2">Cordonnées du client</th>
                                     </tr>
                                     <tr>
-                                        <td colspan="2">Nom:<?php echo"";?></td>
+                                        <td colspan="2">Nom:&nbsp;<?php echo $nom_client;?></td>
                                     </tr>
                                     <tr>
-                                        <td colspan="2">Adresse:<?php echo"";?></td>
+                                        <td colspan="2">Adresse:&nbsp;<?php echo $adresse_client;?></td>
                                     </tr>
                                     <tr>
-                                        <td>Tel:<?php echo"";?></td>
-                                        <td>GSM:<?php echo"";?></td>
+                                        <td>Tel:&nbsp;<?php echo $tel_client;?></td>
+                                        <td>GSM:&nbsp;<?php echo $gsm_client;?></td>
                                     </tr>
                                     <tr>
-                                        <td>CIN N°:<?php echo"";?></td>
-                                        <td>Tunis le:<?php echo"";?></td>
+                                        <td>CIN N°:&nbsp;<?php echo $cin_client;?></td>
+                                        <td>Tunis le:&nbsp;<?php echo $date_cin;?></td>
                                     </tr>
 
                                 </table>
@@ -86,16 +65,16 @@ if (isset($_POST["contrat"])) {
                                         <th colspan="2">Cordonnées du beneficiare</th>
                                     </tr>
                                     <tr>
-                                        <td >Nom:<?php echo"";?></td>
+                                        <td >Nom:&nbsp;<?php echo $nom_ben;?></td>
                                     </tr>
                                     <tr>
-                                        <td >Adresse:<?php echo"";?></td>
+                                        <td >Adresse:&nbsp;<?php echo $adresse_ben;?></td>
                                     </tr>
                                     <tr>
-                                        <td>Tel:<?php echo"";?></td>
+                                        <td>Tel:&nbsp;<?php echo $tel_ben;?></td>
                                     </tr>
                                     <tr>
-                                        <td>CIN N°:<?php echo"";?></td>
+                                        <td>CIN N°:&nbsp;<?php echo $cin_ben;?></td>
                                     </tr>
 
                                 </table>
@@ -109,8 +88,7 @@ if (isset($_POST["contrat"])) {
                                 <?php
                                 //On prépare l'utilisation des variables de fonctions (variable qui sont stockées sur le serveur pour chaque session ouverte)
                                 //test
-                                include_once("config/MyPDO.class.php");
-                                $connect=new MyPDO();
+
 
                                 if(!empty($_SESSION['panier']))
                                 {
@@ -123,17 +101,19 @@ if (isset($_POST["contrat"])) {
                                 $oPDOStatements=$connect->query($req); // Le r&eacute;sultat est un objet de la classe PDOStatement
                                 $oPDOStatements->setFetchMode(PDO::FETCH_ASSOC);;//retourne true on success, false otherwise.
 
-
+                                $total_htva=0;
+                                $total_caution=0;
                                 ?>
                                 <div class="table-responsive">
                                     <table class="table table-bordered table-hover" >
                                         <thead>
                                         <tr>
                                             <th style="width:40%;">Produit</th>
+                                            <th style="width:15%;">Période</th>
                                             <th style="width:15%;">Qte</th>
-                                            <th style="width:30%;">Prix HT</th>
-                                            <th style="width:15%;">Periode</th>
-                                            <th style="width:15%;">Caution</th>
+                                            <th style="width:30%;">P.U HTVA</th>
+                                            <th style="width:15%;">Montant</th>
+                                            <th style="width:15%;">Caution/Unité</th>
 
 
 
@@ -143,17 +123,20 @@ if (isset($_POST["contrat"])) {
                                         <?php while ($data=$oPDOStatements->fetch())//Récupère la ligne suivante d'un jeu de résultat PDO
                                         {
                                             $idd=$data['id'];
+                                            $prix_total=$_SESSION['prix'][$idd]*$_SESSION['panier'][$idd];
 
+                                            $total_htva=$total_htva+$prix_total;
+                                            $total_caution=$total_caution+$_SESSION['caution'][$idd];
                                             echo "<tr>
 
-      <td>".$data['nom']."</td>
-      <td>".$_SESSION['panier'][$idd]."</td>
-      <td>".$_SESSION['prix'][$idd]."</td>
-      <td>".$_SESSION['periode'][$idd]."</td>
-      <td>".$_SESSION['caution'][$idd]."</td>
+                                          <td>".$data['nom']."</td>
+                                          <td>".$_SESSION['periode'][$idd]."</td>
+                                          <td>".$_SESSION['panier'][$idd]."</td>
+                                          <td>".$_SESSION['prix'][$idd]."</td>
+                                          <td>".$prix_total."</td>
+                                          <td>".$_SESSION['caution'][$idd]."</td>
 
-      </tr>";//Lecture des résultats
-
+                                          </tr>";//Lecture des résultats
 
                                         }
                                         ?>
@@ -165,45 +148,48 @@ if (isset($_POST["contrat"])) {
 
 
                         </div>
+
+                        <?php
+                        if(!empty($_SESSION['panier']))
+                        {
+                            $total_tva=$total_htva*0.18;
+                            $totat_ttc=$total_htva+$total_tva;
+                            echo "
+                            <div class='row'>
+                            <div class='col-md-8'></div>
+                            <div class='col-md-4' align='right'><div class='form-inline'> <b>TOTAL HTVA</b> &nbsp;<input type='text' class='form-control' value='".$total_htva."&nbsp Dt' disabled><br>
+                             <b>TVA 18%</b> &nbsp;<input type='text' class='form-control' value='".$total_tva."&nbsp Dt' disabled><br>
+                             <b>TOTAL TTC </b>&nbsp;<input type='text' class='form-control' value='".$totat_ttc."&nbsp Dt' disabled><br><br>
+                             <b>TOTAL CAUTION</b> &nbsp;<input type='text' class='form-control' value='".$total_caution."&nbsp Dt' disabled></div></div>
+                            </div>";
+                        }
+
+                        ?>
+                        <form action="commande_contrat.php" method="post">
+                            <input type="hidden" name="nom_client" value="<?php echo $nom_client ?>" >
+                            <input type="hidden" name="adresse_client" value="<?php echo $adresse_client ?>" >
+                            <input type="hidden" name="tel_client" value="<?php echo $tel_client ?>" >
+                            <input type="hidden" name="gsm_client" value="<?php echo $gsm_client ?>" >
+                            <input type="hidden" name="cin_client" value="<?php echo $cin_client ?>" >
+                            <input type="hidden" name="date_cin" value="<?php echo $date_cin ?>" >
+                            <input type="hidden" name="nom_ben" value="<?php echo $nom_ben ?>" >
+                            <input type="hidden" name="adresse_ben" value="<?php echo $adresse_ben ?>" >
+                            <input type="hidden" name="tel_ben" value="<?php echo $tel_ben ?>" >
+                            <input type="hidden" name="cin_ben" value="<?php echo $cin_ben ?>" >
+                            <input type="hidden" name="total_htva" value="<?php echo $total_htva ?>" >
+                            <input type="hidden" name="total_tva" value="<?php echo $total_tva ?>" >
+                            <input type="hidden" name="total_ttc" value="<?php echo $totat_ttc ?>" >
+                            <input type="hidden" name="total_caution" value="<?php echo $total_caution ?>" >
+
+                        <div class="row">
+                            <div class="col-md-1"><a href="javascript:history.go(-1)"><button type="submit" class="btn btn-default" name="retour" style="width: 200px" ><i class="glyphicon glyphicon-fast-backward"></i> &nbsp;Retour</button></a></div>
+                            <div class="col-md-3"></div>
+                            <button type="submit" class="btn btn-primary" name="ajout" style="width: 200px" >Ajouter</button>
+                        </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-
-
-<!-- library for cookie management -->
-<script src="js/jquery.cookie.js"></script>
-<!-- calender plugin -->
-
-<!-- data table plugin -->
-<script src='js/jquery.dataTables.min.js'></script>
-
-<!-- select or dropdown enhancer -->
-<script src="bower_components/chosen/chosen.jquery.min.js"></script>
-<!-- plugin for gallery image view -->
-<script src="bower_components/colorbox/jquery.colorbox-min.js"></script>
-<!-- notification plugin -->
-<script src="js/jquery.noty.js"></script>
-<!-- library for making tables responsive -->
-<script src="bower_components/responsive-tables/responsive-tables.js"></script>
-<!-- tour plugin -->
-<script src="bower_components/bootstrap-tour/build/js/bootstrap-tour.min.js"></script>
-<!-- star rating plugin -->
-<script src="js/jquery.raty.min.js"></script>
-<!-- for iOS style toggle switch -->
-<script src="js/jquery.iphone.toggle.js"></script>
-<!-- autogrowing textarea plugin -->
-<script src="js/jquery.autogrow-textarea.js"></script>
-<!-- multiple file upload plugin -->
-<script src="js/jquery.uploadify-3.1.min.js"></script>
-<!-- history.js for cross-browser state change on ajax -->
-<script src="js/jquery.history.js"></script>
-<!-- application script for Charisma demo -->
-<script src="js/charisma.js"></script>
-
-
-</body>
-</html>
+<?php require('footer.php'); ?>

@@ -5,6 +5,15 @@ $connect=new MyPDO();
 $req1="SELECT * FROM `produit`";
 $oPDOStatement=$connect->query($req1); // Le résultat est un objet de la classe PDOStatement
 $oPDOStatement->setFetchMode(PDO::FETCH_OBJ);
+
+$req2="SELECT MAX(`ref`)AS max_commande FROM `commande`";
+$oPDOStatement2=$connect->query($req2); // Le résultat est un objet de la classe PDOStatement
+$oPDOStatement2->setFetchMode(PDO::FETCH_OBJ);
+$max_commande=1;
+while ($row2 = $oPDOStatement2->fetch()) {
+    $max_commande = $row2->max_commande+1;
+}
+
 ?>
 
 <?php require('header.php'); ?>
@@ -29,8 +38,12 @@ if (isset($_GET["msg"])) {
 }
 ?>
 
-    <a href="prod_select.php" id="iframe" align="lepht"> <div align="right"><button type="submit" class="btn btn-lg btn-primary" style="background-color:#0C6;"><i class="glyphicon glyphicon-th-large"></i> Consulter Les Models Séléctionnés </button></div> </a>
 <div class="row">
+    <div class="col-md-6"><input type="date" class="form-control" value="<?php echo date("Y-m-d"); ?>"></div>
+    <div class="col-md-6"><a href="prod_select.php" id="iframe" align="lepht"> <div align="right"><button type="submit" class="btn btn-lg btn-primary" style="background-color:#0C6;"><i class="glyphicon glyphicon-th-large"></i> Consulter Les Models Séléctionnés </button></div> </a>
+    </div>
+</div>
+    <div class="row">
     <div class="box col-md-6">
 
         <div class="box-inner">
@@ -44,7 +57,7 @@ if (isset($_GET["msg"])) {
             </div>
 
             <div class="box-content">
-                <form action="commande_contrat.php" method="post">
+                <form action="commande_contrat.php" name="formulaire" method="post">
                 <div class="form-inline">
                     <div class="row">
                         <div class="col-md-2"><label >Nom: </label></div>
@@ -64,7 +77,7 @@ if (isset($_GET["msg"])) {
                         <div class="col-md-5"><input type="text" name="tel_client" class="form-control"  id="exampleInputEmail1"   autofocus required>
                     </div>
                         <div class="col-md-1"><label >Gsm: </label></div>
-                        <div class="col-md-5"><input type="text" name="gsm_client" class="form-control"  id="exampleInputEmail1"   autofocus required>
+                        <div class="col-md-5"><input type="text" name="gsm_client" class="form-control"  id="exampleInputEmail1"  >
                         </div>
                     </div>
                 <br>
@@ -207,6 +220,6 @@ if (isset($_GET["msg"])) {
     </div>
 </div>
 
-<a href="commande_contrat.php" id="iframe" align="lepht"> <div align="lepht"><button type="submit" name="contrat"  class="btn btn-lg btn-primary" style="background-color:#0C6;"><i class="glyphicon glyphicon-shopping-cart"></i> Enregitrer la contrat </button></div> </a>
+ <div align="lepht"><button type="submit" name="contrat"  class="btn btn-lg btn-primary" style="background-color:#0C6;"><i class="glyphicon glyphicon-shopping-cart"></i> Enregitrer la contrat </button></div>
 </form>
 <?php require('footer.php'); ?>
