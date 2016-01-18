@@ -227,6 +227,7 @@ $oPDOStatement=$connect->query($req1); // Le résultat est un objet de la classe
 
 <?php require('footer.php'); ?>
 <?php
+//
 if(isset($_POST['ajout'])) {
 echo "<SCRIPT LANGUAGE='JavaScript'>
     self.parent.location.href='gestion_contrat.php?msg=ajouter';
