@@ -19,15 +19,31 @@ if (isset($_POST["contrat"])) {
 if (isset($_POST["ajout"])) {
     $cin_client="";
     extract($_POST);
-$date_creation=date("Y-m-d");
-$req1 = "INSERT INTO commande (nom_client,adresse_client,tel_client,gsm_client,cin_client,date_cin,nom_ben,adresse_ben,tel_ben,cin_ben,total_htva,total_tva,total_ttc,total_caution,date_commande)
-VALUES (" ."'".$nom_client."'".","."'".$adresse_client."'".","."'".$tel_client."'".","."'".$gsm_client."'".","."'".$cin_client."'".","."'".$date_cin."'".",
+$req1 = "INSERT INTO commande (ref,nom_client,adresse_client,tel_client,gsm_client,cin_client,date_cin,nom_ben,adresse_ben,tel_ben,cin_ben,total_htva,total_tva,total_ttc,total_caution,date_commande)
+VALUES (" ."'".$ref."'"."," ."'".$nom_client."'".","."'".$adresse_client."'".","."'".$tel_client."'".","."'".$gsm_client."'".","."'".$cin_client."'".","."'".$date_cin."'".",
 "."'".$nom_ben."'".","."'".$adresse_ben."'".","."'".$tel_ben."'".","."'".$cin_ben."'".",
-"."'".$total_htva."'".","."'".$total_tva."'".","."'".$total_ttc."'".","."'".$total_caution."'".","."'".$date_creation."'".")";
+"."'".$total_htva."'".","."'".$total_tva."'".","."'".$total_ttc."'".","."'".$total_caution."'".","."'".$date_commande."'".")";
 $oPDOStatement=$connect->query($req1); // Le résultat est un objet de la classe PDOStatement
+
+    //id_dernier d'une commande
+    $req2 = "SELECT * FROM commande WHERE id=(SELECT MAX(id) as 'DERNIER_ID' from commande)";
+
+
+    $oPDOStatement2=$connect->query($req2); // Le résultat est un objet de la classe PDOStatement
+    $oPDOStatement2->setFetchMode(PDO::FETCH_OBJ);
+
+    while ($row2=$oPDOStatement2->fetch())
+    {
+        $iddernier=$row2->id;
+
+    }
 }
 ?>
 <?php require('header.php'); ?>
+<div class="row">
+    <div class="col-md-2"><label>N°</label><input type="text" name="ref" class="form-control" value="<?php echo $ref; ?>" disabled></div>
+    <div class="col-md-2"><label>Date creation</label><input type="text" name="date_commande" class="form-control" value="<?php echo $date_commande ?>" disabled></div>
+    </div>
     <div class="row">
         <div class="box col-md-12">
             <div class="box-inner">
@@ -89,7 +105,6 @@ $oPDOStatement=$connect->query($req1); // Le résultat est un objet de la classe
                                 //On prépare l'utilisation des variables de fonctions (variable qui sont stockées sur le serveur pour chaque session ouverte)
                                 //test
 
-
                                 if(!empty($_SESSION['panier']))
                                 {
                                 // on extrait les id du caddie
@@ -137,7 +152,16 @@ $oPDOStatement=$connect->query($req1); // Le résultat est un objet de la classe
                                           <td>".$_SESSION['caution'][$idd]."</td>
 
                                           </tr>";//Lecture des résultats
+                                        //insertion  dans ligne commande
+                                            if(isset($_POST['ajout']))
+                                            {
+                                                $req = "INSERT INTO ligne_commande ( id_commande,id_produit,periode,qte,prix_unit_ht,prix_caution)
+                                                VALUES ("."'".$iddernier."'".","."'".$idd."'".","."'".$_SESSION['periode'][$idd]."'".","."'".$_SESSION['panier'][$idd]."'".","."'".$_SESSION['prix'][$idd]."'".","."'".$_SESSION['caution'][$idd]."'".")";
+                                                $oPDOStatement4=$connect->query($req); // Le résultat est un objet de la classe PDOStatement
 
+
+
+                                            }
                                         }
                                         ?>
 
@@ -166,20 +190,22 @@ $oPDOStatement=$connect->query($req1); // Le résultat est un objet de la classe
 
                         ?>
                         <form action="commande_contrat.php" method="post">
-                            <input type="hidden" name="nom_client" value="<?php echo $nom_client ?>" >
-                            <input type="hidden" name="adresse_client" value="<?php echo $adresse_client ?>" >
-                            <input type="hidden" name="tel_client" value="<?php echo $tel_client ?>" >
-                            <input type="hidden" name="gsm_client" value="<?php echo $gsm_client ?>" >
-                            <input type="hidden" name="cin_client" value="<?php echo $cin_client ?>" >
-                            <input type="hidden" name="date_cin" value="<?php echo $date_cin ?>" >
-                            <input type="hidden" name="nom_ben" value="<?php echo $nom_ben ?>" >
-                            <input type="hidden" name="adresse_ben" value="<?php echo $adresse_ben ?>" >
-                            <input type="hidden" name="tel_ben" value="<?php echo $tel_ben ?>" >
-                            <input type="hidden" name="cin_ben" value="<?php echo $cin_ben ?>" >
-                            <input type="hidden" name="total_htva" value="<?php echo $total_htva ?>" >
-                            <input type="hidden" name="total_tva" value="<?php echo $total_tva ?>" >
-                            <input type="hidden" name="total_ttc" value="<?php echo $totat_ttc ?>" >
-                            <input type="hidden" name="total_caution" value="<?php echo $total_caution ?>" >
+                            <input type="hidden" name="nom_client" value="<?php echo $nom_client; ?>" >
+                            <input type="hidden" name="adresse_client" value="<?php echo $adresse_client; ?>" >
+                            <input type="hidden" name="tel_client" value="<?php echo $tel_client; ?>" >
+                            <input type="hidden" name="gsm_client" value="<?php echo $gsm_client; ?>" >
+                            <input type="hidden" name="cin_client" value="<?php echo $cin_client; ?>" >
+                            <input type="hidden" name="date_cin" value="<?php echo $date_cin; ?>" >
+                            <input type="hidden" name="nom_ben" value="<?php echo $nom_ben; ?>" >
+                            <input type="hidden" name="adresse_ben" value="<?php echo $adresse_ben; ?>" >
+                            <input type="hidden" name="tel_ben" value="<?php echo $tel_ben; ?>" >
+                            <input type="hidden" name="cin_ben" value="<?php echo $cin_ben; ?>" >
+                            <input type="hidden" name="total_htva" value="<?php echo $total_htva; ?>" >
+                            <input type="hidden" name="total_tva" value="<?php echo $total_tva; ?>" >
+                            <input type="hidden" name="total_ttc" value="<?php echo $totat_ttc; ?>" >
+                            <input type="hidden" name="total_caution" value="<?php echo $total_caution; ?>" >
+                            <input type="hidden" name="ref" value="<?php echo $ref; ?>" >
+                            <input type="hidden" name="date_commande" value="<?php echo $date_commande; ?>" >
 
                         <div class="row">
                             <div class="col-md-1"><a href="javascript:history.go(-1)"><button type="submit" class="btn btn-default" name="retour" style="width: 200px" ><i class="glyphicon glyphicon-fast-backward"></i> &nbsp;Retour</button></a></div>
@@ -193,3 +219,10 @@ $oPDOStatement=$connect->query($req1); // Le résultat est un objet de la classe
             </div>
         </div>
 <?php require('footer.php'); ?>
+<?php
+if(isset($_POST['ajout'])) {
+echo "<SCRIPT LANGUAGE='JavaScript'>
+    self.parent.location.href='gestion_contrat.php?msg=ajouter';
+</SCRIPT> ";
+unset($_SESSION['panier']);}
+?>

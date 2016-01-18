@@ -13,7 +13,9 @@ $max_commande=1;
 while ($row2 = $oPDOStatement2->fetch()) {
     $max_commande = $row2->max_commande+1;
 }
-
+if ($max_commande<10) {$max_commande="000".$max_commande;}
+elseif (($max_commande<100)&&($max_commande>=10)) {$max_lit="00".$max_commande;}
+elseif (($max_commande<1000)&&($max_commande>=100)) {$max_lit="0".$max_commande;}
 ?>
 
 <?php require('header.php'); ?>
@@ -37,9 +39,12 @@ if (isset($_GET["msg"])) {
 
 }
 ?>
-
+<form action="commande_contrat.php" name="formulaire" method="post">
 <div class="row">
-    <div class="col-md-6"><input type="date" class="form-control" value="<?php echo date("Y-m-d"); ?>"></div>
+    <div class="col-md-2"><label>N°</label><input type="text" name="ref" class="form-control" value="<?php echo $max_commande; ?>" disabled></div>
+    <input type="hidden" name="ref" value="<?php echo $max_commande; ?>" >
+    <div class="col-md-2"><label>Date creation</label><input type="date" name="date_commande" class="form-control" value="<?php echo date("Y-m-d"); ?>"></div>
+    <div class="col-md-2"></div>
     <div class="col-md-6"><a href="prod_select.php" id="iframe" align="lepht"> <div align="right"><button type="submit" class="btn btn-lg btn-primary" style="background-color:#0C6;"><i class="glyphicon glyphicon-th-large"></i> Consulter Les Models Séléctionnés </button></div> </a>
     </div>
 </div>
@@ -57,7 +62,7 @@ if (isset($_GET["msg"])) {
             </div>
 
             <div class="box-content">
-                <form action="commande_contrat.php" name="formulaire" method="post">
+
                 <div class="form-inline">
                     <div class="row">
                         <div class="col-md-2"><label >Nom: </label></div>
