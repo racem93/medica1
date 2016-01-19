@@ -199,7 +199,7 @@ VALUES (" ."'".$ref."'"."," ."'".$nom_client."'".","."'".$adresse_client."'".","
 
 
                         ?>
-                        <form action="contrat_pdf.php" method="post">
+                        <form action="contrat_pdf.php" method="post" TARGET=_BLANK>
                             <input type="hidden" name="nom_client" value="<?php echo $nom_client; ?>" >
                             <input type="hidden" name="adresse_client" value="<?php echo $adresse_client; ?>" >
                             <input type="hidden" name="tel_client" value="<?php echo $tel_client; ?>" >
