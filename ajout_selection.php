@@ -286,7 +286,6 @@ while ($row = $oPDOStatement->fetch()) {
                 qte =  $("#quant option:selected").val();
 
 
-
             })
 
 
