@@ -280,7 +280,17 @@ while ($row = $oPDOStatement->fetch()) {
 
 <script language="javascript">
     <?php if ($type==1) {?>
-    var qte = document.getElementById("quant").options[document.getElementById("quant").selectedIndex].value;
+    $(document).ready(function(){
+        qte =  $("#quant option:selected").val();
+        $('#quant').change(function () {
+                qte =  $("#quant option:selected").val();
+
+
+
+            })
+
+
+    })
     <?php }
     else {?>
     var qte=document.getElementById("quant").value;
