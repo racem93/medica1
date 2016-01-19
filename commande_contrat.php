@@ -19,11 +19,11 @@ if (isset($_POST["contrat"])) {
 if (isset($_POST["ajout"])) {
     $cin_client="";
     extract($_POST);
-$req1 = "INSERT INTO commande (ref,nom_client,adresse_client,tel_client,gsm_client,cin_client,date_cin,nom_ben,adresse_ben,tel_ben,cin_ben,total_htva,total_tva,total_ttc,total_caution,date_commande)
+    $req1 = "INSERT INTO commande (ref,nom_client,adresse_client,tel_client,gsm_client,cin_client,date_cin,nom_ben,adresse_ben,tel_ben,cin_ben,total_htva,total_tva,total_ttc,total_caution,date_commande)
 VALUES (" ."'".$ref."'"."," ."'".$nom_client."'".","."'".$adresse_client."'".","."'".$tel_client."'".","."'".$gsm_client."'".","."'".$cin_client."'".","."'".$date_cin."'".",
 "."'".$nom_ben."'".","."'".$adresse_ben."'".","."'".$tel_ben."'".","."'".$cin_ben."'".",
 "."'".$total_htva."'".","."'".$total_tva."'".","."'".$total_ttc."'".","."'".$total_caution."'".","."'".$date_commande."'".")";
-$oPDOStatement=$connect->query($req1); // Le résultat est un objet de la classe PDOStatement
+    $oPDOStatement=$connect->query($req1); // Le résultat est un objet de la classe PDOStatement
 
     //id_dernier d'une commande
     $req2 = "SELECT * FROM commande WHERE id=(SELECT MAX(id) as 'DERNIER_ID' from commande)";
@@ -199,7 +199,7 @@ $oPDOStatement=$connect->query($req1); // Le résultat est un objet de la classe
 
 
                         ?>
-                        <form action="commande_contrat.php" method="post">
+                        <form action="contrat_pdf.php" method="post">
                             <input type="hidden" name="nom_client" value="<?php echo $nom_client; ?>" >
                             <input type="hidden" name="adresse_client" value="<?php echo $adresse_client; ?>" >
                             <input type="hidden" name="tel_client" value="<?php echo $tel_client; ?>" >
@@ -233,14 +233,10 @@ $oPDOStatement=$connect->query($req1); // Le résultat est un objet de la classe
 <?php require('footer.php'); ?>
 <?php
 //
-if(isset($_POST['ajout'])) {
-echo "<SCRIPT LANGUAGE='JavaScript'>
-    self.parent.location.href='gestion_contrat.php?msg=ajouter';
-</SCRIPT> ";
-    unset($_SESSION['id']);
-    unset($_SESSION['panier']);
-    unset($_SESSION['prix']);
-    unset($_SESSION['periode']);
-    unset($_SESSION['caution']);
-}
+//if(isset($_POST['ajout'])) {
+//echo "<SCRIPT LANGUAGE='JavaScript'>
+//    self.parent.location.href='contrat_pdf.php';
+//</SCRIPT> ";
+
+//}
 ?>

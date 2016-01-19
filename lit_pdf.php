@@ -57,7 +57,7 @@ $pdf->addreflit( "REF. DU LIT : "."MM2- L".$reflit." - S",
 
 );
 //$pdf->fact_dev( "Constrat ", "TEMPO" );
-$pdf->fact_dev( "CONSTRAT LIT DE LOCATION" );
+$pdf->fact_dev( "CONTRAT LIT DE LOCATION" );
 $pdf->temporaire( "Technique" );
 $pdf->addDate( "$today");
 $pdf->addEtat("$etatlitdesc");
