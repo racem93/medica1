@@ -135,19 +135,26 @@ $oPDOStatement=$connect->query($req1); // Le résultat est un objet de la classe
                                         </thead>
 
                                         <?php foreach($id_liste as $i => $val){
-                                        $req="select id,nom from produit where id =$val";
+                                        $req="select * from produit where id =$val";
                                         $oPDOStatements=$connect->query($req); // Le r&eacute;sultat est un objet de la classe PDOStatement
                                         $oPDOStatements->setFetchMode(PDO::FETCH_ASSOC);;//retourne true on success, false otherwise.
                                         while ($data=$oPDOStatements->fetch())//Récupère la ligne suivante d'un jeu de résultat PDO
                                         {
                                             $idd=$data['id'];
+                                            $type=$data['type'];
                                             $prix_total=$_SESSION['prix'][$i]*$_SESSION['panier'][$i];
 
                                             $total_htva=$total_htva+$prix_total;
                                             $total_caution=$total_caution+$_SESSION['caution'][$i];
                                             echo "<tr>
+                                            <td>".$data['nom'];
+                                            if ($type==1) {
+                                                $ref_lit=$_SESSION['lit'][$i];
+                                                if ($ref_lit<10) {$ref_lit="00".$ref_lit;}
+                                                elseif (($ref_lit<100)&&($ref_lit>=10)) {$ref_lit="0".$ref_lit;}
+                                                echo"<br><b>Ref: &nbsp;</b>MM2-L".$ref_lit."-S";}
+                                            echo "</td>
 
-                                          <td>".$data['nom']."</td>
                                           <td>".$_SESSION['periode'][$i]."</td>
                                           <td>".$_SESSION['panier'][$i]."</td>
                                           <td>".$_SESSION['prix'][$i]."</td>
