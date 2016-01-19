@@ -90,16 +90,23 @@ $i=0;
  <?php /*while ($data=$oPDOStatements->fetch())//Récupère la ligne suivante d'un jeu de résultat PDO
      {
 	 $idd=$data['id'];*/
- foreach($id_liste as $val){
-      $i++;
-     $req="select id,nom from produit where id =$val";
+ foreach($id_liste as $i => $val){
+
+     $req="select * from produit where id =$val";
      $oPDOStatements=$connect->query($req); // Le r&eacute;sultat est un objet de la classe PDOStatement
      $oPDOStatements->setFetchMode(PDO::FETCH_ASSOC);;//retourne true on success, false otherwise.
  while ($data=$oPDOStatements->fetch())//Récupère la ligne suivante d'un jeu de résultat PDO
  {
      $idd=$data['id'];
+     $type=$data['type'];
       echo "<tr>
-      <td>".$data['nom']."</td>
+      <td>".$data['nom'];
+     if ($type==1) {
+         $ref_lit=$_SESSION['lit'][$i];
+         if ($ref_lit<10) {$ref_lit="00".$ref_lit;}
+         elseif (($ref_lit<100)&&($ref_lit>=10)) {$ref_lit="0".$ref_lit;}
+         echo"<br><b>Ref: &nbsp;</b>MM2-L".$ref_lit."-S";}
+      echo "</td>
       <td>".$_SESSION['panier'][$i]."</td>
       <td>".$_SESSION['prix'][$i]."</td>
       <td>".$_SESSION['periode'][$i]."</td>
@@ -111,7 +118,7 @@ $i=0;
 
       </tr>";//Lecture des résultats
 
-         //unset($_SESSION['id']);
+
 	  
 }}
 ?>

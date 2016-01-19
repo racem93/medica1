@@ -28,8 +28,7 @@ elseif (($max_telecommande<100)&&($max_telecommande>=10)) {$max_telecommande="0"
 //Début d'ajout d'un nouveau lit
 if (isset($_POST["lit"])){
     extract($_POST);
-    include_once("MyPDO.class.php");
-    $connect=new MyPDO();
+
 
     // Début test ref lit
 
@@ -126,6 +125,8 @@ if (isset($_POST["lit"])){
     echo "<SCRIPT LANGUAGE='JavaScript'>
     self.parent.location.href='gestion_lit.php?msg=ajouter';
     </SCRIPT> ";
+
+
     }
 }
 //Fin l'ajout d'un nouveau lit

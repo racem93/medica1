@@ -115,7 +115,6 @@ $oPDOStatement=$connect->query($req1); // Le résultat est un objet de la classe
                                 /*$req="select id,nom from produit where id IN(".$id_liste.")";
                                 $oPDOStatements=$connect->query($req); // Le r&eacute;sultat est un objet de la classe PDOStatement
                                 $oPDOStatements->setFetchMode(PDO::FETCH_ASSOC);;//retourne true on success, false otherwise.*/
-                                $i=0;
                                 $total_htva=0;
                                 $total_caution=0;
                                 ?>
@@ -135,8 +134,7 @@ $oPDOStatement=$connect->query($req1); // Le résultat est un objet de la classe
                                         </tr>
                                         </thead>
 
-                                        <?php foreach($id_liste as $val){
-                                        $i++;
+                                        <?php foreach($id_liste as $i => $val){
                                         $req="select id,nom from produit where id =$val";
                                         $oPDOStatements=$connect->query($req); // Le r&eacute;sultat est un objet de la classe PDOStatement
                                         $oPDOStatements->setFetchMode(PDO::FETCH_ASSOC);;//retourne true on success, false otherwise.

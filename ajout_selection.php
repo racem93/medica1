@@ -25,6 +25,7 @@ while ($row = $oPDOStatement->fetch()) {
     $qte = $row->qte;
     $caution = $row->caution;
     $tva_produit = $row->tva_produit;
+    $type = $row->type;
 }
 ?>
 
@@ -83,12 +84,36 @@ while ($row = $oPDOStatement->fetch()) {
 </div>
 <br>
 <div>
-           <center><h4><b> Préciser la Quantité Souhaitée : </b> <input type="text" value="1" data-rule="quantity" style="width:50px; margin-bottom:-25px; height:30px" id="quant" ></h4>
-
+           <center><h4><b> Préciser la periode Souhaitée : </b> <input type="text" value="1" data-rule="quantity" style="width:50px; margin-bottom:-25px; height:30px" id="periode" ></h4>
                <br>
 
-               <center><h4><b> Préciser la periode Souhaitée : </b> <input type="text" value="1" data-rule="quantity" style="width:50px; margin-bottom:-25px; height:30px" id="periode" ></h4>
-                   <br>
+               <center> <?php if ($type==1){$req1="SELECT * FROM `lit` WHERE nom=$id_prod";
+                       $oPDOStatement=$connect->query($req1); // Le résultat est un objet de la classe PDOStatement
+                       $oPDOStatement->setFetchMode(PDO::FETCH_OBJ);
+                       ?>
+                   <h4><b> Préciser le lit : </b></h4>
+
+                       <select id="quant" data-rel="chosen" class="col-md-8" name="nom"  >
+                       <?php
+                       while ($row = $oPDOStatement->fetch()) {
+                           $id = $row->id;
+                           $ref_lit = $row->ref_lit;
+                           if ($ref_lit<10) {$ref_lit="00".$ref_lit;}
+                           elseif (($ref_lit<100)&&($ref_lit>=10)) {$ref_lit="0".$ref_lit;}
+                           ?>
+                           <option  value="<?php echo $id; ?>">MM2-L<?php echo $ref_lit ?>-S</option>
+
+                       <?php  }?>
+                   </select>
+                   <?php
+                   }
+                    else {
+                   echo '<h4><b> Préciser la Quantité Souhaitée : </b> <input type="text" value="1" data-rule="quantity" style="width:50px; margin-bottom:-25px; height:30px" id="quant" ></h4>
+
+';
+                   }
+                ?>
+                <br>
                <center><h4><b> Préciser la caution Souhaitée : </b>  <input type="text"  value= "<?php echo "$caution"; ?>" data-rule="quantity" style="width:50px; margin-bottom:-25px; height:30px" id="caution" >
                    </h4>  <br>
 
@@ -254,11 +279,18 @@ while ($row = $oPDOStatement->fetch()) {
 </script>
 
 <script language="javascript">
-
+    <?php if ($type==1) {?>
+    var qte = document.getElementById("quant").options[document.getElementById("quant").selectedIndex].value;
+    <?php }
+    else {?>
+    var qte=document.getElementById("quant").value;
+    <?php
+    }?>
     function myAjax() {
+
         $.ajax({
             type: "POST",
-            url: 'ajax.php?id=<?php echo $id_prod; ?>&qte='+document.getElementById("quant").value+'&prix_ht='+document.getElementById("nv_prix").value+'&caution='+document.getElementById("caution").value+'&periode='+document.getElementById("periode").value,
+            url: 'ajax.php?id=<?php echo $id_prod; ?>&qte='+qte+'&prix_ht='+document.getElementById("nv_prix").value+'&caution='+document.getElementById("caution").value+'&periode='+document.getElementById("periode").value+'&type=<?php echo $type; ?>',
             data:{action:'ajout'},
             success:function(html) {
                 alert(html);

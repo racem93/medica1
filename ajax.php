@@ -8,6 +8,7 @@ $qte=$_GET["qte"];
 $prix_ht=$_GET["prix_ht"];
 $caution=$_GET["caution"];
 $periode=$_GET["periode"];
+$type=$_GET["type"];
 
 if($_POST['action'] == 'ajout') {
 
@@ -15,8 +16,9 @@ if($_POST['action'] == 'ajout') {
 	$_SESSION['id']=array();
 	$_SESSION['panier']=array();
 	}
-		
-	$i=count($_SESSION['id'])+1;
+
+	end($_SESSION['id']);
+	$i=key($_SESSION['id'])+1;
 	$id_article=$id_prod;
 	$quantite_article=$qte;
 	$prix_article=$prix_ht;
@@ -24,7 +26,11 @@ if($_POST['action'] == 'ajout') {
 	$periode_article=$periode;
 
 	$_SESSION['id'][$i]=$id_article;
-	$_SESSION['panier'][$i]=$quantite_article;
+	if ($type==1) {$_SESSION['panier'][$i]=1;
+		$_SESSION['lit'][$i]=$quantite_article;
+	}
+	else{
+	$_SESSION['panier'][$i]=$quantite_article;}
 	$_SESSION['prix'][$i]=$prix_article;
 	$_SESSION['caution'][$i]=$caution_article;
 	$_SESSION['periode'][$i]=$periode_article;
