@@ -74,7 +74,7 @@ if (isset($_GET["msg"])) {
                             <td class="center-text"><?php echo $total_caution; ?></td>
 
                             <td class="center" width="30%">
-                                <a class="btn btn-success" href="details_lit.php?id=<?php echo $id; ?>" id="iframe">
+                                <a class="btn btn-success" href="details_contrat.php?id=<?php echo $id; ?>" id="iframe">
                                     <i class="glyphicon glyphicon-zoom-in icon-white"></i>
                                     Details
                                 </a>

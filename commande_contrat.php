@@ -184,7 +184,7 @@ VALUES (" ."'".$ref."'"."," ."'".$nom_client."'".","."'".$adresse_client."'".","
                                                 if ($type!=1) {
                                                     $req5 = "UPDATE `produit` SET `qte_louer`=`qte_louer`+$qte_select  WHERE `id`=$idd ";
                                                     $oPDOStatement5 = $connect->query($req5);
-
+                                                    echo var_dump($qte_select);
                                                 }
                                                 if ($type==1) {
                                                     $req6 = "UPDATE `lit` SET `etat_louer`=1  WHERE `id`=$id_lit AND `nom`=$idd";
@@ -210,13 +210,13 @@ VALUES (" ."'".$ref."'"."," ."'".$nom_client."'".","."'".$adresse_client."'".","
                         if(!empty($_SESSION['id']))
                         {
                             $total_tva=$total_htva*0.18;
-                            $totat_ttc=$total_htva+$total_tva;
+                            $total_ttc=$total_htva+$total_tva;
                             echo "
                             <div class='row'>
                             <div class='col-md-8'></div>
                             <div class='col-md-4' align='right'><div class='form-inline'> <b>TOTAL HTVA</b> &nbsp;<input type='text' class='form-control' value='".$total_htva."&nbsp Dt' disabled><br>
                              <b>TVA 18%</b> &nbsp;<input type='text' class='form-control' value='".$total_tva."&nbsp Dt' disabled><br>
-                             <b>TOTAL TTC </b>&nbsp;<input type='text' class='form-control' value='".$totat_ttc."&nbsp Dt' disabled><br><br>
+                             <b>TOTAL TTC </b>&nbsp;<input type='text' class='form-control' value='".$total_ttc."&nbsp Dt' disabled><br><br>
                              <b>TOTAL CAUTION</b> &nbsp;<input type='text' class='form-control' value='".$total_caution."&nbsp Dt' disabled></div></div>
                             </div>";
 
@@ -235,7 +235,7 @@ VALUES (" ."'".$ref."'"."," ."'".$nom_client."'".","."'".$adresse_client."'".","
                             <input type="hidden" name="cin_ben" value="<?php echo $cin_ben; ?>" >
                             <input type="hidden" name="total_htva" value="<?php echo $total_htva; ?>" >
                             <input type="hidden" name="total_tva" value="<?php echo $total_tva; ?>" >
-                            <input type="hidden" name="total_ttc" value="<?php echo $totat_ttc; ?>" >
+                            <input type="hidden" name="total_ttc" value="<?php echo $total_ttc; ?>" >
                             <input type="hidden" name="total_caution" value="<?php echo $total_caution; ?>" >
                             <input type="hidden" name="ref" value="<?php echo $ref; ?>" >
                             <input type="hidden" name="date_commande" value="<?php echo $date_commande; ?>" >
