@@ -84,7 +84,7 @@ while ($row = $oPDOStatement->fetch()) {
 </div>
 <br>
 <div>
-           <center><h4><b> Préciser la periode Souhaitée : </b> <input type="text" value="1" data-rule="quantity" style="width:50px; margin-bottom:-25px; height:30px" id="periode" ></h4>
+           <center><h4><b> Préciser la periode Souhaitée : </b>&nbsp;Semaine <input type="text" value="0" data-rule="quantity" style="width:50px; margin-bottom:-25px; height:30px" id="semaine" >&nbsp; Mois <input type="text" value="0" data-rule="quantity" style="width:50px; margin-bottom:-25px; height:30px" id="mois" ></h4>
                <br>
 
                <center> <?php if ($type==1){$req1="SELECT * FROM `lit` WHERE nom=$id_prod";
@@ -299,7 +299,7 @@ while ($row = $oPDOStatement->fetch()) {
 
         $.ajax({
             type: "POST",
-            url: 'ajax.php?id=<?php echo $id_prod; ?>&qte='+qte+'&prix_ht='+document.getElementById("nv_prix").value+'&caution='+document.getElementById("caution").value+'&periode='+document.getElementById("periode").value+'&type=<?php echo $type; ?>',
+            url: 'ajax.php?id=<?php echo $id_prod; ?>&qte='+qte+'&prix_ht='+document.getElementById("nv_prix").value+'&caution='+document.getElementById("caution").value+'&semaine='+document.getElementById("semaine").value+'&mois='+document.getElementById("mois").value+'&type=<?php echo $type; ?>',
             data:{action:'ajout'},
             success:function(html) {
                 alert(html);

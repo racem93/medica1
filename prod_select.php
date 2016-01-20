@@ -116,7 +116,9 @@ $i=0;
       echo "</td>
       <td>".$_SESSION['panier'][$i]."</td>
       <td>".$_SESSION['prix'][$i]."</td>
-      <td>".$_SESSION['periode'][$i]."</td>
+      <td>";if ($_SESSION['semaine'][$i]!=0) {echo $_SESSION['semaine'][$i]." Semaine <br>";}
+            if ($_SESSION['mois'][$i]!=0) {echo $_SESSION['mois'][$i]." Mois";}
+      echo "</td>
       <td>".$_SESSION['caution'][$i]."</td>
 
 

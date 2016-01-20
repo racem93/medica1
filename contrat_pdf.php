@@ -148,6 +148,7 @@ $pdf->Output();
 //unset($_SESSION['id']);
 //unset($_SESSION['panier']);
 //unset($_SESSION['prix']);
-//unset($_SESSION['periode']);
+//unset($_SESSION['semaine']);
+//unset($_SESSION['mois']);
 //unset($_SESSION['caution']);
 ?>

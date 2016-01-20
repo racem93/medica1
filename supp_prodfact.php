@@ -6,7 +6,8 @@ session_start ();
 unset($_SESSION['id'][$id_prod]);
 unset($_SESSION['panier'][$id_prod]);
 unset($_SESSION['prix'][$id_prod]);
-unset($_SESSION['periode'][$id_prod]);
+unset($_SESSION['semaine'][$id_prod]);
+unset($_SESSION['mois'][$id_prod]);
 unset($_SESSION['caution'][$id_prod]);
 header("location: prod_select.php");
 	

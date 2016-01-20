@@ -163,7 +163,9 @@ VALUES (" ."'".$ref."'"."," ."'".$nom_client."'".","."'".$adresse_client."'".","
                                                 echo"<br><b>Ref: &nbsp;</b>MM2-L".$ref_lit."-S";}
                                             echo "</td>
 
-                                          <td>".$_SESSION['periode'][$i]."</td>
+                                          <td>";if ($_SESSION['semaine'][$i]!=0) {echo $_SESSION['semaine'][$i]." Semaine <br>";}
+                                                if ($_SESSION['mois'][$i]!=0) {echo $_SESSION['mois'][$i]." Mois";}
+                                          echo "</td>
                                           <td>".$_SESSION['panier'][$i]."</td>
                                           <td>".$_SESSION['prix'][$i]."</td>
                                           <td>".$prix_total."</td>
@@ -174,8 +176,8 @@ VALUES (" ."'".$ref."'"."," ."'".$nom_client."'".","."'".$adresse_client."'".","
 
                                             if(isset($_POST['ajout']))
                                             {
-                                                $req = "INSERT INTO ligne_commande ( id_commande,id_produit,periode,qte,prix_unit_ht,prix_caution)
-                                                VALUES ("."'".$iddernier."'".","."'".$idd."'".","."'".$_SESSION['periode'][$i]."'".","."'".$_SESSION['panier'][$i]."'".","."'".$_SESSION['prix'][$i]."'".","."'".$_SESSION['caution'][$i]."'".")";
+                                                $req = "INSERT INTO ligne_commande ( id_commande,id_produit,semaine,mois,qte,prix_unit_ht,prix_caution)
+                                                VALUES ("."'".$iddernier."'".","."'".$idd."'".","."'".$_SESSION['semaine'][$i]."'".","."'".$_SESSION['mois'][$i]."'".","."'".$_SESSION['panier'][$i]."'".","."'".$_SESSION['prix'][$i]."'".","."'".$_SESSION['caution'][$i]."'".")";
                                                 $oPDOStatement4=$connect->query($req); // Le résultat est un objet de la classe PDOStatement
 
 
@@ -208,7 +210,7 @@ VALUES (" ."'".$ref."'"."," ."'".$nom_client."'".","."'".$adresse_client."'".","
 
 
                         ?>
-                        <form action="contrat_pdf.php" method="post" TARGET=_BLANK>
+                        <form action="commande_contrat.php" method="post">
                             <input type="hidden" name="nom_client" value="<?php echo $nom_client; ?>" >
                             <input type="hidden" name="adresse_client" value="<?php echo $adresse_client; ?>" >
                             <input type="hidden" name="tel_client" value="<?php echo $tel_client; ?>" >
@@ -242,10 +244,10 @@ VALUES (" ."'".$ref."'"."," ."'".$nom_client."'".","."'".$adresse_client."'".","
 <?php require('footer.php'); ?>
 <?php
 //
-//if(isset($_POST['ajout'])) {
-//echo "<SCRIPT LANGUAGE='JavaScript'>
-//    self.parent.location.href='contrat_pdf.php';
-//</SCRIPT> ";
+if(isset($_POST['ajout'])) {
+echo "<SCRIPT LANGUAGE='JavaScript'>
+    self.parent.location.href='gestion_contrat.php?msg=ajouter'
+</SCRIPT> ";
 
-//}
+}
 ?>

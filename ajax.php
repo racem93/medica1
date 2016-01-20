@@ -7,7 +7,8 @@ $id_prod=$_GET["id"];
 $qte=$_GET["qte"];
 $prix_ht=$_GET["prix_ht"];
 $caution=$_GET["caution"];
-$periode=$_GET["periode"];
+$semaine=$_GET["semaine"];
+$mois=$_GET["mois"];
 $type=$_GET["type"];
 
 if($_POST['action'] == 'ajout') {
@@ -23,7 +24,6 @@ if($_POST['action'] == 'ajout') {
 	$quantite_article=$qte;
 	$prix_article=$prix_ht;
 	$caution_article=$caution;
-	$periode_article=$periode;
 
 	$_SESSION['id'][$i]=$id_article;
 	if ($type==1) {$_SESSION['panier'][$i]=1;
@@ -33,7 +33,8 @@ if($_POST['action'] == 'ajout') {
 	$_SESSION['panier'][$i]=$quantite_article;}
 	$_SESSION['prix'][$i]=$prix_article;
 	$_SESSION['caution'][$i]=$caution_article;
-	$_SESSION['periode'][$i]=$periode_article;
+	$_SESSION['semaine'][$i]=$semaine;
+	$_SESSION['mois'][$i]=$mois;
 
 	print("Le produit a ete ajoute avec succes");
 
