@@ -220,7 +220,6 @@ while ($row = $oPDOStatement->fetch()) {
                              <b>TOTAL CAUTION</b> &nbsp;<input type='text' class='form-control' value='".$total_caution."&nbsp Dt' disabled></div></div>
                             </div>";
 
-
                     ?>
 
 
