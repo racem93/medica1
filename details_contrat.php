@@ -225,7 +225,7 @@ while ($row = $oPDOStatement->fetch()) {
 
                     <div class="row">
                         <div class="col-md-2"></div>
-                        <a href="#" class="btn btn-info btn-lg">
+                        <a href="contrat_pdf.php?id=<?php echo $id;?>" class="btn btn-info btn-lg">
                             <i class="glyphicon glyphicon-print"></i> IMPRIMER</a>
                     </div>
 

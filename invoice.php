@@ -139,7 +139,7 @@ function sizeOfText( $texte, $largeur )
 function addSociete( $nom, $adresse )
 {
 	$x1 = 10;
-	$y1 = 8;
+	$y1 = 30;
 	//Positionnement en bas
 	$this->SetXY( $x1, $y1 );
 	$this->SetFont('Arial','B',12);
@@ -186,6 +186,41 @@ function addSociete( $nom, $adresse )
 		$length = $this->GetStringWidth( $reftel );
 		$this->Cell( $length, 2, $reftel);
 
+	}
+
+	function cont_loc( $libelle/*, $num */)
+	{
+		$r1  = $this->w - 120;
+		$r2  = $r1 + 100;
+		$y1  = 6;
+		$y2  = $y1 + 2;
+		$mid = ($r1 + $r2 ) / 2;
+
+		//$texte  = $libelle . " EN " . EURO . " N� : " . $num;
+		$texte  = $libelle;
+		$szfont = 18;
+		$loop   = 0;
+
+		while ( $loop == 0 )
+		{
+			$this->SetFont( "Arial", "B", $szfont );
+			$sz = $this->GetStringWidth( $texte );
+			if ( ($r1+$sz) > $r2 )
+				$szfont --;
+			else
+				$loop ++;
+		}
+
+		$this->SetLineWidth(0.1);
+		$this->SetFillColor(192);
+		$this->RoundedRect($r1, $y1, ($r2 - $r1), 17, 2.5, 'DF');
+		$this->SetXY( $r1+1, $y1+2);
+		$length = $this->GetStringWidth( $texte );
+		$this->SetFont( "Arial", "B", 12 );
+
+		$this->MultiCell($length, 4, $texte,0,"C");
+
+		//$this->Cell($r2-$r1 -1,5, $texte, 0, 0, "C" );
 	}
 
 // Label and number of invoice/estimate
