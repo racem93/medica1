@@ -23,9 +23,19 @@ while ($row = $oPDOStatement->fetch()) {
     $ref = $row->ref;
     $prix_unit = $row->prix_unit;
     $qte = $row->qte;
+    $qte_louer = $row->qte_louer;
     $caution = $row->caution;
     $tva_produit = $row->tva_produit;
     $type = $row->type;
+}if ($type==1){
+$req2="SELECT COUNT(`id`) AS qte_stock FROM `lit` WHERE `nom`=$id AND `etat_lit`=1 AND `etat_louer`!=1 ";
+$oPDOStatement2=$connect->query($req2); // Le résultat est un objet de la classe PDOStatement
+$oPDOStatement2->setFetchMode(PDO::FETCH_OBJ);
+while ($row2 = $oPDOStatement2->fetch()) {
+    $qte_stock = $row2->qte_stock;
+}}
+else {
+    $qte_stock = $qte - $qte_louer;
 }
 ?>
 
@@ -80,14 +90,14 @@ while ($row = $oPDOStatement->fetch()) {
     <b class="list-group-item"> Reference : <?php echo "$ref"; ?></b>
 
     <b class="list-group-item"> Nom du Produit :  <?php echo "$nom"; ?> </b>
-    <b class="list-group-item"> Quantité en stock : <?php echo "$qte"; ?></b>
+    <b class="list-group-item"> Quantité en stock : <?php echo "$qte_stock"; ?></b>
 </div>
 <br>
 <div>
            <center><h4><b> Préciser la periode Souhaitée : </b>&nbsp;Semaine <input type="text" value="0" data-rule="quantity" style="width:50px; margin-bottom:-25px; height:30px" id="semaine" >&nbsp; Mois <input type="text" value="0" data-rule="quantity" style="width:50px; margin-bottom:-25px; height:30px" id="mois" ></h4>
                <br>
 
-               <center> <?php if ($type==1){$req1="SELECT * FROM `lit` WHERE nom=$id_prod";
+               <center> <?php if ($type==1){$req1="SELECT * FROM `lit` WHERE nom=$id_prod AND `etat_lit`=1 AND `etat_louer`!=1";
                        $oPDOStatement=$connect->query($req1); // Le résultat est un objet de la classe PDOStatement
                        $oPDOStatement->setFetchMode(PDO::FETCH_OBJ);
                        ?>

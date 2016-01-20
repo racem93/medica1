@@ -19,10 +19,10 @@ if (isset($_POST["contrat"])) {
 if (isset($_POST["ajout"])) {
     $cin_client="";
     extract($_POST);
-    $req1 = "INSERT INTO commande (ref,nom_client,adresse_client,tel_client,gsm_client,cin_client,date_cin,nom_ben,adresse_ben,tel_ben,cin_ben,total_htva,total_tva,total_ttc,total_caution,date_commande)
+    $req1 = "INSERT INTO commande (ref,nom_client,adresse_client,tel_client,gsm_client,cin_client,date_cin,nom_ben,adresse_ben,tel_ben,cin_ben,total_htva,total_tva,total_ttc,total_caution,date_commande,etat_commande)
 VALUES (" ."'".$ref."'"."," ."'".$nom_client."'".","."'".$adresse_client."'".","."'".$tel_client."'".","."'".$gsm_client."'".","."'".$cin_client."'".","."'".$date_cin."'".",
 "."'".$nom_ben."'".","."'".$adresse_ben."'".","."'".$tel_ben."'".","."'".$cin_ben."'".",
-"."'".$total_htva."'".","."'".$total_tva."'".","."'".$total_ttc."'".","."'".$total_caution."'".","."'".$date_commande."'".")";
+"."'".$total_htva."'".","."'".$total_tva."'".","."'".$total_ttc."'".","."'".$total_caution."'".","."'".$date_commande."'".",1)";
     $oPDOStatement=$connect->query($req1); // Le résultat est un objet de la classe PDOStatement
 
     //id_dernier d'une commande
@@ -149,6 +149,7 @@ VALUES (" ."'".$ref."'"."," ."'".$nom_client."'".","."'".$adresse_client."'".","
                                             $total_caution=$total_caution+$_SESSION['caution'][$i];
                                             echo "<tr>
                                             <td>".$data['nom'];
+                                            $id_lit=0;
                                             if ($type==1) {
                                                 $id_lit=$_SESSION['lit'][$i];
                                                 $req1="SELECT ref_lit FROM `lit` WHERE id=$id_lit";
@@ -176,9 +177,20 @@ VALUES (" ."'".$ref."'"."," ."'".$nom_client."'".","."'".$adresse_client."'".","
 
                                             if(isset($_POST['ajout']))
                                             {
-                                                $req = "INSERT INTO ligne_commande ( id_commande,id_produit,semaine,mois,qte,prix_unit_ht,prix_caution)
-                                                VALUES ("."'".$iddernier."'".","."'".$idd."'".","."'".$_SESSION['semaine'][$i]."'".","."'".$_SESSION['mois'][$i]."'".","."'".$_SESSION['panier'][$i]."'".","."'".$_SESSION['prix'][$i]."'".","."'".$_SESSION['caution'][$i]."'".")";
-                                                $oPDOStatement4=$connect->query($req); // Le résultat est un objet de la classe PDOStatement
+                                                $req = "INSERT INTO ligne_commande ( id_commande,id_produit,id_lit,semaine,mois,qte,prix_unit_ht,prix_caution,etat_louer)
+                                                VALUES ("."'".$iddernier."'".","."'".$idd."'".","."'".$id_lit."'".","."'".$_SESSION['semaine'][$i]."'".","."'".$_SESSION['mois'][$i]."'".","."'".$_SESSION['panier'][$i]."'".","."'".$_SESSION['prix'][$i]."'".","."'".$_SESSION['caution'][$i]."'".",1)";
+                                                $oPDOStatement4=$connect->query($req); // Le résultat est un objet de la classe PDOStatementmo
+                                                $qte_select=$_SESSION['panier'][$i];
+                                                if ($type!=1) {
+                                                    $req5 = "UPDATE `produit` SET `qte_louer`=`qte_louer`+$qte_select  WHERE `id`=$idd ";
+                                                    $oPDOStatement5 = $connect->query($req5);
+
+                                                }
+                                                if ($type==1) {
+                                                    $req6 = "UPDATE `lit` SET `etat_louer`=1  WHERE `id`=$id_lit AND `nom`=$idd";
+                                                    $oPDOStatement6 = $connect->query($req6);
+                                                }
+
 
 
 
