@@ -1,4 +1,10 @@
+<?php
+ini_set('session.save_path',realpath(dirname($_SERVER['DOCUMENT_ROOT']) . '/temp'));
+session_start();
 
+include_once("config/MyPDO.class.php");
+$connect=new MyPDO();
+?>
 <html xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8">
@@ -53,17 +59,11 @@
  <div class="panel-body">
 	<?php 
 //On prépare l'utilisation des variables de fonctions (variable qui sont stockées sur le serveur pour chaque session ouverte)
-    ini_set('session.save_path',realpath(dirname($_SERVER['DOCUMENT_ROOT']) . '/temp'));
-    session_start();
-
-    include_once("config/MyPDO.class.php");
-    $connect=new MyPDO();
 
 if(!empty($_SESSION['id']))
 {
 // on extrait les id du caddie
 $id_liste=$_SESSION['id'];
-echo var_dump($id_liste);
 
 // on fait notre requête
 /*$req="select id,nom from produit where id IN(".$id_liste.")";
@@ -102,7 +102,14 @@ $i=0;
       echo "<tr>
       <td>".$data['nom'];
      if ($type==1) {
-         $ref_lit=$_SESSION['lit'][$i];
+         $id_lit=$_SESSION['lit'][$i];
+         $req1="SELECT ref_lit FROM `lit` WHERE id=$id_lit";
+         $oPDOStatement1=$connect->query($req1); // Le résultat est un objet de la classe PDOStatement
+         $oPDOStatement1->setFetchMode(PDO::FETCH_ASSOC);;
+         while ($row=$oPDOStatement1->fetch())//Récupère la ligne suivante d'un jeu de résultat PDO
+         {
+             $ref_lit=$row['ref_lit'];
+         }
          if ($ref_lit<10) {$ref_lit="00".$ref_lit;}
          elseif (($ref_lit<100)&&($ref_lit>=10)) {$ref_lit="0".$ref_lit;}
          echo"<br><b>Ref: &nbsp;</b>MM2-L".$ref_lit."-S";}

@@ -135,6 +135,7 @@ VALUES (" ."'".$ref."'"."," ."'".$nom_client."'".","."'".$adresse_client."'".","
                                         </thead>
 
                                         <?php foreach($id_liste as $i => $val){
+
                                         $req="select * from produit where id =$val";
                                         $oPDOStatements=$connect->query($req); // Le r&eacute;sultat est un objet de la classe PDOStatement
                                         $oPDOStatements->setFetchMode(PDO::FETCH_ASSOC);;//retourne true on success, false otherwise.
@@ -149,7 +150,14 @@ VALUES (" ."'".$ref."'"."," ."'".$nom_client."'".","."'".$adresse_client."'".","
                                             echo "<tr>
                                             <td>".$data['nom'];
                                             if ($type==1) {
-                                                $ref_lit=$_SESSION['lit'][$i];
+                                                $id_lit=$_SESSION['lit'][$i];
+                                                $req1="SELECT ref_lit FROM `lit` WHERE id=$id_lit";
+                                                $oPDOStatement1=$connect->query($req1); // Le résultat est un objet de la classe PDOStatement
+                                                $oPDOStatement1->setFetchMode(PDO::FETCH_ASSOC);;
+                                                while ($row=$oPDOStatement1->fetch())//Récupère la ligne suivante d'un jeu de résultat PDO
+                                                {
+                                                    $ref_lit=$row['ref_lit'];
+                                                }
                                                 if ($ref_lit<10) {$ref_lit="00".$ref_lit;}
                                                 elseif (($ref_lit<100)&&($ref_lit>=10)) {$ref_lit="0".$ref_lit;}
                                                 echo"<br><b>Ref: &nbsp;</b>MM2-L".$ref_lit."-S";}
@@ -163,6 +171,7 @@ VALUES (" ."'".$ref."'"."," ."'".$nom_client."'".","."'".$adresse_client."'".","
 
                                           </tr>";//Lecture des résultats
                                         //insertion  dans ligne commande
+
                                             if(isset($_POST['ajout']))
                                             {
                                                 $req = "INSERT INTO ligne_commande ( id_commande,id_produit,periode,qte,prix_unit_ht,prix_caution)
