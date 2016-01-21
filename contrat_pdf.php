@@ -54,17 +54,20 @@ if (!is_dir($contrat))
 //************************//
 $pdf = new PDF_Invoice( 'P', 'mm', 'A4' );
 $pdf->AddPage();
-$pdf->addSociete( "$nom_client",
+/*$pdf->addSociete( "$nom_client",
                   "$adresse_client\n" .
                   "75000 PARIS\n".
                   "R.C.S. PARIS B 000 000 007\n" .
-                  "Capital : 18000" );
+                  "Capital : 18000" );*/
+$pdf->addSiege("Siege Social:","12bis Av. Tarak Ibn Ziad.\n".
+    "El Menzah V\n".
+    "2037 Ariana - Tunisie","TEL");
 
 //$pdf->fact_dev( "Constrat ", "TEMPO" );
 $pdf->cont_loc( "CONTRAT DE LOCATION\n".
  "DE\n".
     "MATERIEL RESPIRATOIR N $ref" );
-//$pdf->temporaire( "Technique" );
+$pdf->clausecontrattxt( ">> Clauses du Contrat au Verso >>" );
 //$pdf->addDate( "$today");
 $pdf->Image('img/Sigle.jpg',27,5,-680);
 $pdf->Image('img/LOGO.jpg',10,5,-680);
@@ -73,7 +76,9 @@ $pdf->Image('img/LOGO.jpg',10,5,-680);
 
 //$pdf->addClient("CL01");
 //$pdf->addPageNumber("1");
-$pdf->addClientAdresse("Ste\nM. XXXX\n3�me �tage\n33, rue d'ailleurs\n75000 PARIS");
+$pdf->addClientAdresse("Nom : $nom_client \nAdresse : $adresse_client \nTel : $tel_client \nGSM : $gsm_client \nCIN N : $cin_client  Tunis,le : $date_cin");
+$pdf->addbenificiaire("M/Mme : $nom_ben\nAdresse : $adresse_ben\nTel : $tel_ben\nCIN N : $cin_ben");
+
 //$pdf->addReglement("Ch�que � r�ception de facture");
 //$pdf->addEcheance("03/12/2003");
 //$pdf->addReference("Devis ... du ....");

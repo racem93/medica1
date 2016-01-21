@@ -135,6 +135,20 @@ function sizeOfText( $texte, $largeur )
 	return $nb_lines;
 }
 
+	function clausecontrattxt( $txt )
+	{
+		$x1 = 120;
+		$y1 = 94;
+		//Positionnement
+		$this->SetXY( $x1, $y1 );
+		$this->SetFont('Arial','B',13);
+		$length = $this->GetStringWidth( $txt );
+		$this->Cell( $length, 2, $txt);
+
+
+
+	}
+
 // Company
 function addSociete( $nom, $adresse )
 {
@@ -152,6 +166,75 @@ function addSociete( $nom, $adresse )
 	$lignes = $this->sizeOfText( $adresse, $length) ;
 	$this->MultiCell($length, 4, $adresse);
 }
+
+
+	// siege
+	function addSiege( $nom, $adresse,$tel )
+	{
+		$x1 = 10;
+		$y1 = 24;
+		//Positionnement en bas
+		$this->SetXY( $x1, $y1 );
+		$this->SetFont('Arial','B',8);
+		$length = $this->GetStringWidth( $nom );
+		$this->Cell( $length, 2, $nom);
+
+	$this->SetXY( $x1+19, $y1 -1  );
+		$this->SetFont('Arial','',8);
+		$length = $this->GetStringWidth( $adresse );
+		$lignes = $this->sizeOfText( $adresse, $length) ;
+		$this->MultiCell($length, 4, $adresse);
+//----------------------------------------------
+		$this->SetXY( $x1+54, $y1 );
+		$this->SetFont('Arial','B',8);
+		$length = $this->GetStringWidth( "Tel:" );
+		$this->Cell( $length, 2, "Tel:");
+
+		$this->SetXY( $x1+60, $y1  );
+		$this->SetFont('Arial','',8);
+		$length = $this->GetStringWidth( "71 234 242" );
+		$lignes = $this->sizeOfText( "71 234 242", $length) ;
+		//$this->MultiCell($length, 4, "71 234 242");
+		$this->Cell( $length, 2, "71 234 242");
+		$this->SetXY( $x1+74.2, $y1  );
+		$this->SetFont('Arial','B',8);
+		$length = $this->GetStringWidth( " - Fax:" );
+		$this->Cell( $length, 2, " - Fax:");
+
+		$this->SetXY( $x1+84, $y1  );
+		$this->SetFont('Arial','',8);
+		$length = $this->GetStringWidth( "71 233 836" );
+		$lignes = $this->sizeOfText( "71 233 836", $length) ;
+		$this->Cell( $length, 2, "71 233 836");
+
+
+		$this->SetXY( $x1+54, $y1+3.5 );
+		$this->SetFont('Arial','B',8);
+		$length = $this->GetStringWidth( "Mobile:" );
+		$this->Cell( $length, 2, "Mobile:");
+		$this->SetXY( $x1+65, $y1+3.5  );
+		$this->SetFont('Arial','',8);
+		$length = $this->GetStringWidth( "21 396 411 - 22 326 840" );
+		$lignes = $this->sizeOfText( "21 396 411 - 22 326 840", $length) ;
+		//$this->MultiCell($length, 4, "71 234 242");
+		$this->Cell( $length, 2, "21 396 411 - 22 326 840");
+
+
+		$this->SetXY( $x1+54, $y1+8 );
+		$this->SetFont('Arial','B',8);
+		$length = $this->GetStringWidth( "E-mail:" );
+		$this->Cell( $length, 2, "E-mail:");
+		$this->SetXY( $x1+65, $y1+8  );
+		$this->SetFont('Arial','',8);
+		$length = $this->GetStringWidth( "medicashop@gmail.com" );
+		$lignes = $this->sizeOfText( "medicashop@gmail.com", $length) ;
+		//$this->MultiCell($length, 4, "71 234 242");
+		$this->Cell( $length, 2, "medicashop@gmail.com");
+//----------------------------------------------
+
+
+	}
+
 
 	function addreflit( $nom, $refmotp,$refmotrb,$reftel )
 	{
@@ -339,15 +422,53 @@ function addPageNumber( $page )
 }
 
 // Client address
-function addClientAdresse( $adresse )
+function addbenificiaire( $adresse )
 {
-	$r1     = $this->w - 80;
+
+	$r1  = $this->w - 94;
+	$r2  = $r1 + 85;
+	$y1  = 45;
+	$y2  = $y1;
+
+	$this->RoundedRect($r1, $y1, ($r2 - $r1), $y2, 1, 'D');
+	$this->Line( $r1, 53, $r2, 53);
+
+	$this->SetXY( $r1 + ($r2-$r1)/2 - 5, $y1+3 );
+	$this->SetFont( "Arial", "B", 12);
+	$this->Cell(10,5, "BENEFICIAIRE:", 0, 0, "C");
+	$this->SetXY( $r1  +2, $y1 + 9 );
+	$this->SetFont( "Arial", "", 12);
+	//$this->Cell(10,5,$ref, 0,0, "C");
+	$this->MultiCell( 70, 7, $adresse);
+	/*$r1     = $this->w - 80;
 	$r2     = $r1 + 68;
 	$y1     = 40;
 	$this->SetXY( $r1, $y1);
-	$this->MultiCell( 60, 4, $adresse);
+	$this->MultiCell( 60, 4, $adresse);*/
 }
 
+
+	function addClientAdresse( $adresse )
+	{
+
+		$r1  = $this->w - 200;
+		$r2  = $r1 + 105;
+		$y1  = 45;
+		$y2  = $y1+8;
+
+		$this->RoundedRect($r1, $y1, ($r2 - $r1), $y2, 1, 'D');
+
+//		$this->SetXY( $r1 + ($r2-$r1)/2 - 5, $y1+3 );
+		$this->SetXY( $r1  +2, $y1 + 2 );
+		$this->SetFont( "Arial", "", 12);
+		//$this->Cell(10,5,$ref, 0,0, "C");
+		$this->MultiCell( 70, 7, $adresse);
+		/*$r1     = $this->w - 80;
+        $r2     = $r1 + 68;
+        $y1     = 40;
+        $this->SetXY( $r1, $y1);
+        $this->MultiCell( 60, 4, $adresse);*/
+	}
 // Mode of payment
 function addReglement( $mode )
 {
