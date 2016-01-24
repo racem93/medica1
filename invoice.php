@@ -469,6 +469,75 @@ function addbenificiaire( $adresse )
         $this->SetXY( $r1, $y1);
         $this->MultiCell( 60, 4, $adresse);*/
 	}
+
+
+
+	function totalettctva( $total_htva,$total_tva,$total_ttc,$total_caution )
+	{
+
+		$r1  = $this->w - 50;
+		$r2  = $r1 + 40;
+		$y1  = 218.2;
+
+		$this->RoundedRect($r1, $y1, ($r2 - $r1), 8.5, 1, 'D');
+
+		$this->SetXY( $r1  -27, $y1 + 0.2 );
+		$this->SetFont( "Arial", "B", 11);
+		$this->Cell(25,6,"TOTAL HTVA", 0,0, "C");
+
+		$this->SetXY( $r1  +2, $y1 + 2 );
+		$this->SetFont( "Arial", "", 12);
+		$this->Cell(25,6,number_format($total_htva, 3), 0,0, "C");
+//-------------------------------------------------------------------
+		$this->RoundedRect($r1, $y1+10.2, ($r2 - $r1), 8.5, 1, 'D');
+
+		$this->SetXY( $r1  -25, $y1 + 12.2 );
+		$this->SetFont( "Arial", "B", 11);
+		$this->Cell(25,6,"TVA 18%", 0,0, "C");
+
+		$this->SetXY( $r1  +2, $y1 + 12.2 );
+		$this->SetFont( "Arial", "", 12);
+		$this->Cell(25,6,number_format($total_tva, 3), 0,0, "C");
+		//-------------------------------------------------------------------
+		$this->RoundedRect($r1, $y1+22, ($r2 - $r1), 10, 1, 'D');
+
+		$this->SetXY( $r1  -26, $y1 + 24 );
+		$this->SetFont( "Arial", "B", 11);
+		$this->Cell(25,6,"TOTAL TTC", 0,0, "C");
+
+		$this->SetXY( $r1  +2, $y1 + 24 );
+		$this->SetFont( "Arial", "", 12);
+		$this->Cell(25,6,number_format($total_ttc, 3), 0,0, "C");
+
+		//-------------------------------------------------------------------
+		$this->RoundedRect($r1-5, $y1+41.6, ($r2 - $r1)+5, 9, 1, 'D');
+
+		$this->SetXY( $r1 +5 , $y1 + 35.5 );
+		$this->SetFont( "Arial", "B", 11);
+		$this->Cell(25,6,"TOTAL CAUTION", 0,0, "C");
+
+		$this->SetXY( $r1  +3.5, $y1 + 43.5 );
+		$this->SetFont( "Arial", "", 12);
+		$this->Cell(25,6,number_format($total_caution, 3), 0,0, "C");
+		//-------------------------------------------------------------------
+
+
+
+	}
+
+	function Footer()
+	{
+		$r1  = $this->w - 50;
+		$r2  = $r1 + 40;
+		$y1  = 218.2;
+		$this->SetFont( "Arial", "I", 10);
+		$this->SetXY( $r1  , $y1 + 55);
+
+		$this->Cell(18,4.8,"Caution etablie par :", 0,0, "C");
+		$this->SetXY( $r1 -8.3 , $y1 + 59.9 );
+
+		$this->MultiCell( 50, 7.6, "................................................................................................");
+	}
 // Mode of payment
 function addReglement( $mode )
 {
@@ -534,6 +603,29 @@ function addReference($ref)
 	$this->SetXY( $r1 , $y1 );
 	$this->Cell($length,4, "R�f�rences : " . $ref);
 }
+
+
+	function addCols2( $tab )
+	{
+		global $colonnes;
+
+		$r1  = 10;
+		$r2  = $this->w - ($r1 * 2) ;
+		$y1  = 100;
+		$y2  = $this->h - 80 - $y1;
+		$this->SetXY( $r1, $y1 );
+		$this->Rect( $r1, $y1, $r2, $y2, "D");
+		$this->Line( $r1, $y1+6, $r1+$r2, $y1+6);
+		$colX = $r1;
+		$colonnes = $tab;
+		while ( list( $lib, $pos ) = each ($tab) )
+		{
+			$this->SetXY( $colX, $y1+2 );
+			$this->Cell( $pos, 1, $lib, 0, 0, "C");
+			$colX += $pos;
+			$this->Line( $colX, $y1, $colX, $y1+$y2);
+		}
+	}
 
 function addCols( $tab )
 {
