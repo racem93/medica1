@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1cd33de5-b4f5-4ceb-bd94-58d7afa57d5b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/fonctions.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/contrat_pdf.php" afterPath="$PROJECT_DIR$/contrat_pdf.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/invoice.php" afterPath="$PROJECT_DIR$/invoice.php" />
     </list>
     <ignored path="medica.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,14 +28,14 @@
       <file leaf-file-name="contrat_pdf.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/contrat_pdf.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.22849463">
-              <caret line="89" column="16" selection-start-line="89" selection-start-column="16" selection-end-line="89" selection-end-column="16" />
+            <state vertical-scroll-proportion="0.45698926">
+              <caret line="167" column="23" selection-start-line="167" selection-start-column="23" selection-end-line="167" selection-end-column="23" />
               <folding>
-                <marker date="1453753741793" expanded="true" signature="509:545" placeholder="SELECT * FRO..commande..." />
-                <marker date="1453753741793" expanded="true" signature="3118:3166" placeholder="select * fro..ligne_commande..." />
-                <marker date="1453753741793" expanded="true" signature="4082:4114" placeholder="select * fro..produit..." />
-                <marker date="1453753741793" expanded="true" signature="4681:4733" placeholder="..." />
-                <marker date="1453753741793" expanded="true" signature="4831:4866" placeholder="SELECT ref_l..lit..." />
+                <marker date="1453762284510" expanded="true" signature="509:545" placeholder="SELECT * FRO..commande..." />
+                <marker date="1453762284510" expanded="true" signature="3118:3166" placeholder="select * fro..ligne_commande..." />
+                <marker date="1453762284510" expanded="true" signature="4082:4114" placeholder="select * fro..produit..." />
+                <marker date="1453762284510" expanded="true" signature="4681:4733" placeholder="..." />
+                <marker date="1453762284510" expanded="true" signature="4831:4866" placeholder="SELECT ref_l..lit..." />
               </folding>
             </state>
           </provider>
@@ -46,7 +44,7 @@
       <file leaf-file-name="fonctions.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/fonctions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="49.76923">
+            <state vertical-scroll-proportion="0.0">
               <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding />
             </state>
@@ -56,7 +54,7 @@
       <file leaf-file-name="invoice.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/invoice.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.4512195">
+            <state vertical-scroll-proportion="0.0">
               <caret line="572" column="0" selection-start-line="572" selection-start-column="0" selection-end-line="572" selection-end-column="0" />
               <folding />
             </state>
@@ -66,7 +64,7 @@
       <file leaf-file-name="fpdf.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/extras/fpdf/fpdf.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="30.73077">
+            <state vertical-scroll-proportion="0.0">
               <caret line="367" column="1" selection-start-line="364" selection-start-column="0" selection-end-line="367" selection-end-column="1" />
               <folding>
                 <element signature="e#6#572#0#PHP" expanded="true" />
@@ -78,8 +76,8 @@
       <file leaf-file-name="details_contrat.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/details_contrat.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="172" column="37" selection-start-line="172" selection-start-column="37" selection-end-line="172" selection-end-column="37" />
+            <state vertical-scroll-proportion="-10.461538">
+              <caret line="187" column="62" selection-start-line="187" selection-start-column="62" selection-end-line="187" selection-end-column="62" />
               <folding>
                 <marker date="1453326912922" expanded="true" signature="311:347" placeholder="SELECT * FRO..commande..." />
                 <marker date="1453326912922" expanded="true" signature="6510:6558" placeholder="select * fro..ligne_commande..." />
@@ -250,6 +248,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -284,8 +284,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -304,123 +302,6 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\wamp\www\charisma-master\medica" />
     </key>
-  </component>
-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
-    <UpdatedFiles>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ajax.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ajout_produit.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ajout_selection.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/commande_contrat.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/gestion_produit.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/header.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/prod_select.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/supp_prodfact.php</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-    </UpdatedFiles>
   </component>
   <component name="RunManager" selected="JavaScript Debug.calendar.html">
     <configuration default="false" name="calendar.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/medica/calendar.html">
@@ -619,7 +500,13 @@
       <option name="project" value="LOCAL" />
       <updated>1453672239734</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="updatepdfcontratv4">
+      <created>1453753814130</created>
+      <option name="number" value="00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1453753814130</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -629,9 +516,9 @@
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21815519" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32913387" sideWeight="0.53806734" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32913387" sideWeight="0.5409956" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32913387" sideWeight="0.46193266" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32913387" sideWeight="0.4590044" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -680,7 +567,8 @@
     <MESSAGE value="updatepdfcontrat" />
     <MESSAGE value="updatepdfcontratv2" />
     <MESSAGE value="updatepdfcontratv3" />
-    <option name="LAST_COMMIT_MESSAGE" value="updatepdfcontratv3" />
+    <MESSAGE value="updatepdfcontratv4" />
+    <option name="LAST_COMMIT_MESSAGE" value="updatepdfcontratv4" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1008,23 +896,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/details_contrat.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="172" column="37" selection-start-line="172" selection-start-column="37" selection-end-line="172" selection-end-column="37" />
-          <folding>
-            <marker date="1453326912922" expanded="true" signature="311:347" placeholder="SELECT * FRO..commande..." />
-            <marker date="1453326912922" expanded="true" signature="6510:6558" placeholder="select * fro..ligne_commande..." />
-            <marker date="1453326912922" expanded="true" signature="7683:7715" placeholder="select * fro..produit..." />
-            <marker date="1453326912922" expanded="true" signature="8337:8387" placeholder="..." />
-            <marker date="1453326912922" expanded="true" signature="8511:8546" placeholder="SELECT ref_l..lit..." />
-            <marker date="1453326912922" expanded="true" signature="10312:11032" placeholder="..." />
-            <marker date="1453326912922" expanded="true" signature="10434:10997" placeholder="..." />
-            <marker date="1453326912922" expanded="true" signature="10459:10991" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ajout_selection.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.045698926">
@@ -1041,7 +912,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/extras/fpdf/fpdf.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="30.73077">
+        <state vertical-scroll-proportion="0.0">
           <caret line="367" column="1" selection-start-line="364" selection-start-column="0" selection-end-line="367" selection-end-column="1" />
           <folding>
             <element signature="e#6#572#0#PHP" expanded="true" />
@@ -1051,7 +922,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/fonctions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="49.76923">
+        <state vertical-scroll-proportion="0.0">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
@@ -1059,22 +930,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/invoice.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.4512195">
+        <state vertical-scroll-proportion="0.0">
           <caret line="572" column="0" selection-start-line="572" selection-start-column="0" selection-end-line="572" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/details_contrat.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.461538">
+          <caret line="187" column="62" selection-start-line="187" selection-start-column="62" selection-end-line="187" selection-end-column="62" />
+          <folding>
+            <marker date="1453326912922" expanded="true" signature="311:347" placeholder="SELECT * FRO..commande..." />
+            <marker date="1453326912922" expanded="true" signature="6510:6558" placeholder="select * fro..ligne_commande..." />
+            <marker date="1453326912922" expanded="true" signature="7683:7715" placeholder="select * fro..produit..." />
+            <marker date="1453326912922" expanded="true" signature="8337:8387" placeholder="..." />
+            <marker date="1453326912922" expanded="true" signature="8511:8546" placeholder="SELECT ref_l..lit..." />
+            <marker date="1453326912922" expanded="true" signature="10312:11032" placeholder="..." />
+            <marker date="1453326912922" expanded="true" signature="10434:10997" placeholder="..." />
+            <marker date="1453326912922" expanded="true" signature="10459:10991" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/contrat_pdf.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22849463">
-          <caret line="89" column="16" selection-start-line="89" selection-start-column="16" selection-end-line="89" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.45698926">
+          <caret line="167" column="23" selection-start-line="167" selection-start-column="23" selection-end-line="167" selection-end-column="23" />
           <folding>
-            <marker date="1453753741793" expanded="true" signature="509:545" placeholder="SELECT * FRO..commande..." />
-            <marker date="1453753741793" expanded="true" signature="3118:3166" placeholder="select * fro..ligne_commande..." />
-            <marker date="1453753741793" expanded="true" signature="4082:4114" placeholder="select * fro..produit..." />
-            <marker date="1453753741793" expanded="true" signature="4681:4733" placeholder="..." />
-            <marker date="1453753741793" expanded="true" signature="4831:4866" placeholder="SELECT ref_l..lit..." />
+            <marker date="1453762284510" expanded="true" signature="509:545" placeholder="SELECT * FRO..commande..." />
+            <marker date="1453762284510" expanded="true" signature="3118:3166" placeholder="select * fro..ligne_commande..." />
+            <marker date="1453762284510" expanded="true" signature="4082:4114" placeholder="select * fro..produit..." />
+            <marker date="1453762284510" expanded="true" signature="4681:4733" placeholder="..." />
+            <marker date="1453762284510" expanded="true" signature="4831:4866" placeholder="SELECT ref_l..lit..." />
           </folding>
         </state>
       </provider>

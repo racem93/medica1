@@ -157,7 +157,6 @@ $nbPage=1;
                             } elseif (($ref_lit < 100) && ($ref_lit >= 10)) {
                                 $ref_lit = "0" . $ref_lit;
                             }
-                            echo "<br><b>Ref: &nbsp;</b>MM2-L" . $ref_lit . "-S";
                             $reflittotal="MM2-L".$ref_lit . "-S";
                         }
 
@@ -177,20 +176,35 @@ $nbPage=1;
                         $k++;
                         if ($k < 27) {
 
+                            if ($type == 1) {
+                                $line = array("Ref." => "1",
+                                    "DESIGNATION" => "$nomprod\nRef: $reflittotal",
+                                    "Periode" => "$semainetot\n$moistot",
+
+                                    "Qte" => "$qte",
+                                    "P.U. HT" => number_format($prix_unit_ht, 3),
+                                    "MT H.T." => number_format($prix_total, 3),
+
+                                    "Caution/Unite" => number_format($prix_caution, 3));
+
+                            }else{
+                                $line = array("Ref." => "1",
+                                    "DESIGNATION" => "$nomprod",
+                                    "Periode" => "$semainetot\n$moistot",
+
+                                    "Qte" => "$qte",
+                                    "P.U. HT" => number_format($prix_unit_ht, 3),
+                                    "MT H.T." => number_format($prix_total, 3),
+
+                                    "Caution/Unite" => number_format($prix_caution, 3));
+
+                            }
 
 
-
-                            $line = array("Ref." => "$ref",
-                                "DESIGNATION" => "$nomprod",
-                                "Periode" => "$semainetot\n$moistot",
-
-                                "Qte" => "$qte",
-                                "P.U. HT" => number_format($prix_unit_ht, 3),
-                                "MT H.T." => number_format($prix_total, 3),
-
-                                "Caution/Unite" => number_format($prix_caution, 3));
                             $size = $pdf->addLine($y, $line);
                             $y += $size + 4.2;
+
+
 
                         }
 
