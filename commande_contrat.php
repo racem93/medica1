@@ -143,7 +143,8 @@ VALUES (" ."'".$ref."'"."," ."'".$nom_client."'".","."'".$adresse_client."'".","
                                         {
                                             $idd=$data['id'];
                                             $type=$data['type'];
-                                            $prix_total=$_SESSION['prix'][$i]*$_SESSION['panier'][$i];
+                                            $prix_unit=($_SESSION['prix_s'][$i]*$_SESSION['semaine'][$i]+$_SESSION['prix_m'][$i]*$_SESSION['mois'][$i]);
+                                            $prix_total=$prix_unit*$_SESSION['panier'][$i];
 
                                             $total_htva=$total_htva+$prix_total;
                                             $total_caution=$total_caution+$_SESSION['caution'][$i];
@@ -166,11 +167,13 @@ VALUES (" ."'".$ref."'"."," ."'".$nom_client."'".","."'".$adresse_client."'".","
 
                                           <td>";if ($_SESSION['semaine'][$i]!=0) {echo $_SESSION['semaine'][$i]." Semaine <br>";}
                                                 if ($_SESSION['mois'][$i]!=0) {echo $_SESSION['mois'][$i]." Mois";}
+
                                           echo "</td>
+
                                           <td>".$_SESSION['panier'][$i]."</td>
-                                          <td>".$_SESSION['prix'][$i]."</td>
-                                          <td>".$prix_total."</td>
-                                          <td>".$_SESSION['caution'][$i]."</td>
+                                          <td>".$prix_unit."DT</td>
+                                          <td>".$prix_total."DT</td>
+                                          <td>".$_SESSION['caution'][$i]."DT</td>
 
                                           </tr>";//Lecture des résultats
                                         //insertion  dans ligne commande
@@ -178,17 +181,18 @@ VALUES (" ."'".$ref."'"."," ."'".$nom_client."'".","."'".$adresse_client."'".","
                                             if(isset($_POST['ajout']))
                                             {
                                                 $req = "INSERT INTO ligne_commande ( id_commande,id_produit,id_lit,semaine,mois,qte,prix_unit_ht,prix_caution,etat_louer)
-                                                VALUES ("."'".$iddernier."'".","."'".$idd."'".","."'".$id_lit."'".","."'".$_SESSION['semaine'][$i]."'".","."'".$_SESSION['mois'][$i]."'".","."'".$_SESSION['panier'][$i]."'".","."'".$_SESSION['prix'][$i]."'".","."'".$_SESSION['caution'][$i]."'".",1)";
+                                                VALUES ("."'".$iddernier."'".","."'".$idd."'".","."'".$id_lit."'".","."'".$_SESSION['semaine'][$i]."'".","."'".$_SESSION['mois'][$i]."'".","."'".$_SESSION['panier'][$i]."'".","."'".$prix_unit."'".","."'".$_SESSION['caution'][$i]."'".",1)";
                                                 $oPDOStatement4=$connect->query($req); // Le résultat est un objet de la classe PDOStatementmo
                                                 $qte_select=$_SESSION['panier'][$i];
                                                 if ($type!=1) {
                                                     $req5 = "UPDATE `produit` SET `qte_louer`=`qte_louer`+$qte_select  WHERE `id`=$idd ";
                                                     $oPDOStatement5 = $connect->query($req5);
-                                                    echo var_dump($qte_select);
                                                 }
                                                 if ($type==1) {
                                                     $req6 = "UPDATE `lit` SET `etat_louer`=1  WHERE `id`=$id_lit AND `nom`=$idd";
                                                     $oPDOStatement6 = $connect->query($req6);
+                                                    $req7 = "UPDATE `produit` SET `qte_louer`=`qte_louer`+1  WHERE `id`=$idd ";
+                                                    $oPDOStatement7 = $connect->query($req7);
                                                 }
 
 

@@ -115,7 +115,7 @@ $i=0;
          echo"<br><b>Ref: &nbsp;</b>MM2-L".$ref_lit."-S";}
       echo "</td>
       <td>".$_SESSION['panier'][$i]."</td>
-      <td>".$_SESSION['prix'][$i]."</td>
+      <td>".($_SESSION['prix_s'][$i]*$_SESSION['semaine'][$i]+$_SESSION['prix_m'][$i]*$_SESSION['mois'][$i])."</td>
       <td>";if ($_SESSION['semaine'][$i]!=0) {echo $_SESSION['semaine'][$i]." Semaine <br>";}
             if ($_SESSION['mois'][$i]!=0) {echo $_SESSION['mois'][$i]." Mois";}
       echo "</td>

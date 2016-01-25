@@ -47,7 +47,8 @@ if (isset($_GET["msg"])) {
                     <tr>
                         <th class="center-text" width="20%">NOM</th>
                         <th class="center-text">REFERENCE</th>
-                        <th class="center-text">PRIX_UNIT</th>
+                        <th class="center-text">P.U.SEMAINE</th>
+                        <th class="center-text">P.U.MOIS</th>
                         <th class="center-text">QUANTITE</th>
                         <th class="center-text">CAUTION</th>
                         <th class="center-text">TVA</th>
@@ -61,7 +62,8 @@ if (isset($_GET["msg"])) {
                         $id=$row->id;
                         $nom=$row->nom;
                         $ref=$row->ref;
-                        $prix_unit=$row->prix_unit;
+                        $prix_semaine=$row->prix_semaine;
+                        $prix_mois=$row->prix_mois;
                         $qte=$row->qte;
                         $caution=$row->caution;
                         $tva_produit=$row->tva_produit;
@@ -70,9 +72,10 @@ if (isset($_GET["msg"])) {
                         <tr>
                             <td class="center-text"><?php echo $nom; ?></td>
                             <td class="center-text"><?php echo $ref; ?></td>
-                            <td class="center-text"><?php echo $prix_unit; ?>&nbsp dt</td>
+                            <td class="center-text"><?php echo $prix_semaine; ?>&nbsp DT</td>
+                            <td class="center-text"><?php echo $prix_mois; ?>&nbsp DT</td>
                             <td class="center-text"><?php echo $qte; ?></td>
-                            <td class="center-text"><?php echo $caution; ?>&nbsp dt</td>
+                            <td class="center-text"><?php echo $caution; ?>&nbsp DT</td>
                             <td class="center-text"><?php echo $tva_produit; ?>%</td>
 
                             <td class="center" width="25%">

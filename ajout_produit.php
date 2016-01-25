@@ -10,6 +10,7 @@ if (isset($_POST["produit"])) {
     $msg3="";$c=0;
     $msg4="";$d=0;
     $msg5="";$e=0;
+    $msg6="";$f=0;
     $req="SELECT * FROM `produit` WHERE ref='$ref'";
     $oPDOStatement=$connect->query($req);
     $oPDOStatement->setFetchMode(PDO::FETCH_OBJ);
@@ -25,11 +26,16 @@ if (isset($_POST["produit"])) {
 
 
     }
-    if(!preg_match('/^[[:digit:]]+((\.[[:digit:]]{1,3})?)$/',$prix_unit))
-        { $msg2='Le PRIX n est pas valide \n';
+    if(!preg_match('/^[[:digit:]]+((\.[[:digit:]]{1,3})?)$/',$prix_semaine))
+        { $msg2='Le PRIX de semaine n\'est pas valide \n';
           $b=1;
 
         }
+    if(!preg_match('/^[[:digit:]]+((\.[[:digit:]]{1,3})?)$/',$prix_semaine))
+    { $msg6='Le PRIX de mois n\'est pas valide \n';
+        $f=1;
+
+    }
 
     if(!preg_match('/^[[:digit:]]*$/',$qte))
     { $msg3='La QUANTITE n est pas valide \n' ;
@@ -50,16 +56,16 @@ if (isset($_POST["produit"])) {
 
         }
 
-    if (($a == 1) || ($b == 1) ||($c == 1)||($d == 1)||($e == 1)) { ?>
+    if (($a != 0) || ($b == 1)||($f == 1) ||($c == 1)||($d == 1)||($e == 1)) { ?>
         <SCRIPT LANGUAGE='JavaScript'>
-            alert('<?php echo $msg1.$msg2.$msg3.$msg4.$msg5 ?>');
+            alert('<?php echo $msg1.$msg2.$msg6.$msg3.$msg4.$msg5 ?>');
             //location='ajout_lit.php';
             history.go(-1);
         </SCRIPT>
     <?php }
     else {
-        $req1 = "INSERT INTO `produit`( `type`,`nom`,`ref`, `prix_unit`, `qte`, `caution`, `tva_produit`)
-    VALUES (" . "'" . $type . "'" . "," . "'" . $nom . "'" . "," . "'" . $ref . "'" . "," . "'" . $prix_unit . "'" . "," . "'" . $qte . "'" . "," . "'" . $caution . "'" . "," . "'" . $tva_produit . "'" . ")";
+        $req1 = "INSERT INTO `produit`( `type`,`nom`,`ref`,`prix_semaine`,`prix_mois`, `qte`, `caution`, `tva_produit`)
+    VALUES (" . "'" . $type . "'" . "," . "'" . $nom . "'" . "," . "'" . $ref . "'" . "," . "'" . $prix_semaine . "'" . "," . "'" . $prix_mois . "'" . "," . "'" . $qte . "'" . "," . "'" . $caution . "'" . "," . "'" . $tva_produit . "'" . ")";
         $oPDOStatement = $connect->query($req1); // Le résultat est un objet de la classe PDOStatement
         echo "<SCRIPT LANGUAGE='JavaScript'>
     self.parent.location.href='gestion_produit.php?msg=ajouter';
@@ -124,8 +130,12 @@ if (isset($_POST["produit"])) {
                             <div class="form-inline">
                                 <div class="row">
                                     <div class="col-md-1"></div>
-                                    <div class="col-md-1"><label >Prix produit </label></div>
-                                <input type="text" name="prix_unit" class="form-control" id="exampleInputEmail1" placeholder="Entrer le prix" autofocus required>&nbsp dt
+                                    <div class="col-md-1"><label >Prix produit: </label></div>
+                                    <div class="col-md-3"><input type="text" name="prix_semaine" class="form-control" id="exampleInputEmail1" style="width: 150px;" placeholder="prix du semaine" autofocus required>&nbsp DT/semaine
+                                    </div>
+
+                                    <div class="col-md-3"><input type="text" name="prix_mois" class="form-control" id="exampleInputEmail1" style="width: 150px;" placeholder="prix du mois" autofocus required>&nbsp DT/mois
+                                    </div>
                                     </div>
                             </div>
                             <br>

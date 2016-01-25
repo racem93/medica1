@@ -69,9 +69,17 @@ if(!isset($_SESSION['admin']))
 
 
 
+    <!--<script type="text/javascript">
+
+        function autoClick() {
+            document.getElementById('iframe').click();
+        }
+
+    </script>!-->
+
 </head>
 
-<body>
+<body> <!--onLoad="autoClick();"!-->
 <?php if (!isset($no_visible_elements) || !$no_visible_elements) { ?>
     <!-- topbar starts -->
     <div class="navbar navbar-default" role="navigation">

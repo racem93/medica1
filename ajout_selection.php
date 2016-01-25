@@ -21,7 +21,8 @@ while ($row = $oPDOStatement->fetch()) {
     $id = $row->id;
     $nom = $row->nom;
     $ref = $row->ref;
-    $prix_unit = $row->prix_unit;
+    $prix_semaine = $row->prix_semaine;
+    $prix_mois = $row->prix_mois;
     $qte = $row->qte;
     $qte_louer = $row->qte_louer;
     $caution = $row->caution;
@@ -127,7 +128,7 @@ else {
                <center><h4><b> Préciser la caution Souhaitée : </b>  <input type="text"  value= "<?php echo "$caution"; ?>" data-rule="quantity" style="width:50px; margin-bottom:-25px; height:30px" id="caution" >
                    </h4>  <br>
 
-        <center><h4><b> Préciser le prix : </b> <input type="text" value= "<?php echo "$prix_unit"; ?>" data-rule="price" style="width:50px; margin-bottom:-25px; height:30px" id="nv_prix" >
+        <center><h4><b> Préciser le prix : </b> <input type="text" value= "<?php echo "$prix_semaine"; ?>" data-rule="price" style="width:50px; margin-bottom:-25px; height:30px" id="nv_prix_s" >DT/Semaine &nbsp;&nbsp;&nbsp;<input type="text" value= "<?php echo "$prix_mois"; ?>" data-rule="price" style="width:50px; margin-bottom:-25px; height:30px" id="nv_prix_m" >DT/Mois
             </h4>        <br>
             <br>
             <center><button type="submit" class="btn btn-lg btn-primary" onClick="myAjax();" >Ajouter aux séléctions <img src='images/icons/add2basket.png' ></button></center>
@@ -309,7 +310,7 @@ else {
 
         $.ajax({
             type: "POST",
-            url: 'ajax.php?id=<?php echo $id_prod; ?>&qte='+qte+'&prix_ht='+document.getElementById("nv_prix").value+'&caution='+document.getElementById("caution").value+'&semaine='+document.getElementById("semaine").value+'&mois='+document.getElementById("mois").value+'&type=<?php echo $type; ?>',
+            url: 'ajax.php?id=<?php echo $id_prod; ?>&qte='+qte+'&prix_s='+document.getElementById("nv_prix_s").value+'&prix_m='+document.getElementById("nv_prix_m").value+'&caution='+document.getElementById("caution").value+'&semaine='+document.getElementById("semaine").value+'&mois='+document.getElementById("mois").value+'&type=<?php echo $type; ?>',
             data:{action:'ajout'},
             success:function(html) {
                 alert(html);
