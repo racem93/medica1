@@ -2,6 +2,8 @@
 ini_set('session.save_path',realpath(dirname($_SERVER['DOCUMENT_ROOT']) . '/temp'));
 session_start();
 require('invoice.php');
+require('config/fonctions.php');
+
 include_once("config/MyPDO.class.php");
 $connect=new MyPDO();
 //************************//
@@ -81,9 +83,13 @@ $pdf->addbenificiaire("M/Mme : $nom_ben\nAdresse : $adresse_ben\nTel : $tel_ben\
 
 $pdf->totalettctva($total_htva,$total_tva,$total_ttc,$total_caution);
 
-//$pdf->addReglement("Ch�que � r�ception de facture");
-//$pdf->addEcheance("03/12/2003");
-//$pdf->addReference("Devis ... du ....");
+$accompte=300;
+$pdf->Accompte($accompte);
+$pdf->transport();
+
+$let=strtoupper(int2str($total_ttc));
+
+$pdf->contratenttelettre("$let");
 
 
 

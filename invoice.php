@@ -525,6 +525,77 @@ function addbenificiaire( $adresse )
 
 	}
 
+	function Accompte($accompte)
+	{
+		$r1  = $this->w - 50;
+		$r2  = $r1 + 40;
+		$y1  = 218.2;
+
+
+		$this->RoundedRect($r1-150, $y1, ($r2 - $r1), 23, 1, 'D');
+		$this->Line( $r1-150, $y1+6, $r2-150, $y1+6);
+
+		$this->SetXY( $r1 + ($r2-$r1)/2 - 156, $y1+1 );
+		$this->SetFont( "Arial", "", 10);
+		$this->Cell(10,5, "ACOMPTE", 0, 0, "C");
+
+		$this->SetXY( $r1 + ($r2-$r1)/2 - 162, $y1+11 );
+		$this->SetFont( "Arial", "", 12);
+		$this->Cell(25,6,number_format($accompte, 3)." DT", 0,0, "C");
+
+
+
+	}
+
+	function transport()
+	{
+		$r1  = $this->w - 50;
+		$r2  = $r1 + 77;
+		$y1  = 218.2;
+
+
+		$this->RoundedRect($r1-108, $y1, ($r2 - $r1), 23, 1, 'D');
+		$this->Line( $r1-108, $y1+6, $r2-108, $y1+6);
+
+		$this->SetXY( $r1 + ($r2-$r1)/2 - 113, $y1+1 );
+		$this->SetFont( "Arial", "", 10);
+		$this->Cell(10,5, "TRANSPORT", 0, 0, "C");
+
+
+
+
+	}
+
+
+
+
+
+
+
+
+	function contratenttelettre($numttcattelettre)
+	{
+		$r1  = $this->w - 50;
+		$r2  = $r1 + 119;
+		$y1  = 218.2;
+
+
+		$this->RoundedRect($r1-150, $y1+26, ($r2 - $r1), 22, 1, 'D');
+		$this->Line( $r1-150, $y1+31, $r2-150, $y1+31);
+
+		$this->SetXY( $r1 + ($r2-$r1)/2 - 148, $y1+26 );
+		$this->SetFont( "Arial", "I", 9);
+		$this->Cell(10,5, "Le present contrat est conclu pour la somme de :", 0, 0, "R");
+
+		$this->SetFont( "Arial", "", 10);
+		$this->SetXY( $r1 + ($r2-$r1)/2 - 205  , $y1 + 34);
+
+		//$this->Cell(18,4.8,"Ce contrat est lu et approuve.\nFait en double examplaires,a :", 0,0, "C");
+		$this->MultiCell( 108, 6, "$numttcattelettre");
+
+
+
+	}
 	function Footer()
 	{
 		$r1  = $this->w - 50;
@@ -537,6 +608,40 @@ function addbenificiaire( $adresse )
 		$this->SetXY( $r1 -8.3 , $y1 + 59.9 );
 
 		$this->MultiCell( 50, 7.6, "................................................................................................");
+
+		//------------------------------------------------------------
+
+
+
+		$this->RoundedRect($r1-56, $y1+52, ($r2 - $r1), 24, 1, 'D');
+		$this->Line( $r1-56, $y1+58, $r2-56, $y1+58);
+
+		$this->SetXY( $r1 + ($r2-$r1)/2 - 61, $y1+53 );
+		$this->SetFont( "Arial", "", 10);
+		$this->Cell(10,5, "MedicA", 0, 0, "C");
+
+
+		$this->RoundedRect($r1-150, $y1+52, ($r2 - $r1), 24, 1, 'D');
+		$this->Line( $r1-150, $y1+58, $r2-150, $y1+58);
+
+		$this->SetXY( $r1 + ($r2-$r1)/2 - 156, $y1+53 );
+		$this->SetFont( "Arial", "", 10);
+		$this->Cell(10,5, "Le Client", 0, 0, "C");
+
+
+		$this->SetFont( "Arial", "I", 9);
+		$this->SetXY( $r1-106  , $y1 + 53.5);
+
+		//$this->Cell(18,4.8,"Ce contrat est lu et approuve.\nFait en double examplaires,a :", 0,0, "C");
+		$this->MultiCell( 50, 3, "Ce contrat est lu et approuve.\nFait en double examplaires,a :");
+
+		$this->SetXY( $r1 -108 , $y1 + 59.9 );
+		$this->SetFont( "Arial", "I", 10);
+
+		$this->MultiCell( 50, 7.6, "................................................................................................");
+
+
+
 	}
 // Mode of payment
 function addReglement( $mode )
