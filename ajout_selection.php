@@ -302,12 +302,11 @@ else {
 
     })
     <?php }
-    else {?>
-    var qte=document.getElementById("quant").value;
-    <?php
-    }?>
+    ?>
     function myAjax() {
-
+        <?php if ($type!=1) {?>
+        var qte=document.getElementById("quant").value;
+        <?php } ?>
         $.ajax({
             type: "POST",
             url: 'ajax.php?id=<?php echo $id_prod; ?>&qte='+qte+'&prix_s='+document.getElementById("nv_prix_s").value+'&prix_m='+document.getElementById("nv_prix_m").value+'&caution='+document.getElementById("caution").value+'&semaine='+document.getElementById("semaine").value+'&mois='+document.getElementById("mois").value+'&type=<?php echo $type; ?>',
