@@ -166,7 +166,7 @@ if (isset($_GET["msg"])) {
                         <tr>
                             <th class="center-text" width="10%">REF. Model</th>
                             <th class="center-text">Nom Model</th>
-                            <th class="center-text">Qte</th>
+                            <th class="center-text">Qte.Stock</th>
                             <th class="center-text">ACTION</th>
                         </tr>
                         </thead>
@@ -177,14 +177,25 @@ if (isset($_GET["msg"])) {
                             $id=$row->id;
                             $ref=$row->ref;
                             $nom=$row->nom;
-                            $qte=$row->qte;
-
+                            $type=$row->type;
+                            $qte_total=$row->qte;
+                            $qte_louer=$row->qte_louer;
+                            if ($type==1){
+                                $req2="SELECT COUNT(`id`) AS qte_stock FROM `lit` WHERE `nom`=$id AND `etat_lit`=1 AND `etat_louer`!=1 ";
+                                $oPDOStatement2=$connect->query($req2); // Le résultat est un objet de la classe PDOStatement
+                                $oPDOStatement2->setFetchMode(PDO::FETCH_OBJ);
+                                while ($row2 = $oPDOStatement2->fetch()) {
+                                    $qte_stock = $row2->qte_stock;
+                                }}
+                            else {
+                                $qte_stock = $qte_total - $qte_louer;
+                            }
 
                         ?>
                         <tr>
                             <td class="center-text"><?php echo $ref ?></td>
                             <td class="center-text"><?php echo $nom ?></td>
-                            <td class="center-text"><?php echo $qte ?></td>
+                            <td class="center-text"><?php echo $qte_stock ?></td>
                             <?php
                             //here php code
                             ?>

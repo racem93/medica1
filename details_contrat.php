@@ -147,6 +147,8 @@ while ($row = $oPDOStatement->fetch()) {
                                         <th style="width:30%;">P.U HTVA</th>
                                         <th style="width:15%;">Montant</th>
                                         <th style="width:15%;">Caution/Unité</th>
+                                        <th style="width:15%;">Retour.Produit</th>
+
                                     </tr>
                                     </thead>
                                     <?php
@@ -195,10 +197,17 @@ while ($row = $oPDOStatement->fetch()) {
                                           <td>".$qte."</td>
                                           <td>".$prix_unit_ht."</td>
                                           <td>".$prix_total."</td>
-                                          <td>".$prix_caution."</td>
-
-                                          </tr>";//Lecture des résultats
-                                    }}
+                                          <td>".$prix_caution."</td>";//Lecture des résultats
+                                    }
+                                        ?>
+                                        <td>
+                                                <a class="btn btn-danger" href='retour_produit.php?id=<?php echo $id; ?>' onclick="return(confirm('Etes-vous sûr de vouloir supprimer ce produit?'))"; >
+                                                    <i class="glyphicon glyphicon-download-alt"></i>
+                                                    Retour
+                                                </a>
+                                            </td></tr>
+                                    <?php
+                                    }
                                     ?>
 
                                 </table>

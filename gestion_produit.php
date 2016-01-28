@@ -49,9 +49,10 @@ if (isset($_GET["msg"])) {
                         <th class="center-text">REFERENCE</th>
                         <th class="center-text">P.U.SEMAINE</th>
                         <th class="center-text">P.U.MOIS</th>
-                        <th class="center-text">QUANTITE</th>
+                        <th class="center-text">Qte.T</th>
+                        <th class="center-text">Qte.Stock</th>
+                        <th class="center-text">Qte.Louer</th>
                         <th class="center-text">CAUTION</th>
-                        <th class="center-text">TVA</th>
                         <th class="center-text">ACTION</th>
                     </tr>
                     </thead>
@@ -61,12 +62,29 @@ if (isset($_GET["msg"])) {
                     {
                         $id=$row->id;
                         $nom=$row->nom;
+                        $type=$row->type;
                         $ref=$row->ref;
                         $prix_semaine=$row->prix_semaine;
                         $prix_mois=$row->prix_mois;
-                        $qte=$row->qte;
+                        $qte_total=$row->qte;
+                        $qte_louer=$row->qte_louer;
                         $caution=$row->caution;
                         $tva_produit=$row->tva_produit;
+                        if ($type==1){
+                            $req2="SELECT COUNT(`id`) AS qte_total FROM `lit` WHERE `nom`=$id AND `etat_lit`=1 ";
+                            $oPDOStatement2=$connect->query($req2); // Le résultat est un objet de la classe PDOStatement
+                            $oPDOStatement2->setFetchMode(PDO::FETCH_OBJ);
+                            while ($row2 = $oPDOStatement2->fetch()) {
+                                $qte_total = $row2->qte_total;
+                            }
+                            $req3="SELECT COUNT(`id`) AS qte_louer FROM `lit` WHERE `nom`=$id AND `etat_lit`=1 AND `etat_louer`=1 ";
+                            $oPDOStatement3=$connect->query($req3); // Le résultat est un objet de la classe PDOStatement
+                            $oPDOStatement3->setFetchMode(PDO::FETCH_OBJ);
+                            while ($row3 = $oPDOStatement3->fetch()) {
+                                $qte_louer = $row3->qte_louer;
+                            }}
+
+                        $qte_stock=$qte_total-$qte_louer;
                     ?>
 
                         <tr>
@@ -74,16 +92,18 @@ if (isset($_GET["msg"])) {
                             <td class="center-text"><?php echo $ref; ?></td>
                             <td class="center-text"><?php echo $prix_semaine; ?>&nbsp DT</td>
                             <td class="center-text"><?php echo $prix_mois; ?>&nbsp DT</td>
-                            <td class="center-text"><?php echo $qte; ?></td>
+                            <td class="center-text"><?php echo $qte_total; ?></td>
+                            <td class="center-text"><?php echo $qte_stock; ?></td>
+                            <td class="center-text"><?php echo $qte_louer; ?></td>
                             <td class="center-text"><?php echo $caution; ?>&nbsp DT</td>
-                            <td class="center-text"><?php echo $tva_produit; ?>%</td>
+
 
                             <td class="center" width="25%">
                                 <a class="btn btn-info" href="modifier_produit.php?id=<?php echo $id; ?>" id="iframe">
                                     <i class="glyphicon glyphicon-edit icon-white"></i>
                                     Modifier
                                 </a>
-                                <a class="btn btn-danger" href='supprimer_produit.php?id=<?php echo $id; ?>' onclick="return(confirm('Etes-vous sûr de vouloir supprimer ce lit?'))"; >
+                                <a class="btn btn-danger" href='supprimer_produit.php?id=<?php echo $id; ?>' onclick="return(confirm('Etes-vous sûr de vouloir supprimer ce produit?'))"; >
                                     <i class="glyphicon glyphicon-trash icon-white"></i>
                                     Supprimer
                                 </a>
