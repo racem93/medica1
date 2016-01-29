@@ -15,14 +15,15 @@ if (isset($_POST["contrat"])) {
     $tel_ben="";
     $cin_ben="";
     extract($_POST);
+    $transport=$transport*0.6+15;
 }
 if (isset($_POST["ajout"])) {
     $cin_client="";
     extract($_POST);
-    $req1 = "INSERT INTO commande (ref,nom_client,adresse_client,tel_client,gsm_client,cin_client,date_cin,nom_ben,adresse_ben,tel_ben,cin_ben,total_htva,total_tva,total_ttc,total_caution,date_commande,etat_commande)
+    $req1 = "INSERT INTO commande (ref,nom_client,adresse_client,tel_client,gsm_client,cin_client,date_cin,nom_ben,adresse_ben,tel_ben,cin_ben,total_htva,total_tva,total_ttc,total_caution,date_commande,acompte,prix_transport,etat_commande)
 VALUES (" ."'".$ref."'"."," ."'".$nom_client."'".","."'".$adresse_client."'".","."'".$tel_client."'".","."'".$gsm_client."'".","."'".$cin_client."'".","."'".$date_cin."'".",
 "."'".$nom_ben."'".","."'".$adresse_ben."'".","."'".$tel_ben."'".","."'".$cin_ben."'".",
-"."'".$total_htva."'".","."'".$total_tva."'".","."'".$total_ttc."'".","."'".$total_caution."'".","."'".$date_commande."'".",1)";
+"."'".$total_htva."'".","."'".$total_tva."'".","."'".$total_ttc."'".","."'".$total_caution."'".","."'".$date_commande."'".","."'".$acompte."'".","."'".$transport."'".",1)";
     $oPDOStatement=$connect->query($req1); // Le résultat est un objet de la classe PDOStatement
 
     //id_dernier d'une commande
@@ -217,7 +218,19 @@ VALUES (" ."'".$ref."'"."," ."'".$nom_client."'".","."'".$adresse_client."'".","
                             $total_ttc=$total_htva+$total_tva;
                             echo "
                             <div class='row'>
-                            <div class='col-md-8'></div>
+                            <div class='col-md-8'>
+                            <div class='row'>
+                            <div class='col-md-1'></div>
+                            <div class='col-md-2' align='center'>
+                            <b>ACOMPTE</b><br>".$acompte."&nbsp; DT
+                            </div>
+                            <div class='col-md-1'></div>
+                            <div class='col-md-2' align='center'>
+                            <b>TRANSPORT</b><br>".$transport."&nbsp; DT
+                            </div>
+                            </div>
+
+                            </div>
                             <div class='col-md-4' align='right'><div class='form-inline'> <b>TOTAL HTVA</b> &nbsp;<input type='text' class='form-control' value='".$total_htva."&nbsp Dt' disabled><br>
                              <b>TVA 18%</b> &nbsp;<input type='text' class='form-control' value='".$total_tva."&nbsp Dt' disabled><br>
                              <b>TOTAL TTC </b>&nbsp;<input type='text' class='form-control' value='".$total_ttc."&nbsp Dt' disabled><br><br>
@@ -243,11 +256,13 @@ VALUES (" ."'".$ref."'"."," ."'".$nom_client."'".","."'".$adresse_client."'".","
                             <input type="hidden" name="total_caution" value="<?php echo $total_caution; ?>" >
                             <input type="hidden" name="ref" value="<?php echo $ref; ?>" >
                             <input type="hidden" name="date_commande" value="<?php echo $date_commande; ?>" >
+                            <input type="hidden" name="acompte" value="<?php echo $acompte; ?>" >
+                            <input type="hidden" name="transport" value="<?php echo $transport; ?>" >
                             <?php }?>
                         <div class="row">
                             <div class="col-md-1"><a href="javascript:history.go(-1)"><button type="button" class="btn btn-default" name="retour" style="width: 200px" ><i class="glyphicon glyphicon-fast-backward"></i> &nbsp;Retour</button></a></div>
                             <div class="col-md-3"></div>
-                            <button type="submit" class="btn btn-primary" name="ajout" style="width: 200px" >Ajouter</button>
+                            <button type="submit" class="btn btn-primary" name="ajout" style="width: 200px" >Confirmer</button>
                         </div>
                             </form>
 

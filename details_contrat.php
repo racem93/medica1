@@ -35,6 +35,8 @@ while ($row = $oPDOStatement->fetch()) {
     $total_htva = $row->total_htva;
     $total_tva = $row->total_tva;
     $total_ttc = $row->total_ttc;
+    $acompte = $row->acompte;
+    $transport= $row->prix_transport;
 
 }
 ?>
@@ -238,7 +240,20 @@ while ($row = $oPDOStatement->fetch()) {
 
                     echo "
                             <div class='row'>
-                            <div class='col-md-8'></div>
+                            <div class='col-md-8'>
+
+                            <div class='row'>
+                            <div class='col-md-1'></div>
+                            <div class='col-md-2' align='center'>
+                            <b>ACOMPTE</b><br>".$acompte."&nbsp; DT
+                            </div>
+                            <div class='col-md-1'></div>
+                            <div class='col-md-2' align='center'>
+                            <b>TRANSPORT</b><br>".$transport."&nbsp; DT
+                            </div>
+                            </div>
+
+                            </div>
                             <div class='col-md-4' align='right'><div class='form-inline'> <b>TOTAL HTVA</b> &nbsp;<input type='text' class='form-control' value='".$total_htva."&nbsp Dt' disabled><br>
                              <b>TVA 18%</b> &nbsp;<input type='text' class='form-control'value='".$total_tva."&nbsp Dt' disabled><br>
                              <b>TOTAL TTC </b>&nbsp;<input type='text' class='form-control' value='".$total_ttc."&nbsp Dt' disabled><br><br>

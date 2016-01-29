@@ -153,7 +153,7 @@ if (isset($_GET["msg"])) {
 
             <div class="box-inner">
                 <div class="box-header well" data-original-title="">
-                    <h2><i class="glyphicon glyphicon-user"></i> Liste des models</h2>
+                    <h2><i class="glyphicon glyphicon-user"></i> Liste des produits</h2>
                     <div class="box-icon">
 
                         <a href="#" class="btn btn-minimize btn-round btn-default"><i
@@ -231,11 +231,22 @@ if (isset($_GET["msg"])) {
                 </div>
             </div>
             <div class="box-content">
+                <div class="form-inline">
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-1"><label >ACOMPTE </label></div>
+                    <div class="col-md-3"><input type="text" name="acompte" class="form-control"  id="exampleInputEmail1" value="0" style="width: 100px"   autofocus required>&nbsp;DT
+                    </div>
+                    <div class="col-md-1"><label >TRANSPORT</label></div>
+                    <div class="col-md-5"><input type="text" name="transport" class="form-control"  id="exampleInputEmail1" value="0" style="width: 100px"  >&nbsp;Nb.KM
+                    </div>
+                </div>
+                    </div>
             </div>
         </div>
     </div>
 </div>
 
- <div align="lepht"><button type="submit" name="contrat"  class="btn btn-lg btn-primary" style="background-color:#0C6;"><i class="glyphicon glyphicon-shopping-cart"></i> Enregitrer la contrat </button></div>
+ <div align="center"><button type="submit" name="contrat"  class="btn btn-lg btn-primary" style="background-color:#0C6;"><i class="glyphicon glyphicon-shopping-cart"></i> Enregitrer la contrat </button></div>
 </form>
 <?php require('footer.php'); ?>
