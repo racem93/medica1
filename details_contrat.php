@@ -157,6 +157,7 @@ while ($row = $oPDOStatement->fetch()) {
                                     $oPDOStatements2->setFetchMode(PDO::FETCH_ASSOC);;//retourne true on success, false otherwise.
                                     while ($data=$oPDOStatements2->fetch())//Récupère la ligne suivante d'un jeu de résultat PDO
                                     {
+                                        $id=$data['id'];
                                         $id_produit = $data['id_produit'];
                                         $id_lit = $data['id_lit'];
                                         $prix_unit_ht = $data['prix_unit_ht'];
@@ -201,12 +202,15 @@ while ($row = $oPDOStatement->fetch()) {
                                     }
                                         ?>
                                         <td>
+                                        <?php
+                                                if ($etat_louer!=0) { ?>
                                                 <a class="btn btn-danger" href='retour_produit.php?id=<?php echo $id; ?>' onclick="return(confirm('Etes-vous sûr de vouloir supprimer ce produit?'))"; >
                                                     <i class="glyphicon glyphicon-download-alt"></i>
                                                     Retour
                                                 </a>
                                             </td></tr>
                                     <?php
+                                        }
                                     }
                                     ?>
 
