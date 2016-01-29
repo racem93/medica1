@@ -144,9 +144,10 @@ while ($row = $oPDOStatement->fetch()) {
                                         <th style="width:40%;">Produit</th>
                                         <th style="width:15%;">Période</th>
                                         <th style="width:15%;">Qte</th>
-                                        <th style="width:30%;">P.U HTVA</th>
+                                        <th style="width:15%;">P.U HTVA</th>
                                         <th style="width:15%;">Montant</th>
                                         <th style="width:15%;">Caution/Unité</th>
+                                        <th style="width:15%;">Etat</th>
                                         <th style="width:15%;">Retour.Produit</th>
 
                                     </tr>
@@ -196,11 +197,22 @@ while ($row = $oPDOStatement->fetch()) {
                                         if ($mois!=0) {echo $mois." Mois";}
                                         echo "</td>
                                           <td>".$qte."</td>
-                                          <td>".$prix_unit_ht."</td>
-                                          <td>".$prix_total."</td>
-                                          <td>".$prix_caution."</td>";//Lecture des résultats
-                                    }
-                                        ?>
+                                          <td>".$prix_unit_ht."DT</td>
+                                          <td>".$prix_total."DT</td>
+                                          <td>".$prix_caution."DT</td>";
+                                        }
+
+                                        if ($etat_louer==1) {
+                                                echo '<td class="center-text">
+                                                    <span class="label-success label label-default">EN COURS</span>
+                                                </td>';
+                                               }
+                                         elseif ($etat_louer==0) {
+                                                echo '<td class="center-text">
+                                                <span class="label-default label"">FINI</span>
+                                                </td>';
+                                                }
+                                         ?>
                                         <td>
                                         <?php
                                                 if ($etat_louer!=0) { ?>

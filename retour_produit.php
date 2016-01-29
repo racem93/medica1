@@ -18,6 +18,7 @@ $oPDOStatements2->setFetchMode(PDO::FETCH_ASSOC);;//retourne true on success, fa
 while ($data=$oPDOStatements2->fetch())//Récupère la ligne suivante d'un jeu de résultat PDO
 {
     $id = $data['id'];
+    $id_commande = $data['id_commande'];
     $id_produit = $data['id_produit'];
     $id_lit = $data['id_lit'];
     $etat_louer = $data['etat_louer'];
@@ -34,5 +35,8 @@ if ($id_lit!=0) {
     $req7 = "UPDATE `produit` SET `qte_louer`=`qte_louer`-1  WHERE `id`=$id_produit ";
     $oPDOStatement7 = $connect->query($req7);
 }
+echo "<SCRIPT LANGUAGE='JavaScript'>
+    self.parent.location.href='gestion_contrat.php?comm=".$id_commande."';
+    </SCRIPT> ";
 
 ?>

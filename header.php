@@ -68,20 +68,29 @@ if(!isset($_SESSION['admin']))
     <link rel="shortcut icon" href="img/favicon.jpg">
 
 
+<?php if (isset($_GET["comm"])) {
 
-    <!--<script type="text/javascript">
+
+    echo "<script type='text/javascript'>
 
         function autoClick() {
             document.getElementById('iframe').click();
         }
 
-    </script>!-->
+    </script>";
+}
+?>
 
 </head>
 
-<body> <!--onLoad="autoClick();"!-->
+<body <?php if (isset($_GET["comm"])) { echo 'onLoad="autoClick();"'; } ?> > <!--onLoad="autoClick();"!-->
 <?php if (!isset($no_visible_elements) || !$no_visible_elements) { ?>
     <!-- topbar starts -->
+<?php if (isset($_GET["comm"])) {
+        $id=$_GET["comm"];
+        ?>
+    <a href="details_contrat.php?id=<?php echo $id; ?>" id="iframe"></a>
+    <?php } ?>
     <div class="navbar navbar-default" role="navigation">
 
         <div class="navbar-inner">
