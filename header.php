@@ -114,30 +114,81 @@ if(!isset($_SESSION['admin']))
                     <li class="divider"></li>
                     <li><a href="deconnexion.php">Logout</a></li>
                 </ul>
+
+
             </div>
+
+
+
             <!-- user dropdown ends -->
 
             <!-- theme selector starts -->
-            <!--
-            <div class="btn-group pull-right theme-container animated tada">
-                <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                    <i class="glyphicon glyphicon-tint"></i><span
-                        class="hidden-sm hidden-xs"> Change Theme / Skin</span>
-                    <span class="caret"></span>
+            <div class="btn-group pull-right ">
+                |
+                </div>
+            <div class="btn-group pull-right ">
+            </div>
+            <div class="btn-group pull-right theme-container animated tada ">
+                <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                    <i class="glyphicon glyphicon-bell  "></i>
+                    <span class="notification red">5</span>
+
                 </button>
-                <ul class="dropdown-menu" id="themes">
-                    <li><a data-value="classic" href="#"><i class="whitespace"></i> Classic</a></li>
-                    <li><a data-value="cerulean" href="#"><i class="whitespace"></i> Cerulean</a></li>
-                    <li><a data-value="cyborg" href="#"><i class="whitespace"></i> Cyborg</a></li>
-                    <li><a data-value="simplex" href="#"><i class="whitespace"></i> Simplex</a></li>
-                    <li><a data-value="darkly" href="#"><i class="whitespace"></i> Darkly</a></li>
-                    <li><a data-value="lumen" href="#"><i class="whitespace"></i> Lumen</a></li>
-                    <li><a data-value="slate" href="#"><i class="whitespace"></i> Slate</a></li>
-                    <li><a data-value="spacelab" href="#"><i class="whitespace"></i> Spacelab</a></li>
-                    <li><a data-value="united" href="#"><i class="whitespace"></i> United</a></li>
+                <ul class="dropdown-menu" >
+                    <?php
+                    include_once("config/MyPDO.class.php");
+                    $connect=new MyPDO();
+                    $req2="select * from ligne_commande where etat_louer =1";
+                    $oPDOStatements2=$connect->query($req2); // Le r&eacute;sultat est un objet de la classe PDOStatement
+                    $oPDOStatements2->setFetchMode(PDO::FETCH_ASSOC);;//retourne true on success, false otherwise.
+                    while ($data=$oPDOStatements2->fetch())//Récupère la ligne suivante d'un jeu de résultat PDO
+                    {
+                        $id = $data['id'];
+                        $id_commande = $data['id_commande'];
+                        $id_produit = $data['id_produit'];
+                        $semaine = $data['semaine'];
+                        $mois = $data['mois'];
+                        $jours=$semaine*7;
+
+                    $req3="select ref,date_commande from commande where id =$id_commande";
+                    $oPDOStatements3=$connect->query($req3); // Le r&eacute;sultat est un objet de la classe PDOStatement
+                    $oPDOStatements3->setFetchMode(PDO::FETCH_ASSOC);;//retourne true on success, false otherwise.
+                    while ($data3=$oPDOStatements3->fetch())//Récupère la ligne suivante d'un jeu de résultat PDO
+                    {
+
+                        $DateDebut = $data3['date_commande'];
+                        $ref=$data3['ref'];
+                        $DateFin = date('Y-m-d', strtotime($DateDebut.' +'.$jours.' days'));
+                        $DateFin = date('Y-m-d', strtotime($DateFin.' +'.$mois.' month'));
+                        $date = date("Y-m-d");
+
+                        if ($date >= $DateFin)
+                        {
+                            $req4="select nom from produit where id =$id_produit";
+                            $oPDOStatements4=$connect->query($req4); // Le r&eacute;sultat est un objet de la classe PDOStatement
+                            $oPDOStatements4->setFetchMode(PDO::FETCH_ASSOC);;//retourne true on success, false otherwise.
+                            while ($data3=$oPDOStatements4->fetch())//Récupère la ligne suivante d'un jeu de résultat PDO
+                            {
+                                $nom=$data3['nom'];
+                            }
+                            echo '<li class="divider"></li>';
+                            echo '<li><a  href="gestion_contrat.php?comm='.$id_commande.'"><i class="glyphicon glyphicon-warning-sign red"></i> La période de la prdouit <b>'.$nom.'</b><br> de la contrat N° <b>'.$ref.'</b> a été terminer </a></li>';
+                            echo '<li class="divider"></li>';
+
+                        }
+
+                    }
+
+                    }
+
+                    ?>
+
+
+
+
                 </ul>
             </div>
-            -->
+
             <!-- theme selector ends -->
             <!--
             <ul class="collapse navbar-collapse nav navbar-nav top-menu">

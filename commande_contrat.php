@@ -42,7 +42,7 @@ VALUES (" ."'".$ref."'"."," ."'".$nom_client."'".","."'".$adresse_client."'".","
 ?>
 <?php require('header.php'); ?>
 <div class="row">
-    <div class="col-md-2"><label>N°</label><input type="text" name="ref" class="form-control" value="<?php echo $ref; ?>" disabled></div>
+    <div class="col-md-2"><label>N°</label><input type="text" name="ref" class="form-control" value="<?php echo $numero; ?>" disabled></div>
     <div class="col-md-2"><label>Date creation</label><input type="text" name="date_commande" class="form-control" value="<?php echo $date_commande ?>" disabled></div>
     </div>
     <div class="row">
@@ -254,7 +254,7 @@ VALUES (" ."'".$ref."'"."," ."'".$nom_client."'".","."'".$adresse_client."'".","
                             <input type="hidden" name="total_tva" value="<?php echo $total_tva; ?>" >
                             <input type="hidden" name="total_ttc" value="<?php echo $total_ttc; ?>" >
                             <input type="hidden" name="total_caution" value="<?php echo $total_caution; ?>" >
-                            <input type="hidden" name="ref" value="<?php echo $ref; ?>" >
+                            <input type="hidden" name="ref" value="<?php echo $numero; ?>" >
                             <input type="hidden" name="date_commande" value="<?php echo $date_commande; ?>" >
                             <input type="hidden" name="acompte" value="<?php echo $acompte; ?>" >
                             <input type="hidden" name="transport" value="<?php echo $transport; ?>" >

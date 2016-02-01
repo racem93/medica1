@@ -18,7 +18,7 @@ $req1="SELECT * FROM `commande` WHERE `id`=$id; ";
 $oPDOStatement=$connect->query($req1); // Le résultat est un objet de la classe PDOStatement
 $oPDOStatement->setFetchMode(PDO::FETCH_OBJ);
 while ($row = $oPDOStatement->fetch()) {
-    $id = $row->id;
+    $id_commande = $row->id;
     $ref = $row->ref;
     $nom_client = $row->nom_client;
     $date_commande = $row->date_commande;
@@ -265,7 +265,7 @@ while ($row = $oPDOStatement->fetch()) {
 
                     <div class="row">
                         <div class="col-md-2"></div>
-                        <a href="contrat_pdf.php?id=<?php echo $id;?>" class="btn btn-info btn-lg">
+                        <a href="contrat_pdf.php?id=<?php echo $id_commande;?>" class="btn btn-info btn-lg">
                             <i class="glyphicon glyphicon-print"></i> IMPRIMER</a>
                     </div>
 

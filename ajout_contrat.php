@@ -41,8 +41,8 @@ if (isset($_GET["msg"])) {
 ?>
 <form action="commande_contrat.php" name="formulaire" method="post">
 <div class="row">
-    <div class="col-md-2"><label>N°</label><input type="text" name="ref" class="form-control" value="<?php echo $max_commande; ?>" disabled></div>
-    <input type="hidden" name="ref" value="<?php echo $max_commande; ?>" >
+    <div class="col-md-2"><label>N°</label><input type="text" name="numero" class="form-control" value="<?php echo $max_commande; ?>" disabled></div>
+    <input type="hidden" name="numero" value="<?php echo $max_commande; ?>" >
     <div class="col-md-2"><label>Date creation</label><input type="date" name="date_commande" class="form-control" value="<?php echo date("Y-m-d"); ?>"></div>
     <div class="col-md-2"></div>
     <div class="col-md-6"><a href="prod_select.php" id="iframe" align="lepht"> <div align="right"><button type="submit" class="btn btn-lg btn-primary" style="background-color:#0C6;"><i class="glyphicon glyphicon-th-large"></i> Consulter Les Models Séléctionnés </button></div> </a>
@@ -175,7 +175,7 @@ if (isset($_GET["msg"])) {
                         while ($row = $oPDOStatement->fetch())
                         {
                             $id=$row->id;
-                            $ref=$row->ref;
+                            $ref_produit=$row->ref;
                             $nom=$row->nom;
                             $type=$row->type;
                             $qte_total=$row->qte;
@@ -193,7 +193,7 @@ if (isset($_GET["msg"])) {
 
                         ?>
                         <tr>
-                            <td class="center-text"><?php echo $ref ?></td>
+                            <td class="center-text"><?php echo $ref_produit ?></td>
                             <td class="center-text"><?php echo $nom ?></td>
                             <td class="center-text"><?php echo $qte_stock ?></td>
                             <?php
