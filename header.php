@@ -172,7 +172,7 @@ if(!isset($_SESSION['admin']))
                                 $nom=$data3['nom'];
                             }
                             echo '<li class="divider"></li>';
-                            echo '<li><a  href="gestion_contrat.php?comm='.$id_commande.'"><i class="glyphicon glyphicon-warning-sign red"></i> La période de la prdouit <b>'.$nom.'</b><br> de la contrat N° <b>'.$ref.'</b> a été terminer </a></li>';
+                            echo '<li><a  href="gestion_contrat.php?comm='.$id_commande.'"><i class="glyphicon glyphicon-warning-sign red"></i> La période de la prdouit <b>'.$nom.'</b><br> de la contrat N° <b>'.$ref.'</b> a été terminer <br></a></li>';
                             echo '<li class="divider"></li>';
 
                         }

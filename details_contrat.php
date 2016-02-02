@@ -38,9 +38,13 @@ while ($row = $oPDOStatement->fetch()) {
     $acompte = $row->acompte;
     $transport= $row->prix_transport;
 
+    $DateDebut=$date_commande;
+
+
+
 }
 ?>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8">
     <title>MEDICA</title>
@@ -145,12 +149,13 @@ while ($row = $oPDOStatement->fetch()) {
                                     <tr>
                                         <th style="width:40%;">Produit</th>
                                         <th style="width:15%;">Période</th>
+                                        <th style="width:20%;">Date Fin</th>
                                         <th style="width:15%;">Qte</th>
                                         <th style="width:15%;">P.U HTVA</th>
                                         <th style="width:15%;">Montant</th>
                                         <th style="width:15%;">Caution/Unité</th>
                                         <th style="width:15%;">Etat</th>
-                                        <th style="width:15%;">Retour.Produit</th>
+                                        <th style="width:10%;">Retour.Produit</th>
 
                                     </tr>
                                     </thead>
@@ -171,6 +176,10 @@ while ($row = $oPDOStatement->fetch()) {
                                         $etat_louer=$data['etat_louer'];
 
                                         $prix_total=$qte*$prix_unit_ht;
+                                        $jours=$semaine*7;
+                                        $DateFin = date('Y-m-d', strtotime($DateDebut.' +'.$jours.' days'));
+                                        $DateFin = date('Y-m-d', strtotime($DateFin.' +'.$mois.' month'));
+                                        $date = date("Y-m-d");
 
                                     $req3="select * from produit where id =$id_produit";
                                     $oPDOStatements3=$connect->query($req3); // Le r&eacute;sultat est un objet de la classe PDOStatement
@@ -179,9 +188,12 @@ while ($row = $oPDOStatement->fetch()) {
                                     {
                                         $idd=$data3['id'];
                                         $type=$data3['type'];
+                                        ?>
 
-                                        echo "<tr>
-                                            <td>".$data3['nom'];
+                                        <tr <?php if ($date >= $DateFin){ echo "style='color: #ff0000'"; } ?> >
+                                        <?php
+
+                                            echo "<td>".$data3['nom'];
                                         if ($type==1) {
                                             $req1="SELECT ref_lit FROM `lit` WHERE id=$id_lit";
                                             $oPDOStatement1=$connect->query($req1); // Le résultat est un objet de la classe PDOStatement
@@ -198,6 +210,7 @@ while ($row = $oPDOStatement->fetch()) {
                                           <td>";if ($semaine!=0) {echo $semaine." Semaine <br>";}
                                         if ($mois!=0) {echo $mois." Mois";}
                                         echo "</td>
+                                          <td>".$DateFin."</td>
                                           <td>".$qte."</td>
                                           <td>".$prix_unit_ht."DT</td>
                                           <td>".$prix_total."DT</td>
