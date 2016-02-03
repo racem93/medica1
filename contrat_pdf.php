@@ -44,7 +44,8 @@ while ($row = $oPDOStatement->fetch()) {
     $total_htva = $row->total_htva;
     $total_tva = $row->total_tva;
     $total_ttc = $row->total_ttc;
-
+    $accompte = $row->acompte;
+    $transport= $row->prix_transport;
 }
 
 //***********************//
@@ -83,9 +84,9 @@ $pdf->addbenificiaire("M/Mme : $nom_ben\nAdresse : $adresse_ben\nTel : $tel_ben\
 
 $pdf->totalettctva($total_htva,$total_tva,$total_ttc,$total_caution);
 
-$accompte=300;
+//$accompte=300;
 $pdf->Accompte($accompte);
-$pdf->transport();
+$pdf->transport($transport);
 
 $let=strtoupper(int2str($total_ttc));
 
@@ -93,7 +94,7 @@ $pdf->contratenttelettre("$let");
 
 
 
-$cols=array( "Ref."    => 11,
+$cols=array( "Ord."    => 11,
     "DESIGNATION"  => 70,
     "Periode"     => 20,
 
@@ -102,7 +103,7 @@ $cols=array( "Ref."    => 11,
     "MT H.T." => 27,
     "Caution/Unite"          => 28 );
 $pdf->addCols2( $cols);
-$cols=array( "REFERENCE"    => "L",
+$cols=array( "Ord."    => "L",
     "DESIGNATION"  => "L",
     "Periode"     => "C",
 
@@ -160,13 +161,13 @@ $nbPage=1;
                             $reflittotal="MM2-L".$ref_lit . "-S";
                         }
 
-                        $semainetot=0;
-                        if ($semaine != 0) {
+                        $semainetot="";
+                        if ($semaine != "") {
                           //  echo $semaine . " Semaine <br>";
                             $semainetot=$semaine . " Sem";
                         }
-                        $moistot=0;
-                        if ($mois != 0) {
+                        $moistot="";
+                        if ($mois != "") {
                             //echo $mois . " Mois";
                             $moistot=$mois . " Mois";
                         }
@@ -177,7 +178,7 @@ $nbPage=1;
                         if ($k < 27) {
 
                             if ($type == 1) {
-                                $line = array("Ref." => "1",
+                                $line = array("Ord." => "$k",
                                     "DESIGNATION" => "$nomprod\nRef: $reflittotal",
                                     "Periode" => "$semainetot\n$moistot",
 
@@ -188,7 +189,7 @@ $nbPage=1;
                                     "Caution/Unite" => number_format($prix_caution, 3));
 
                             }else{
-                                $line = array("Ref." => "1",
+                                $line = array("Ord." => "$k",
                                     "DESIGNATION" => "$nomprod",
                                     "Periode" => "$semainetot\n$moistot",
 
@@ -202,7 +203,7 @@ $nbPage=1;
 
 
                             $size = $pdf->addLine($y, $line);
-                            $y += $size + 4.2;
+                            $y += $size + 4.3;
 
 
 
@@ -223,7 +224,6 @@ $nbPage=1;
 
 
 
-//$pdf->addsignature();
 
 
 //$pdf->Output("$repconstratlit\CL"."$reflit"."_"."$today.pdf",'F');

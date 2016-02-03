@@ -1,36 +1,5 @@
 <?php
 require('extras/fpdf/fpdf.php');
-define('EURO', chr(128) );
-define('EURO_VAL', 6.55957 );
-
-// Xavier Nicolay 2004
-// Version 1.02
-
-//////////////////////////////////////
-// Public functions                 //
-//////////////////////////////////////
-//  function sizeOfText( $texte, $larg )
-//  function addSociete( $nom, $adresse )
-//  function fact_dev( $libelle, $num )
-//  function addDevis( $numdev )
-//  function addFacture( $numfact )
-//  function addDate( $date )
-//  function addClient( $ref )
-//  function addPageNumber( $page )
-//  function addClientAdresse( $adresse )
-//  function addReglement( $mode )
-//  function addEcheance( $date )
-//  function addNumTVA($tva)
-//  function addReference($ref)
-//  function addCols( $tab )
-//  function addLineFormat( $tab )
-//  function lineVert( $tab )
-//  function addLine( $ligne, $tab )
-//  function addRemarque($remarque)
-//  function addCadreTVAs()
-//  function addCadreEurosFrancs()
-//  function addTVAs( $params, $tab_tva, $invoice )
-//  function temporaire( $texte )
 
 class PDF_Invoice extends FPDF
 {
@@ -547,7 +516,7 @@ function addbenificiaire( $adresse )
 
 	}
 
-	function transport($transport)
+	function transport()
 	{
 		$r1  = $this->w - 50;
 		$r2  = $r1 + 77;
@@ -561,9 +530,7 @@ function addbenificiaire( $adresse )
 		$this->SetFont( "Arial", "", 10);
 		$this->Cell(10,5, "TRANSPORT", 0, 0, "C");
 
-		$this->SetXY( $r1 + ($r2-$r1)/2 - 121, $y1+11 );
-		$this->SetFont( "Arial", "", 12);
-		$this->Cell(25,6,number_format($transport, 3)." DT", 0,0, "C");
+
 
 
 	}
@@ -598,53 +565,7 @@ function addbenificiaire( $adresse )
 
 
 	}
-	function Footer()
-	{
-		$r1  = $this->w - 50;
-		$r2  = $r1 + 40;
-		$y1  = 218.2;
-		$this->SetFont( "Arial", "I", 10);
-		$this->SetXY( $r1  , $y1 + 55);
 
-		$this->Cell(18,4.8,"Caution etablie par :", 0,0, "C");
-		$this->SetXY( $r1 -8.3 , $y1 + 59.9 );
-
-		$this->MultiCell( 50, 7.6, "................................................................................................");
-
-		//------------------------------------------------------------
-
-
-
-		$this->RoundedRect($r1-56, $y1+52, ($r2 - $r1), 24, 1, 'D');
-		$this->Line( $r1-56, $y1+58, $r2-56, $y1+58);
-
-		$this->SetXY( $r1 + ($r2-$r1)/2 - 61, $y1+53 );
-		$this->SetFont( "Arial", "", 10);
-		$this->Cell(10,5, "MedicA", 0, 0, "C");
-
-
-		$this->RoundedRect($r1-150, $y1+52, ($r2 - $r1), 24, 1, 'D');
-		$this->Line( $r1-150, $y1+58, $r2-150, $y1+58);
-
-		$this->SetXY( $r1 + ($r2-$r1)/2 - 156, $y1+53 );
-		$this->SetFont( "Arial", "", 10);
-		$this->Cell(10,5, "Le Client", 0, 0, "C");
-
-
-		$this->SetFont( "Arial", "I", 9);
-		$this->SetXY( $r1-106  , $y1 + 53.5);
-
-		//$this->Cell(18,4.8,"Ce contrat est lu et approuve.\nFait en double examplaires,a :", 0,0, "C");
-		$this->MultiCell( 50, 3, "Ce contrat est lu et approuve.\nFait en double examplaires,a :");
-
-		$this->SetXY( $r1 -108 , $y1 + 59.9 );
-		$this->SetFont( "Arial", "I", 10);
-
-		$this->MultiCell( 50, 7.6, "................................................................................................");
-
-
-
-	}
 // Mode of payment
 function addReglement( $mode )
 {

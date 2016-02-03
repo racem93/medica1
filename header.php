@@ -103,8 +103,8 @@ if(!isset($_SESSION['admin']))
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="acceuil.php"> <img alt="Charisma Logo" src="img/logo20.png" class="hidden-xs"/>
-                <span>MEDICA</span> SHOP</a>
+            <a class="navbar-brand" href="acceuil.php"> <img alt="MedicA Logo" src="img/logo.jpg" class="hidden-xs" width="20" height="20"/>
+                <span>MEDICA </span>SHOP</a>
 
             <!-- user dropdown starts -->
             <div class="btn-group pull-right">

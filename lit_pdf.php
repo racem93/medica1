@@ -2,7 +2,7 @@
 // (c) Xavier Nicolay
 // Exemple de g�n�ration de devis/facture PDF
 
-require('invoice.php');
+require('invoice_lit.php');
 
 //************************//
 $today = date("d-m-Y");
