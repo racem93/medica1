@@ -190,7 +190,7 @@ while ($row = $oPDOStatement->fetch()) {
                                         $type=$data3['type'];
                                         ?>
 
-                                        <tr <?php if ($date >= $DateFin){ echo "style='color: #ff0000'"; } ?> >
+                                        <tr <?php if (($date >= $DateFin)&&($etat_louer==1)){ echo "style='color: #ff0000'"; } ?> >
                                         <?php
 
                                             echo "<td>".$data3['nom'];

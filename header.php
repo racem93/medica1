@@ -7,7 +7,10 @@ if(!isset($_SESSION['admin']))
 }
 
 ?>
-<?php include 'config.php' ?>
+<?php include 'config.php';
+ include_once("config/MyPDO.class.php");
+                    $connect=new MyPDO();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -131,13 +134,45 @@ if(!isset($_SESSION['admin']))
             <div class="btn-group pull-right theme-container animated tada ">
                 <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                     <i class="glyphicon glyphicon-bell  "></i>
-                    <span class="notification red">5</span>
+                    <?php
+                    $a=0;
+                    $req2="select * from ligne_commande where etat_louer =1";
+                    $oPDOStatements2=$connect->query($req2); // Le r&eacute;sultat est un objet de la classe PDOStatement
+                    $oPDOStatements2->setFetchMode(PDO::FETCH_ASSOC);;//retourne true on success, false otherwise.
+                    while ($data=$oPDOStatements2->fetch())//Récupère la ligne suivante d'un jeu de résultat PDO
+                    {
+                    $id = $data['id'];
+                    $id_commande = $data['id_commande'];
+                    $id_produit = $data['id_produit'];
+                    $semaine = $data['semaine'];
+                    $mois = $data['mois'];
+                    $jours=$semaine*7;
+
+                    $req3="select ref,date_commande from commande where id =$id_commande";
+                    $oPDOStatements3=$connect->query($req3); // Le r&eacute;sultat est un objet de la classe PDOStatement
+                    $oPDOStatements3->setFetchMode(PDO::FETCH_ASSOC);;//retourne true on success, false otherwise.
+                    while ($data3=$oPDOStatements3->fetch())//Récupère la ligne suivante d'un jeu de résultat PDO
+                    {
+
+                    $DateDebut = $data3['date_commande'];
+                    $ref=$data3['ref'];
+                    $DateFin = date('Y-m-d', strtotime($DateDebut.' +'.$jours.' days'));
+                    $DateFin = date('Y-m-d', strtotime($DateFin.' +'.$mois.' month'));
+                    $date = date("Y-m-d");
+
+                    if ($date >= $DateFin) {
+                        $a++;
+
+                    }
+                    }
+                    }
+                    ?>
+                    <span class="notification red"><?php echo $a; ?></span>
 
                 </button>
                 <ul class="dropdown-menu" >
                     <?php
-                    include_once("config/MyPDO.class.php");
-                    $connect=new MyPDO();
+
                     $req2="select * from ligne_commande where etat_louer =1";
                     $oPDOStatements2=$connect->query($req2); // Le r&eacute;sultat est un objet de la classe PDOStatement
                     $oPDOStatements2->setFetchMode(PDO::FETCH_ASSOC);;//retourne true on success, false otherwise.
@@ -171,7 +206,7 @@ if(!isset($_SESSION['admin']))
                             {
                                 $nom=$data3['nom'];
                             }
-                            echo '<li class="divider"></li>';
+                            //echo '<li class="divider"></li>';
                             echo '<li><a  href="gestion_contrat.php?comm='.$id_commande.'"><i class="glyphicon glyphicon-warning-sign red"></i> La période de la prdouit <b>'.$nom.'</b><br> de la contrat N° <b>'.$ref.'</b> a été terminer <br></a></li>';
                             echo '<li class="divider"></li>';
 
