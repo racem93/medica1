@@ -67,6 +67,10 @@ if (isset($_GET["id"])) {
         elseif (($ref_telecommande<100)&&($ref_telecommande>=10)) {$ref_telecommande="0".$ref_telecommande;}
 
     }
+
+    $req2="SELECT * FROM `produit` where `type`=1";
+    $oPDOStatement2=$connect->query($req2); // Le résultat est un objet de la classe PDOStatement
+    $oPDOStatement2->setFetchMode(PDO::FETCH_OBJ);
 }
 //Fin de la remplissage des formulaires
 ?>
@@ -130,7 +134,18 @@ if (isset($_GET["id"])) {
                                 <div class="row">
                                     <div class="col-md-1" width="10%"></div>
                                     <div class="col-md-3" width="30%"><label class="control-label"><h3 style="display:inline;"><b>MODELE DE LIT:</b></h3></label></div>
-                                    <div class="col-md-8" width="60%"> <input type="text" class="form-control" style="width: 500px;" name="nom" value="<?php echo $nom; ?>" ></div>
+                                    <div class="col-md-8" width="60%">
+                                        <select id="selectError" data-rel="chosen" class="col-md-8" name="nom" style="width: 400px">
+                                            <?php
+                                            while ($row = $oPDOStatement2->fetch()) {
+                                                $id_produit = $row->id;
+                                                $nom_produit = $row->nom;
+                                                ?>
+                                                <option <?php if ($id_produit==$nom){ echo "selected"; } ?> value="<?php echo $id_produit; ?>"><?php echo $nom_produit; ?></option>
+
+                                            <?php  }?>
+                                            </select>
+                                    </div>
                                 </div>
                             </div>
                             <br>

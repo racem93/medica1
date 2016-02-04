@@ -43,7 +43,7 @@ if (isset($_GET["msg"])) {
 <div class="row">
     <div class="col-md-2"><label>N°</label><input type="text" name="numero" class="form-control" value="<?php echo $max_commande; ?>" disabled></div>
     <input type="hidden" name="numero" value="<?php echo $max_commande; ?>" >
-    <div class="col-md-2"><label>Date creation</label><input type="date" name="date_commande" class="form-control" value="<?php echo date("Y-m-d"); ?>"></div>
+    <div class="col-md-2"><label>Date creation</label><input type="date" name="date_commande" class="form-control" value="<?php  echo date("Y-m-d"); ?>"></div>
     <div class="col-md-2"></div>
     <div class="col-md-6"><a href="prod_select.php" id="iframe" align="lepht"> <div align="right"><button type="submit" class="btn btn-lg btn-primary" style="background-color:#0C6;"><i class="glyphicon glyphicon-th-large"></i> Consulter Les Models Séléctionnés </button></div> </a>
     </div>

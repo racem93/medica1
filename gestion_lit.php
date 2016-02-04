@@ -47,11 +47,12 @@ if (isset($_GET["msg"])) {
                         <thead>
                         <tr>
                             <th class="center-text" width="10%">REF. DU LIT</th>
-                            <th class="center-text">REF. MOTEUR PRINCIPAL</th>
-                            <th class="center-text">REF. MOTEUR R-B</th>
-                            <th class="center-text">REF. TELECOMMANDE</th>
-                            <th class="center-text">ETAT DU LIT</th>
-                            <th class="center-text">ACTION</th>
+                            <th class="center-text" width="10%">MODELE DU LIT</th>
+                            <th class="center-text" >REF. MOTEUR PRINCIPAL</th>
+                            <th class="center-text" >REF. MOTEUR R-B</th>
+                            <th class="center-text" >REF. TELECOMMANDE</th>
+                            <th class="center-text" >ETAT DU LIT</th>
+                            <th class="center-text" >ACTION</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -66,6 +67,14 @@ if (isset($_GET["msg"])) {
                             $ref_telecommande=$row->ref_telecommande;
                             $etat_lit=$row->etat_lit;
 
+                            $req2="SELECT * FROM `produit` where `id`=$nom";
+                            $oPDOStatement2=$connect->query($req2); // Le résultat est un objet de la classe PDOStatement
+                            $oPDOStatement2->setFetchMode(PDO::FETCH_OBJ);
+                            while ($row = $oPDOStatement2->fetch()) {
+                                $id_produit = $row->id;
+                                $nom_produit = $row->nom;
+                            }
+
                             if ($ref_lit<10) {$ref_lit="00".$ref_lit;}
                             elseif (($ref_lit<100)&&($ref_lit>=10)) {$ref_lit="0".$ref_lit;}
 
@@ -77,9 +86,13 @@ if (isset($_GET["msg"])) {
 
                             if ($ref_telecommande<10) {$ref_telecommande="00".$ref_telecommande;}
                             elseif (($ref_telecommande<100)&&($ref_telecommande>=10)) {$ref_telecommande="0".$ref_telecommande;}
+
+
+
                         ?>
                         <tr>
                             <td class="center-text">MM2-L<?php echo $ref_lit ?>-S</td>
+                            <td class="center-text"> <?php echo $nom_produit ?></td>
                             <td class="center-text">MM2-L<?php echo $ref_moteur_p ?>-MP</td>
                             <td class="center-text">MM2-L<?php echo $ref_moteur_s ?>-MA</td>
                             <td class="center-text">MM2-L<?php echo $ref_telecommande ?>-MC</td>

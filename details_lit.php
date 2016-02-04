@@ -46,7 +46,16 @@ while ($row = $oPDOStatement->fetch()) {
     if ($ref_telecommande<10) {$ref_telecommande="00".$ref_telecommande;}
     elseif (($ref_telecommande<100)&&($ref_telecommande>=10)) {$ref_telecommande="0".$ref_telecommande;}
 
-}
+    $req2="SELECT * FROM `produit` where `id`=$nom";
+    $oPDOStatement2=$connect->query($req2); // Le résultat est un objet de la classe PDOStatement
+    $oPDOStatement2->setFetchMode(PDO::FETCH_OBJ);
+    while ($row = $oPDOStatement2->fetch()) {
+        $id_produit = $row->id;
+        $nom_produit = $row->nom;
+    }
+
+
+    }
 
 ?>
 <html>
@@ -105,7 +114,7 @@ while ($row = $oPDOStatement->fetch()) {
                 <div class="row">
                     <div class="col-md-1"></div>
                     <div class="col-md-3"><h3 style="display:inline;"><b>MODELE DE LIT:</b></h3></div>
-                    <div class="col-md-8"><b><?php echo $nom; ?></b></div>
+                    <div class="col-md-8"><b><?php echo $nom_produit; ?></b></div>
                 </div>
         <br>
     <table class="table table-striped table-bordered responsive" border="">

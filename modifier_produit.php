@@ -21,10 +21,16 @@ if (isset($_POST["produit"])){
     $msg3="";$c=0;
     $msg4="";$d=0;
     $msg5="";$e=0;
+    $msg6="";$f=0;
 
-    if(!preg_match('/^[[:digit:]]+((\.[[:digit:]]{1,3})?)$/',$prix_unit))
-    { $msg2='Le PRIX n est pas valide \n';
+    if(!preg_match('/^[[:digit:]]+((\.[[:digit:]]{1,3})?)$/',$semaine))
+    { $msg2='Le PRIX du semaine n est pas valide \n';
         $b=1;
+
+    }
+    if(!preg_match('/^[[:digit:]]+((\.[[:digit:]]{1,3})?)$/',$mois))
+    { $msg6='Le PRIX du mois n est pas valide \n';
+        $f=1;
 
     }
 
@@ -47,9 +53,9 @@ if (isset($_POST["produit"])){
 
     }
 
-    if (($b == 1) ||($c == 1)||($d == 1)||($e == 1)) { ?>
+    if (($b == 1)||($f == 1) ||($c == 1)||($d == 1)||($e == 1)) { ?>
         <SCRIPT LANGUAGE='JavaScript'>
-            alert('<?php echo $msg2.$msg3.$msg4.$msg5 ?>');
+            alert('<?php echo $msg2.$msg6.$msg3.$msg4.$msg5 ?>');
             //location='ajout_lit.php';
             history.go(-1);
         </SCRIPT>
@@ -57,7 +63,7 @@ if (isset($_POST["produit"])){
 
     else {
 
-        $req2 = "UPDATE `produit` SET `ref`='$ref' ,`nom`='$nom' ,`prix_unit`='$prix_unit' ,`qte`='$qte',
+        $req2 = "UPDATE `produit` SET `ref`='$ref' ,`nom`='$nom' ,`prix_semaine`='$semaine',`prix_mois`='$mois' ,`qte`='$qte',
 `caution`='$caution',`tva_produit`='$tva_produit',`type`='$type' WHERE `id`=$id ";
         $oPDOStatement = $connect->query($req2);
         echo "<SCRIPT LANGUAGE='JavaScript'>
@@ -82,7 +88,8 @@ if (isset($_GET["id"])) {
         $type=$row->type;
         $nom=$row->nom;
         $ref=$row->ref;
-        $prix_unit=$row->prix_unit;
+        $semaine=$row->prix_semaine;
+        $mois=$row->prix_mois;
         $qte=$row->qte;
         $caution=$row->caution;
         $tva_produit=$row->tva_produit;
@@ -167,15 +174,20 @@ if (isset($_GET["id"])) {
                                 <div class="row">
                                     <div class="col-md-1"></div>
                                     <div class="col-md-1"><label >Reférence produit </label></div>
-                                    <input type="text" name="ref" value="<?php echo $ref; ?>" class="form-control" id="exampleInputEmail1" placeholder="Entrer la ref"  autofocus required disabled>
+                                    <input type="text" name="ref" value="<?php echo $ref; ?>" class="form-control" id="exampleInputEmail1" placeholder="Entrer la ref"  autofocus required disabled >
+                                    <input type="hidden" name="ref"  value="<?php echo $ref; ?>">
                                 </div>
                             </div>
                             <br>
                             <div class="form-inline">
                                 <div class="row">
                                     <div class="col-md-1"></div>
-                                    <div class="col-md-1"><label >Prix produit </label></div>
-                                    <input type="text" name="prix_unit" value="<?php echo $prix_unit; ?>" class="form-control" id="exampleInputEmail1" placeholder="Entrer le prix" autofocus required>&nbsp dt
+                                    <div class="col-md-1"><label >Prix produit: </label></div>
+                                    <div class="col-md-3"><input type="text" name="semaine" value="<?php echo $semaine; ?>" class="form-control" id="exampleInputEmail1" style="width: 150px;" placeholder="prix du semaine" autofocus required>&nbsp DT/semaine
+                                    </div>
+
+                                    <div class="col-md-3"><input type="text" name="mois" value="<?php echo $mois; ?>" class="form-control" id="exampleInputEmail1" style="width: 150px;" placeholder="prix du mois" autofocus required>&nbsp DT/mois
+                                    </div>
                                 </div>
                             </div>
                             <br>
