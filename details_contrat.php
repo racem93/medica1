@@ -150,12 +150,12 @@ while ($row = $oPDOStatement->fetch()) {
                                         <th style="width:40%;">Produit</th>
                                         <th style="width:15%;">Période</th>
                                         <th style="width:20%;">Date Fin</th>
-                                        <th style="width:15%;">Qte</th>
-                                        <th style="width:15%;">P.U HTVA</th>
+                                        <th style="width:10%;">Qte</th>
+                                        <th style="width:20%;">P.U HTVA</th>
                                         <th style="width:15%;">Montant</th>
                                         <th style="width:15%;">Caution/Unité</th>
-                                        <th style="width:15%;">Etat</th>
-                                        <th style="width:10%;">Retour.Produit</th>
+                                        <th style="width:13%;">Etat</th>
+                                        <th style="width:9%;">Retour.Produit</th>
 
                                     </tr>
                                     </thead>
@@ -168,14 +168,16 @@ while ($row = $oPDOStatement->fetch()) {
                                         $id=$data['id'];
                                         $id_produit = $data['id_produit'];
                                         $id_lit = $data['id_lit'];
-                                        $prix_unit_ht = $data['prix_unit_ht'];
+                                        $prix_unit_s = $data['prix_unit_s'];
+                                        $prix_unit_m = $data['prix_unit_m'];
                                         $qte = $data['qte'];
                                         $semaine = $data['semaine'];
                                         $mois = $data['mois'];
                                         $prix_caution = $data['prix_caution'];
                                         $etat_louer=$data['etat_louer'];
 
-                                        $prix_total=$qte*$prix_unit_ht;
+                                        $prix_unit=($prix_unit_s*$semaine+$prix_unit_m*$mois);
+                                        $prix_total=$qte*$prix_unit;
                                         $jours=$semaine*7;
                                         $DateFin = date('Y-m-d', strtotime($DateDebut.' +'.$jours.' days'));
                                         $DateFin = date('Y-m-d', strtotime($DateFin.' +'.$mois.' month'));
@@ -212,7 +214,10 @@ while ($row = $oPDOStatement->fetch()) {
                                         echo "</td>
                                           <td>".$DateFin."</td>
                                           <td>".$qte."</td>
-                                          <td>".$prix_unit_ht."DT</td>
+                                          <td>";if ($semaine!=0) {echo $prix_unit_s." DT/S <br>";}
+                                        if ($mois!=0) {echo $prix_unit_m." DT/M";}
+
+                                        echo "</td>
                                           <td>".$prix_total."DT</td>
                                           <td>".$prix_caution."DT</td>";
                                         }

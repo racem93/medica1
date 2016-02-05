@@ -172,7 +172,10 @@ VALUES (" ."'".$ref."'"."," ."'".$nom_client."'".","."'".$adresse_client."'".","
                                           echo "</td>
 
                                           <td>".$_SESSION['panier'][$i]."</td>
-                                          <td>".$prix_unit."DT</td>
+                                          <td>";if ($_SESSION['semaine'][$i]!=0) {echo $_SESSION['prix_s'][$i]." DT/Sem <br>";}
+                                            if ($_SESSION['mois'][$i]!=0) {echo $_SESSION['prix_m'][$i]." DT/Mois";}
+
+                                            echo "</td>
                                           <td>".$prix_total."DT</td>
                                           <td>".$_SESSION['caution'][$i]."DT</td>
 
@@ -181,8 +184,8 @@ VALUES (" ."'".$ref."'"."," ."'".$nom_client."'".","."'".$adresse_client."'".","
 
                                             if(isset($_POST['ajout']))
                                             {
-                                                $req = "INSERT INTO ligne_commande ( id_commande,id_produit,id_lit,semaine,mois,qte,prix_unit_ht,prix_caution,etat_louer)
-                                                VALUES ("."'".$iddernier."'".","."'".$idd."'".","."'".$id_lit."'".","."'".$_SESSION['semaine'][$i]."'".","."'".$_SESSION['mois'][$i]."'".","."'".$_SESSION['panier'][$i]."'".","."'".$prix_unit."'".","."'".$_SESSION['caution'][$i]."'".",1)";
+                                                $req = "INSERT INTO ligne_commande ( id_commande,id_produit,id_lit,semaine,mois,qte,prix_unit_s,prix_unit_m,prix_caution,etat_louer)
+                                                VALUES ("."'".$iddernier."'".","."'".$idd."'".","."'".$id_lit."'".","."'".$_SESSION['semaine'][$i]."'".","."'".$_SESSION['mois'][$i]."'".","."'".$_SESSION['panier'][$i]."'".","."'".$_SESSION['prix_s'][$i]."'".","."'".$_SESSION['prix_m'][$i]."'".","."'".$_SESSION['caution'][$i]."'".",1)";
                                                 $oPDOStatement4=$connect->query($req); // Le résultat est un objet de la classe PDOStatementmo
                                                 $qte_select=$_SESSION['panier'][$i];
                                                 if ($type!=1) {
