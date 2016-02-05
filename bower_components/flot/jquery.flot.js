@@ -2702,7 +2702,8 @@ Licensed under the MIT license.
                     if (label) {
                         entries.push({
                             label: label,
-                            color: s.color
+                            color: s.color,
+                            data: s.value
                         });
                     }
                 }
@@ -2740,7 +2741,8 @@ Licensed under the MIT license.
 
                 fragments.push(
                     '<td class="legendColorBox"><div style="border:1px solid ' + options.legend.labelBoxBorderColor + ';padding:1px"><div style="width:4px;height:0;border:5px solid ' + entry.color + ';overflow:hidden"></div></div></td>' +
-                    '<td class="legendLabel">' + entry.label + '</td>'
+                    '<td class="legendLabel">' + entry.label + '</td>'+
+                    '<td class="legendLabel">' + entry.data + '</td>'
                 );
             }
 

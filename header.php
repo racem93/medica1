@@ -12,7 +12,7 @@ if(!isset($_SESSION['admin']))
                     $connect=new MyPDO();
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <!--
         ===

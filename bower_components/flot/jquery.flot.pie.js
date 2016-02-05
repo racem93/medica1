@@ -226,6 +226,7 @@ More detail and specific examples can be found in the included HTML file.
 				if (numCombined < 2 || value / total > options.series.pie.combine.threshold) {
 					newdata.push({
 						data: [[1, value]],
+						value: value,
 						color: data[i].color,
 						label: data[i].label,
 						angle: value * Math.PI * 2 / total,
@@ -237,6 +238,7 @@ More detail and specific examples can be found in the included HTML file.
 			if (numCombined > 1) {
 				newdata.push({
 					data: [[1, combined]],
+					value: combined,
 					color: color,
 					label: options.series.pie.combine.label,
 					angle: combined * Math.PI * 2 / total,
