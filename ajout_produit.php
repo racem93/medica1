@@ -99,7 +99,9 @@ if (isset($_POST["produit"])) {
                 </div>
                 <div class="box-content">
                     <div class="control-group">
-                        <form role="form" action="ajout_produit.php" method="post" >
+                        <?php if(isset($_SESSION['superadmin'])){ ?>
+
+                            <form role="form" action="ajout_produit.php" method="post" >
                             <div class="form-inline">
                                 <div class="row">
                                     <div class="col-md-1"></div>
@@ -170,6 +172,10 @@ if (isset($_POST["produit"])) {
                             </div>
 
                         </form>
+                        <?php }else {
+                            echo "<SCRIPT LANGUAGE='JavaScript'>
+    self.parent.location.href='error.html';
+    </SCRIPT> ";        }?>
                     </div>
                 </div>
             </div>

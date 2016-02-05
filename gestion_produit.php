@@ -53,7 +53,10 @@ if (isset($_GET["msg"])) {
                         <th class="center-text">Qte.Stock</th>
                         <th class="center-text">Qte.Louer</th>
                         <th class="center-text">CAUTION</th>
+                        <?php if (isset($_SESSION['superadmin'])){ ?>
+
                         <th class="center-text">ACTION</th>
+                        <?php } ?>
                     </tr>
                     </thead>
                     <tbody>
@@ -97,6 +100,7 @@ if (isset($_GET["msg"])) {
                             <td class="center-text"><?php echo $qte_louer; ?></td>
                             <td class="center-text"><?php echo $caution; ?>&nbsp DT</td>
 
+                            <?php if (isset($_SESSION['superadmin'])){ ?>
 
                             <td class="center" width="25%">
                                 <a class="btn btn-info" href="modifier_produit.php?id=<?php echo $id; ?>" id="iframe">
@@ -108,6 +112,7 @@ if (isset($_GET["msg"])) {
                                     Supprimer
                                 </a>
                             </td>
+                            <?php } ?>
                         </tr>
 
                         <?php } ?>

@@ -119,17 +119,29 @@ else {
                    <?php
                    }
                     else {
-                   echo '<h4><b> Préciser la Quantité Souhaitée : </b> <input type="text" value="1" data-rule="quantity" style="width:50px; margin-bottom:-25px; height:30px" id="quant" ></h4>
+                   echo '<h4><b> Préciser la Quantité Souhaitée : </b> <input type="text" value="1" data-rule="quantity" style="width:50px; margin-bottom:-25px; height:30px" id="quant"></h4>';
 
-';
-                   }
+
+
+                    }
                 ?>
                 <br>
-               <center><h4><b> Préciser la caution Souhaitée : </b>  <input type="text"  value= "<?php echo "$caution"; ?>" data-rule="quantity" style="width:50px; margin-bottom:-25px; height:30px" id="caution" >
+               <center><h4><b> Préciser la caution Souhaitée : </b>  <input type="text"  value= "<?php echo "$caution"; ?>" data-rule="quantity" style="width:50px; margin-bottom:-25px; height:30px" id="caution" <?php if (isset($_SESSION['user1'])) {echo "disabled";} ?> >
                    </h4>  <br>
 
-        <center><h4><b> Préciser le prix : </b> <input type="text" value= "<?php echo "$prix_semaine"; ?>" data-rule="price" style="width:50px; margin-bottom:-25px; height:30px" id="nv_prix_s" >DT/Semaine &nbsp;&nbsp;&nbsp;<input type="text" value= "<?php echo "$prix_mois"; ?>" data-rule="price" style="width:50px; margin-bottom:-25px; height:30px" id="nv_prix_m" >DT/Mois
-            </h4>        <br>
+                  <?php if (isset($_SESSION['user1'])){ ?>
+
+                   <input type="hidden"  value= "<?php echo "$caution"; ?>" data-rule="quantity" style="width:50px; margin-bottom:-25px; height:30px" id="caution" >
+
+                   <?php } ?>
+
+                   <center><h4><b> Préciser le prix : </b> <input type="text" value= "<?php echo "$prix_semaine"; ?> " data-rule="price" style="width:50px; margin-bottom:-25px; height:30px" id="nv_prix_s" <?php if (isset($_SESSION['user1'])) {echo "disabled";} ?> >DT/Semaine &nbsp;&nbsp;&nbsp;<input type="text" value= "<?php echo "$prix_mois"; ?>" data-rule="price" style="width:50px; margin-bottom:-25px; height:30px" id="nv_prix_m" <?php if (isset($_SESSION['user1'])) {echo "disabled";} ?> >DT/Mois
+            </h4>
+
+                       <?php if (isset($_SESSION['user1'])){ ?>
+                           <input type="hidden" value= "<?php echo "$prix_semaine"; ?>" data-rule="price" style="width:50px; margin-bottom:-25px; height:30px" id="nv_prix_s" > <input type="hidden" value= "<?php echo "$prix_mois"; ?>" data-rule="price" style="width:50px; margin-bottom:-25px; height:30px" id="nv_prix_m" >
+                        <?php } ?>
+                       <br>
             <br>
             <center><button type="submit" class="btn btn-lg btn-primary" onClick="myAjax();" >Ajouter aux séléctions <img src='images/icons/add2basket.png' ></button></center>
             <!--<h5><b style = " font-size : 20px;"><a onClick="myAjax();" style="margin-left:10px;"><img src='images/icons/add2basket.png' > Ajouter ce produit aux séléctions</a></b> </h5></center>-->

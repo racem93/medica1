@@ -16,23 +16,42 @@ $connect=new MyPDO();
 $AfficherFormulaire = TRUE;
 
 if(!empty($_POST['pseudo']) AND !empty($_POST['MotDePasse'])) {
-    $req = $connect->prepare('SELECT COUNT(*) FROM users WHERE password = :MotDePasse AND login = :pseudo');
+    $req = $connect->prepare('SELECT COUNT(*),TYPE FROM users WHERE password = :MotDePasse AND login = :pseudo');
     $req->bindValue(':pseudo', $_POST['pseudo'], PDO::PARAM_STR);
     $req->bindValue(':MotDePasse', $_POST['MotDePasse'], PDO::PARAM_STR);
     $req->execute();
     $resultat = $req->fetch();
     $req->closeCursor();
-    if($resultat[0] == 0) {
+
+
+
+
+    if($resultat[0] == 0 ) {
         header("location: login.html");
-    } else {
+    }
+
+    if (($resultat[0] != 0) && ($resultat[1] == 0)  ) {
 
 
         $_SESSION['pseudo']=$_POST['pseudo'];
         $_SESSION['password']=$_POST['MotDePasse'];
         $_SESSION['admin']="auth_ok";
+        $_SESSION['superadmin']="auth_ok";
+
+        header("location: acceuil.php");
+        $AfficherFormulaire = FALSE;
+    } elseif (($resultat[0] != 0) && ($resultat[1] == 1)){
+
+        $_SESSION['pseudo']=$_POST['pseudo'];
+        $_SESSION['password']=$_POST['MotDePasse'];
+        $_SESSION['admin']="auth_ok";
+        $_SESSION['user1']="auth_ok";
+
         header("location: acceuil.php");
         $AfficherFormulaire = FALSE;
     }
+
+
 }else{
     header("location: login.html");
 

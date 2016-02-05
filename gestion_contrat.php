@@ -49,9 +49,12 @@ if (isset($_GET["msg"])) {
                             <th class="center-text" width="10%">REF. DU CONTRAT</th>
                             <th class="center-text">NOM CLIENT</th>
                             <th class="center-text">NOM BENIFICAIRE</th>
-                            <th class="center-text">DATE</th>
                             <th class="center-text">TOTAL TTC</th>
+
                             <th class="center-text">Etat</th>
+
+                            <th class="center-text">DATE</th>
+
                             <th class="center-text">ACTION</th>
                         </tr>
                         </thead>
@@ -84,34 +87,30 @@ if (isset($_GET["msg"])) {
                             <td class="center-text"><?php echo $ref_contrat; ?></td>
                             <td class="center-text"><?php echo $nom_client; ?></td>
                             <td class="center-text"><?php echo $nom_ben;  ?></td>
-                            <td class="center-text"><?php echo $date_commande; ?></td>
                             <td class="center-text"><?php echo $total_caution; ?></td>
+
                             <?php
                             if ($b==1) {
-                            echo '<td class="center-text">
+                                echo '<td class="center-text">
                                 <span class="label-success label label-default">EN COURS</span>
                             </td>';
                             }
                             elseif ($b==0) {
-                            echo '<td class="center-text">
+                                echo '<td class="center-text">
                                 <span class="label-default label"">FINI</span>
                             </td>';
                             }
                             ?>
 
-                            <td class="center" width="30%">
+                            <td class="center-text"><?php echo $date_commande; ?></td>
+
+                            <td class="center" width="10%">
                                 <a class="btn btn-success" href="details_contrat.php?id=<?php echo $id; ?>" id="iframe">
                                     <i class="glyphicon glyphicon-zoom-in icon-white"></i>
                                     Details
                                 </a>
-                                <a class="btn btn-info" href="modifier_lit.php?id=<?php echo $id; ?>" id="iframe">
-                                    <i class="glyphicon glyphicon-edit icon-white"></i>
-                                    Modifier
-                                </a>
-                                <a class="btn btn-danger" href='supprimer_lit.php?id=<?php echo $id; ?>' onclick="return(confirm('Etes-vous sûr de vouloir supprimer ce lit?'))"; >
-                                    <i class="glyphicon glyphicon-trash icon-white"></i>
-                                    Supprimer
-                                </a>
+
+
                             </td>
                         </tr>
 

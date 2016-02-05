@@ -1,6 +1,6 @@
 
 
-<?php
+    <?php
 include_once("config/MyPDO.class.php");
 $connect=new MyPDO();
 $req1="SELECT MAX(`ref_lit`)AS max_lit,MAX(`ref_moteur_p`)AS max_moteur_p, MAX(`ref_moteur_s`)AS max_moteur_s, MAX(`ref_telecommande`) AS max_telecommande FROM `lit`";
@@ -142,6 +142,8 @@ $oPDOStatement2->setFetchMode(PDO::FETCH_OBJ);
 
 
 <?php require('header.php'); ?>
+
+
 <div>
     <ul class="breadcrumb">
         <li>
@@ -166,6 +168,8 @@ $oPDOStatement2->setFetchMode(PDO::FETCH_OBJ);
             </div>
 <div class="box-content">
     <div class="control-group">
+        <?php if(isset($_SESSION['superadmin'])){ ?>
+
         <form role="form" action="ajout_lit.php" method="post">
             <div class="form-inline">
                 <div class="row">
@@ -334,9 +338,14 @@ $oPDOStatement2->setFetchMode(PDO::FETCH_OBJ);
             <br>
             <div class="row">
                 <div class="col-md-4"></div>
-            <button type="submit" class="btn btn-primary" name="lit" style="width: 200px" >Ajouter</button>
+                <button type="submit" class="btn btn-primary" name="lit" style="width: 200px" >Ajouter</button>
             </div>
             </form>
+        <?php }else {
+            echo "<SCRIPT LANGUAGE='JavaScript'>
+    self.parent.location.href='error.html';
+    </SCRIPT> ";        }?>
+
     </div>
     </div>
             </div>

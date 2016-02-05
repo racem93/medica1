@@ -273,14 +273,19 @@ if(!isset($_SESSION['admin']))
                                                     <a href="#"><i class="glyphicon glyphicon-hdd"></i><span> Gestion des lits</span></a>
                                                     <ul class="nav nav-pills nav-stacked">
                                                         <li><a href="gestion_lit.php">Liste des lits</a></li>
+                                                  <?php if (isset($_SESSION['superadmin'])){ ?>
                                                         <li><a href="ajout_lit.php">Ajouter un lit</a></li>
+                                                  <?php }?>
                                                     </ul>
                         </li>
                         <li class="accordion">
                                                        <a href="#"><i class="glyphicon glyphicon-briefcase"></i><span> Gestion des produits</span></a>
                                                        <ul class="nav nav-pills nav-stacked">
                                                           <li><a href="gestion_produit.php">Liste des produits</a></li>
-                                                          <li><a href="ajout_produit.php">ajouter un produit</a></li>
+                                                           <?php if (isset($_SESSION['superadmin'])){ ?>
+                                                           <li><a href="ajout_produit.php">ajouter un produit</a></li>
+                                                           <?php }?>
+
                                                        </ul>
                         </li>
                         <li class="accordion">

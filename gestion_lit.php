@@ -108,11 +108,14 @@ if (isset($_GET["msg"])) {
                                                 </td>';
                                                 }
                             ?>
+                            <?php if (isset($_SESSION['superadmin'])){ ?>
+
                             <td class="center" width="30%">
                                 <a class="btn btn-success" href="details_lit.php?id=<?php echo $id; ?>" id="iframe">
                                     <i class="glyphicon glyphicon-zoom-in icon-white"></i>
                                     Details
                                 </a>
+
                                 <a class="btn btn-info" href="modifier_lit.php?id=<?php echo $id; ?>" id="iframe">
                                     <i class="glyphicon glyphicon-edit icon-white"></i>
                                     Modifier
@@ -121,6 +124,14 @@ if (isset($_GET["msg"])) {
                                     <i class="glyphicon glyphicon-trash icon-white"></i>
                                     Supprimer
                                 </a>
+                                <?php }elseif (isset($_SESSION['user1'])){ ?>
+                            <td class="center" width="10%">
+                                <a class="btn btn-success" href="details_lit.php?id=<?php echo $id; ?>" id="iframe">
+                                    <i class="glyphicon glyphicon-zoom-in icon-white"></i>
+                                    Details
+                                </a>
+
+                                <?php } ?>
                             </td>
                         </tr>
 
