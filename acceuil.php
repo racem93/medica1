@@ -121,6 +121,7 @@ $lit_stock=$lit_marche-$lit_louer;
 </div>
 
 <!-- chart libraries start -->
+
 <script src="bower_components/flot/excanvas.min.js"></script>
 <script src="bower_components/flot/jquery.flot.js"></script>
 <script src="bower_components/flot/jquery.flot.pie.js"></script>
