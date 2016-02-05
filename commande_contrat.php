@@ -213,6 +213,7 @@ VALUES (" ."'".$ref."'"."," ."'".$nom_client."'".","."'".$adresse_client."'".","
 
 
                         </div>
+                        <form action="commande_contrat.php" method="post">
 
                         <?php
                         if(!empty($_SESSION['id']))
@@ -223,13 +224,16 @@ VALUES (" ."'".$ref."'"."," ."'".$nom_client."'".","."'".$adresse_client."'".","
                             <div class='row'>
                             <div class='col-md-8'>
                             <div class='row'>
-                            <div class='col-md-1'></div>
-                            <div class='col-md-2' align='center'>
-                            <b>ACOMPTE</b><br>".$acompte."&nbsp; DT
-                            </div>
+
                             <div class='col-md-1'></div>
                             <div class='col-md-2' align='center'>
                             <b>TRANSPORT</b><br>".$transport."&nbsp; DT
+                            </div>
+                            <div class='form-inline'>
+                            <div class='col-md-1'></div>
+                            <div class='col-md-2'><label >ACOMPTE </label></div>
+                            <div class='col-md-3'><input type='text' name='acompte' class='form-control'   value='0' style='width: 100px'   autofocus required>&nbsp;DT
+                            </div>
                             </div>
                             </div>
 
@@ -242,7 +246,7 @@ VALUES (" ."'".$ref."'"."," ."'".$nom_client."'".","."'".$adresse_client."'".","
 
 
                         ?>
-                        <form action="commande_contrat.php" method="post">
+
                             <input type="hidden" name="nom_client" value="<?php echo $nom_client; ?>" >
                             <input type="hidden" name="adresse_client" value="<?php echo $adresse_client; ?>" >
                             <input type="hidden" name="tel_client" value="<?php echo $tel_client; ?>" >
@@ -259,7 +263,6 @@ VALUES (" ."'".$ref."'"."," ."'".$nom_client."'".","."'".$adresse_client."'".","
                             <input type="hidden" name="total_caution" value="<?php echo $total_caution; ?>" >
                             <input type="hidden" name="ref" value="<?php echo $numero; ?>" >
                             <input type="hidden" name="date_commande" value="<?php echo $date_commande; ?>" >
-                            <input type="hidden" name="acompte" value="<?php echo $acompte; ?>" >
                             <input type="hidden" name="transport" value="<?php echo $transport; ?>" >
                             <?php }?>
                         <div class="row">
@@ -279,6 +282,14 @@ VALUES (" ."'".$ref."'"."," ."'".$nom_client."'".","."'".$adresse_client."'".","
 <?php
 //
 if(isset($_POST['ajout'])) {
+    unset($_SESSION['id']);
+    unset($_SESSION['panier']);
+    unset($_SESSION['prix_s']);
+    unset($_SESSION['prix_m']);
+    unset($_SESSION['semaine']);
+    unset($_SESSION['mois']);
+    unset($_SESSION['caution']);
+
 echo "<SCRIPT LANGUAGE='JavaScript'>
     self.parent.location.href='gestion_contrat.php?msg=ajouter'
 </SCRIPT> ";

@@ -21,7 +21,7 @@ while ($row = $oPDOStatement->fetch()) {
     $id_commande = $row->id;
     $ref = $row->ref;
     $nom_client = $row->nom_client;
-    $date_commande = $row->date_commande;
+    $date_commande1 = $row->date_commande;
     $adresse_client = $row->adresse_client;
     $tel_client = $row->tel_client;
     $gsm_client = $row->gsm_client;
@@ -38,7 +38,8 @@ while ($row = $oPDOStatement->fetch()) {
     $acompte = $row->acompte;
     $transport= $row->prix_transport;
 
-    $DateDebut=$date_commande;
+    $date_commande=date("d-m-Y", strtotime($date_commande1));
+    $DateDebut=date("d-m-Y", strtotime($date_commande));
 
 
 
@@ -179,9 +180,9 @@ while ($row = $oPDOStatement->fetch()) {
                                         $prix_unit=($prix_unit_s*$semaine+$prix_unit_m*$mois);
                                         $prix_total=$qte*$prix_unit;
                                         $jours=$semaine*7;
-                                        $DateFin = date('Y-m-d', strtotime($DateDebut.' +'.$jours.' days'));
-                                        $DateFin = date('Y-m-d', strtotime($DateFin.' +'.$mois.' month'));
-                                        $date = date("Y-m-d");
+                                        $DateFin = date('d-m-Y', strtotime($DateDebut.' +'.$jours.' days'));
+                                        $DateFin = date('d-m-Y', strtotime($DateFin.' +'.$mois.' month'));
+                                        $date = date("d-m-Y");
 
                                     $req3="select * from produit where id =$id_produit";
                                     $oPDOStatements3=$connect->query($req3); // Le r&eacute;sultat est un objet de la classe PDOStatement
@@ -236,7 +237,7 @@ while ($row = $oPDOStatement->fetch()) {
                                         <td>
                                         <?php
                                                 if ($etat_louer!=0) { ?>
-                                                <a class="btn btn-danger" href='retour_produit.php?id=<?php echo $id; ?>' onclick="return(confirm('Etes-vous sûr de vouloir supprimer ce produit?'))"; >
+                                                <a class="btn btn-danger" href='retour_produit.php?id=<?php echo $id; ?>' onclick="return(confirm('Etes-vous sûr que le produit est retourné en stock?'))"; >
                                                     <i class="glyphicon glyphicon-download-alt"></i>
                                                     Retour
                                                 </a>

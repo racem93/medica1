@@ -234,9 +234,6 @@ if (isset($_GET["msg"])) {
                 <div class="form-inline">
                 <div class="row">
                     <div class="col-md-1"></div>
-                    <div class="col-md-1"><label >ACOMPTE </label></div>
-                    <div class="col-md-3"><input type="text" name="acompte" class="form-control"  id="exampleInputEmail1" value="0" style="width: 100px"   autofocus required>&nbsp;DT
-                    </div>
                     <div class="col-md-1"><label >TRANSPORT</label></div>
                     <div class="col-md-5"><input type="text" name="transport" class="form-control"  id="exampleInputEmail1" value="0" style="width: 100px"  >&nbsp;Nb.KM
                     </div>
