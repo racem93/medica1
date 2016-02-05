@@ -88,10 +88,10 @@ if (isset($_GET["msg"])) {
                 <br>
                 <div class="row">
                     <div class="col-md-2"><label >CIN N: </label></div>
-                    <div class="col-md-4"><input type="text" name="cin_client" class="form-control"  id="exampleInputEmail1"   autofocus required>
+                    <div class="col-md-4"><input type="text" name="cin_client" class="form-control"  id="exampleInputEmail1" pattern="[0-9]{8,10}" title="Le CIN doit être composer de 8 à 10 chiffres "   autofocus required>
                     </div>
                     <div class="col-md-2"><label >Tunis,le: </label></div>
-                    <div class="col-md-4"><input type="text" name="date_cin" class="form-control"  id="exampleInputEmail1"   autofocus required>
+                    <div class="col-md-4"><input type="text" name="date_cin" class="form-control"  id="exampleInputEmail1" pattern="\d{1,2}/\d{1,2}/\d{4}" title="Le date doit être se forme dd/mm/yyyy"   autofocus required>
                     </div>
                 </div>
 
@@ -136,7 +136,7 @@ if (isset($_GET["msg"])) {
                 <div class="form-inline">
                     <div class="row">
                         <div class="col-md-2"><label >CIN N:</label></div>
-                        <input type="text" name="cin_ben" class="form-control" style="width: 400px;" id="exampleInputEmail1" placeholder="Entrer le cin du benefecirae"  autofocus required>
+                        <input type="text" name="cin_ben" class="form-control" style="width: 400px;" id="exampleInputEmail1" placeholder="Entrer le cin du benefecirae" pattern="[0-9]{8,10}" title="Le CIN doit être composer de 8 à 10 chiffres "  autofocus required>
                     </div>
                 </div>
 
