@@ -267,7 +267,7 @@ if(!isset($_SESSION['admin']))
                     </div>
                     <ul class="nav nav-pills nav-stacked main-menu">
                         <li class="nav-header">Main</li>
-                        <li><a class="ajax-link" href="index.html"><i class="glyphicon glyphicon-home"></i><span> Accueil</span></a>
+                        <li><a class="ajax-link" href="acceuil.php"><i class="glyphicon glyphicon-home"></i><span> Accueil</span></a>
                         </li>
                         <li class="accordion">
                                                     <a href="#"><i class="glyphicon glyphicon-hdd"></i><span> Gestion des lits</span></a>
