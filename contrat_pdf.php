@@ -332,6 +332,7 @@ $nbPage=1;
 
                             }
 
+                            $pdf->Line(10, $y-3, 210-10, $y-3); // 50mm from each edge
 
                             $size = $pdf->addLine($y, $line);
                             $y += $size + 4.3;

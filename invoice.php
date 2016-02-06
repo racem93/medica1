@@ -810,10 +810,12 @@ function addLine( $ligne, $tab )
 		$formText  = $format[ $lib ];
 		$this->SetXY( $ordonnee, $ligne-1);
 		$this->MultiCell( $longCell, 4 , $texte, 0, $formText);
+
 		if ( $maxSize < ($this->GetY()  ) )
 			$maxSize = $this->GetY() ;
 		$ordonnee += $pos;
 	}
+
 	return ( $maxSize - $ligne );
 }
 
