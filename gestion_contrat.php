@@ -49,7 +49,7 @@ if (isset($_GET["msg"])) {
                             <th class="center-text" width="10%">REF. DU CONTRAT</th>
                             <th class="center-text">NOM CLIENT</th>
                             <th class="center-text">NOM BENIFICAIRE</th>
-                            <th class="center-text">TOTAL TTC</th>
+                            <th class="center-text">TOTAL CAUTION</th>
 
                             <th class="center-text">Etat</th>
 
@@ -67,6 +67,7 @@ if (isset($_GET["msg"])) {
                             $nom_client=$row->nom_client;
                             $date_commande1=$row->date_commande;
                             $total_caution=$row->total_caution;
+
                             $nom_ben=$row->nom_ben;
 
                             $date_commande = date("d-m-Y", strtotime($date_commande1));

@@ -798,7 +798,7 @@ function addLine( $ligne, $tab )
 
 	$ordonnee     = 10;
 	$maxSize      = $ligne;
-	$this->SetFont( "Arial", "", 14.2);
+	$this->SetFont( "Arial", "", 13.5);
 
 	reset( $colonnes );
 	while ( list( $lib, $pos ) = each ($colonnes) )

@@ -125,15 +125,16 @@ $nbPage=1;
                 {
                     $id_produit = $data['id_produit'];
                     $id_lit = $data['id_lit'];
-                    $prix_unit_ht = $data['prix_unit_ht'];
+                    $prix_unit_s = $data['prix_unit_s'];
+                    $prix_unit_m = $data['prix_unit_m'];
                     $qte = $data['qte'];
                     $semaine = $data['semaine'];
                     $mois = $data['mois'];
                     $prix_caution = $data['prix_caution'];
                     $etat_louer = $data['etat_louer'];
 
-                    $prix_total = $qte * $prix_unit_ht;
-
+                    $prix_unit=($prix_unit_s*$semaine+$prix_unit_m*$mois);
+                    $prix_total=$qte*$prix_unit;
 
                     $req3 = "select * from produit where id =$id_produit";
                     $oPDOStatements3 = $connect->query($req3); // Le r&eacute;sultat est un objet de la classe PDOStatement
@@ -171,25 +172,152 @@ $nbPage=1;
                             //echo $mois . " Mois";
                             $moistot=$mois . " Mois";
                         }
-
-
+                        //$prix_unit_ht="";
 
                         $k++;
-                        if ($k < 27) {
+                        if ($k < 20) {
 
                             if ($type == 1) {
-                                $line = array("Ord." => "$k",
+
+                                if ($semaine!=0 && $mois!=0 ) {$line = array(
+
+                                    "Ord." => "$k",
                                     "DESIGNATION" => "$nomprod\nRef: $reflittotal",
                                     "Periode" => "$semainetot\n$moistot",
 
                                     "Qte" => "$qte",
-                                    "P.U. HT" => number_format($prix_unit_ht, 3),
+                                    "P.U. HT" => number_format($prix_unit_s, 3)."\n".number_format($prix_unit_m, 3),
                                     "MT H.T." => number_format($prix_total, 3),
 
-                                    "Caution/Unite" => number_format($prix_caution, 3));
+                                    "Caution/Unite" => number_format($prix_caution, 3)
 
+                                );
+                                }elseif ($semaine!=0 && $mois==0 ){
+                                    $line = array(
+
+                                        "Ord." => "$k",
+                                        "DESIGNATION" => "$nomprod\nRef: $reflittotal",
+                                        "Periode" => "$semainetot",
+
+                                        "Qte" => "$qte",
+                                        "P.U. HT" => number_format($prix_unit_s, 3),
+                                        "MT H.T." => number_format($prix_total, 3),
+
+                                        "Caution/Unite" => number_format($prix_caution, 3)
+
+                                    );
+                                }elseif ($semaine==0 && $mois!=0 ){
+                                    $line = array(
+
+                                        "Ord." => "$k",
+                                        "DESIGNATION" => "$nomprod\nRef: $reflittotal",
+                                        "Periode" => "$moistot",
+
+                                        "Qte" => "$qte",
+                                        "P.U. HT" => number_format($prix_unit_m, 3),
+                                        "MT H.T." => number_format($prix_total, 3),
+
+                                        "Caution/Unite" => number_format($prix_caution, 3)
+
+                                    );
+                                }elseif ($semaine==0 && $mois==0 ){
+                                    $line = array(
+
+                                        "Ord." => "$k",
+                                        "DESIGNATION" => "$nomprod\nRef: $reflittotal",
+                                        "Periode" => "0",
+
+                                        "Qte" => "$qte",
+                                        "P.U. HT" => number_format($prix_unit_m, 3),
+                                        "MT H.T." => number_format($prix_total, 3),
+
+                                        "Caution/Unite" => number_format($prix_caution, 3)
+
+                                    );
+                                }
+                                /*
+                                if ($mois!=0) {$line = array(
+
+                                     "P.U. HT" => number_format($prix_unit_m, 3)." DT/M\n"
+
+                                 );}
+
+
+
+
+                                 $line = array("Ord." => "$k",
+                                     "DESIGNATION" => "$nomprod\nRef: $reflittotal",
+                                     "Periode" => "$semainetot\n$moistot",
+
+                                     "Qte" => "$qte",
+                                     "P.U. HT" => $prix_unit_ht,
+                                     "MT H.T." => number_format($prix_total, 3),
+
+                                     "Caution/Unite" => number_format($prix_caution, 3));
+ */
                             }else{
-                                $line = array("Ord." => "$k",
+
+
+                                if ($semaine!=0 && $mois!=0 ) {$line = array(
+
+                                    "Ord." => "$k",
+                                    "DESIGNATION" => "$nomprod",
+                                    "Periode" => "$semainetot\n$moistot",
+
+                                    "Qte" => "$qte",
+                                    "P.U. HT" => number_format($prix_unit_s, 3)."\n".number_format($prix_unit_m, 3),
+                                    "MT H.T." => number_format($prix_total, 3),
+
+                                    "Caution/Unite" => number_format($prix_caution, 3)
+
+                                );
+                                }elseif ($semaine!=0 && $mois==0 ){
+                                    $line = array(
+
+                                        "Ord." => "$k",
+                                        "DESIGNATION" => "$nomprod",
+                                        "Periode" => "$semainetot",
+
+                                        "Qte" => "$qte",
+                                        "P.U. HT" => number_format($prix_unit_s, 3),
+                                        "MT H.T." => number_format($prix_total, 3),
+
+                                        "Caution/Unite" => number_format($prix_caution, 3)
+
+                                    );
+                                }elseif ($semaine==0 && $mois!=0 ){
+                                    $line = array(
+
+                                        "Ord." => "$k",
+                                        "DESIGNATION" => "$nomprod",
+                                        "Periode" => "$moistot",
+
+                                        "Qte" => "$qte",
+                                        "P.U. HT" => number_format($prix_unit_m, 3),
+                                        "MT H.T." => number_format($prix_total, 3),
+
+                                        "Caution/Unite" => number_format($prix_caution, 3)
+
+                                    );
+                                }elseif ($semaine==0 && $mois==0 ){
+                                    $line = array(
+
+                                        "Ord." => "$k",
+                                        "DESIGNATION" => "$nomprod",
+                                        "Periode" => "0",
+
+                                        "Qte" => "$qte",
+                                        "P.U. HT" => number_format($prix_unit_m, 3),
+                                        "MT H.T." => number_format($prix_total, 3),
+
+                                        "Caution/Unite" => number_format($prix_caution, 3)
+
+                                    );
+                                }
+
+
+
+                                    /*    $line = array("Ord." => "$k",
                                     "DESIGNATION" => "$nomprod",
                                     "Periode" => "$semainetot\n$moistot",
 
@@ -198,6 +326,9 @@ $nbPage=1;
                                     "MT H.T." => number_format($prix_total, 3),
 
                                     "Caution/Unite" => number_format($prix_caution, 3));
+
+                                    */
+
 
                             }
 
