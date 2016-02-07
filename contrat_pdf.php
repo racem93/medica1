@@ -79,7 +79,7 @@ $pdf->Image('img/LOGO.jpg',10,5,-680);
 
 //$pdf->addClient("CL01");
 //$pdf->addPageNumber("1");
-$pdf->addClientAdresse("Nom : $nom_client \nAdresse : $adresse_client \nTel : $tel_client \nGSM : $gsm_client \nCIN N : $cin_client  Tunis,le : $date_cin");
+$pdf->addClientAdresse("Nom : $nom_client \nAdresse : $adresse_client \nTel : $tel_client \nGSM : $gsm_client \nCIN N : $cin_client - Tunis,le : $date_cin");
 $pdf->addbenificiaire("M/Mme : $nom_ben\nAdresse : $adresse_ben\nTel : $tel_ben\nCIN N : $cin_ben");
 
 $pdf->totalettctva($total_htva,$total_tva,$total_ttc,$total_caution);

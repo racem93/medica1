@@ -439,7 +439,7 @@ function addbenificiaire( $adresse )
 	$this->SetXY( $r1  +2, $y1 + 9 );
 	$this->SetFont( "Arial", "", 12);
 	//$this->Cell(10,5,$ref, 0,0, "C");
-	$this->MultiCell( 70, 7, $adresse);
+	$this->MultiCell( 84, 6, $adresse);
 	/*$r1     = $this->w - 80;
 	$r2     = $r1 + 68;
 	$y1     = 40;
@@ -462,7 +462,7 @@ function addbenificiaire( $adresse )
 		$this->SetXY( $r1  +2, $y1 + 2 );
 		$this->SetFont( "Arial", "", 12);
 		//$this->Cell(10,5,$ref, 0,0, "C");
-		$this->MultiCell( 70, 7, $adresse);
+		$this->MultiCell( 101, 6.6, $adresse);
 		/*$r1     = $this->w - 80;
         $r2     = $r1 + 68;
         $y1     = 40;
