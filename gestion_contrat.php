@@ -2,6 +2,7 @@
 <?php extract($_POST);
 include_once("config/MyPDO.class.php");
 $connect=new MyPDO();
+$connect->query("SET NAMES 'utf8'");
 $req1="SELECT * FROM `commande` ORDER BY `id` DESC";
 $oPDOStatement=$connect->query($req1); // Le résultat est un objet de la classe PDOStatement
 $oPDOStatement->setFetchMode(PDO::FETCH_OBJ);
