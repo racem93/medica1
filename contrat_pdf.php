@@ -182,7 +182,7 @@ $nbPage=1;
                                 if ($semaine!=0 && $mois!=0 ) {$line = array(
 
                                     "Ord." => "$k",
-                                    "DESIGNATION" => "$nomprod\nRef: $reflittotal",
+                                    "DESIGNATION" => "$nomprod\n\nRef: $reflittotal",
                                     "Periode" => "$semainetot\n$moistot",
 
                                     "Qte" => "$qte",
@@ -196,7 +196,7 @@ $nbPage=1;
                                     $line = array(
 
                                         "Ord." => "$k",
-                                        "DESIGNATION" => "$nomprod\nRef: $reflittotal",
+                                        "DESIGNATION" => "$nomprod\n\nRef: $reflittotal",
                                         "Periode" => "$semainetot",
 
                                         "Qte" => "$qte",
@@ -210,7 +210,7 @@ $nbPage=1;
                                     $line = array(
 
                                         "Ord." => "$k",
-                                        "DESIGNATION" => "$nomprod\nRef: $reflittotal",
+                                        "DESIGNATION" => "$nomprod\n\nRef: $reflittotal",
                                         "Periode" => "$moistot",
 
                                         "Qte" => "$qte",
@@ -224,7 +224,7 @@ $nbPage=1;
                                     $line = array(
 
                                         "Ord." => "$k",
-                                        "DESIGNATION" => "$nomprod\nRef: $reflittotal",
+                                        "DESIGNATION" => "$nomprod\n\nRef: $reflittotal",
                                         "Periode" => "0",
 
                                         "Qte" => "$qte",
