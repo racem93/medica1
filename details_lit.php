@@ -13,6 +13,7 @@ if(!isset($_SESSION['admin']))
 $id=$_GET['id'];
 include_once("config/MyPDO.class.php");
 $connect=new MyPDO();
+$connect->query("SET NAMES 'utf8'");
 $req1="SELECT * FROM `lit` WHERE  id= $id";
 $oPDOStatement=$connect->query($req1); // Le résultat est un objet de la classe PDOStatement
 $oPDOStatement->setFetchMode(PDO::FETCH_OBJ);

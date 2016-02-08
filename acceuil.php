@@ -1,6 +1,7 @@
 <?php
 include_once("config/MyPDO.class.php");
 $connect=new MyPDO();
+$connect->query("SET NAMES 'utf8'");
 $req1="SELECT COUNT(id) AS total_lit FROM `lit`";
 $oPDOStatement=$connect->query($req1); // Le résultat est un objet de la classe PDOStatement
 $oPDOStatement->setFetchMode(PDO::FETCH_OBJ);
@@ -28,6 +29,28 @@ while ($row = $oPDOStatement->fetch())
 
 $lit_stock=$lit_marche-$lit_louer;
 
+$req1="SELECT COUNT(id) AS total_produit FROM `produit`";
+$oPDOStatement=$connect->query($req1); // Le résultat est un objet de la classe PDOStatement
+$oPDOStatement->setFetchMode(PDO::FETCH_OBJ);
+while ($row = $oPDOStatement->fetch())
+{
+    $total_produit=$row->total_produit;
+}
+$req1="SELECT COUNT(id) AS total_contrat FROM `commande`";
+$oPDOStatement=$connect->query($req1); // Le résultat est un objet de la classe PDOStatement
+$oPDOStatement->setFetchMode(PDO::FETCH_OBJ);
+while ($row = $oPDOStatement->fetch())
+{
+    $total_contrat=$row->total_contrat;
+}
+
+$req1="SELECT COUNT(id) AS total_contrat_c FROM `commande` WHERE etat_commande=1 ";
+$oPDOStatement=$connect->query($req1); // Le résultat est un objet de la classe PDOStatement
+$oPDOStatement->setFetchMode(PDO::FETCH_OBJ);
+while ($row = $oPDOStatement->fetch())
+{
+    $total_contrat_c=$row->total_contrat_c;
+}
 ?>
 <?php require('header.php'); ?>
 <div>
@@ -39,45 +62,35 @@ $lit_stock=$lit_marche-$lit_louer;
     </ul>
 </div>
 <div class=" row">
-    <div class="col-md-3 col-sm-3 col-xs-6">
-        <a data-toggle="tooltip" title="6 new members." class="well top-block" href="#">
-            <i class="glyphicon glyphicon-user blue"></i>
+    <div class="col-md-4 col-sm-4 col-xs-6">
+        <a data-toggle="tooltip"  class="well top-block" href="gestion_produit.php">
+            <i class="glyphicon glyphicon-briefcase blue"></i>
 
-            <div>Total Members</div>
-            <div>507</div>
-            <span class="notification">6</span>
+            <div>Total Produits</div>
+            <div><?php echo $total_produit; ?></div>
         </a>
     </div>
 
-    <div class="col-md-3 col-sm-3 col-xs-6">
-        <a data-toggle="tooltip" title="4 new pro members." class="well top-block" href="#">
+    <div class="col-md-4 col-sm-4 col-xs-6">
+        <a data-toggle="tooltip" title="<?php echo $total_contrat_c ?> contarts en cours" class="well top-block" href="gestion_contrat.php">
             <i class="glyphicon glyphicon-star green"></i>
 
-            <div>Pro Members</div>
-            <div>228</div>
-            <span class="notification green">4</span>
+            <div>Total contrats</div>
+            <div><?php echo $total_contrat; ?></div>
+            <span class="notification green"><?php echo $total_contrat_c; ?></span>
         </a>
     </div>
 
-    <div class="col-md-3 col-sm-3 col-xs-6">
-        <a data-toggle="tooltip" title="$34 new sales." class="well top-block" href="#">
-            <i class="glyphicon glyphicon-shopping-cart yellow"></i>
+    <div class="col-md-4 col-sm-4 col-xs-6">
+        <a data-toggle="tooltip"  class="well top-block" href="gestion_lit.php">
+            <i class="glyphicon glyphicon-hdd yellow"></i>
 
-            <div>Sales</div>
-            <div>$13320</div>
-            <span class="notification yellow">$34</span>
+            <div>Total lits</div>
+            <div><?php echo $total_lit; ?></div>
         </a>
     </div>
 
-    <div class="col-md-3 col-sm-3 col-xs-6">
-        <a data-toggle="tooltip" title="12 new messages." class="well top-block" href="#">
-            <i class="glyphicon glyphicon-envelope red"></i>
 
-            <div>Messages</div>
-            <div>25</div>
-            <span class="notification red">12</span>
-        </a>
-    </div>
 </div>
 <br>
 <div class="row">

@@ -69,7 +69,7 @@ $pdf->addSiege("Siege Social:","12bis Av. Tarak Ibn Ziad.\n".
 //$pdf->fact_dev( "Constrat ", "TEMPO" );
 $pdf->cont_loc( "CONTRAT DE LOCATION\n".
  "DE\n".
-    "MATERIEL RESPIRATOIR N $ref" );
+    "MATERIEL MEDICAL $ref" );
 $pdf->clausecontrattxt( ">> Clauses du Contrat au Verso >>" );
 //$pdf->addDate( "$today");
 $pdf->Image('img/Sigle.jpg',27,5,-680);

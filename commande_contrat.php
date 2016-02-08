@@ -3,6 +3,7 @@
 <?php
 include_once("config/MyPDO.class.php");
 $connect=new MyPDO();
+$connect->query("SET NAMES 'utf8'");
 if (isset($_POST["contrat"])) {
     $nom_client="";
     $adresse_client="";
@@ -15,7 +16,12 @@ if (isset($_POST["contrat"])) {
     $tel_ben="";
     $cin_ben="";
     extract($_POST);
-    $transport=$transport*0.6+15;
+    if ($etage==2) {
+        $frais=$frais*1.5;
+    }
+    elseif ($etage==3) { $frais=$frais*1.75;}
+    elseif ($etage >=4) {$frais=$frais*2;}
+    $transport=$transport*0.6+$frais;
 }
 if (isset($_POST["ajout"])) {
     $cin_client="";
@@ -219,20 +225,30 @@ VALUES (" ."'".$ref."'"."," ."'".$nom_client."'".","."'".$adresse_client."'".","
                         if(!empty($_SESSION['id']))
                         {
                             $total_tva=$total_htva*0.18;
-                            $total_ttc=$total_htva+$total_tva;
+                            $tva_transport=$transport*0.12;
+                            $total_ttc=$total_htva+$total_tva+$transport+$tva_transport;
                             echo "
                             <div class='row'>
                             <div class='col-md-8'>
                             <div class='row'>
 
-                            <div class='col-md-1'></div>
-                            <div class='col-md-2' align='center'>
-                            <b>TRANSPORT</b><br>".$transport."&nbsp; DT
+                            <div class='col-md-4' align='center'>
+                            <label>TRANSPORT ET MISE EN OEUVRE :</label><input type='text' class='form-control' value='".$transport."&nbsp Dt' disabled>
+                            <br>
+                            <label>TVA 12% :</label><input type='text' class='form-control' value='".$tva_transport."&nbsp Dt' disabled>
                             </div>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+
+
+
+
                             <div class='form-inline'>
                             <div class='col-md-1'></div>
                             <div class='col-md-2'><label >ACOMPTE </label></div>
-                            <div class='col-md-3'><input type='text' name='acompte' class='form-control'   value='0' style='width: 100px'   autofocus required>&nbsp;DT
+                            <div class='col-md-3'><input type='text' name='acompte' class='form-control'   value='0' style='width: 100px;height:50px'   autofocus required>&nbsp;DT
                             </div>
                             </div>
                             </div>
@@ -240,7 +256,7 @@ VALUES (" ."'".$ref."'"."," ."'".$nom_client."'".","."'".$adresse_client."'".","
                             </div>
                             <div class='col-md-4' align='right'><div class='form-inline'> <b>TOTAL HTVA</b> &nbsp;<input type='text' class='form-control' value='".$total_htva."&nbsp Dt' disabled><br>
                              <b>TVA 18%</b> &nbsp;<input type='text' class='form-control' value='".$total_tva."&nbsp Dt' disabled><br>
-                             <b>TOTAL TTC </b>&nbsp;<input type='text' class='form-control' value='".$total_ttc."&nbsp Dt' disabled><br><br>
+                             <b><font color='red'>TOTAL TTC</font> </b>&nbsp;<input type='text' class='form-control' value='".$total_ttc."&nbsp Dt' disabled><br><br>
                              <b>TOTAL CAUTION</b> &nbsp;<input type='text' class='form-control' value='".$total_caution."&nbsp Dt' disabled></div></div>
                             </div>";
 
@@ -265,6 +281,7 @@ VALUES (" ."'".$ref."'"."," ."'".$nom_client."'".","."'".$adresse_client."'".","
                             <input type="hidden" name="date_commande" value="<?php echo $date_commande; ?>" >
                             <input type="hidden" name="transport" value="<?php echo $transport; ?>" >
                             <?php }?>
+                            <br>
                         <div class="row">
                             <div class="col-md-1"><a href="javascript:history.go(-1)"><button type="button" class="btn btn-default" name="retour" style="width: 200px" ><i class="glyphicon glyphicon-fast-backward"></i> &nbsp;Retour</button></a></div>
                             <div class="col-md-3"></div>
@@ -291,7 +308,7 @@ if(isset($_POST['ajout'])) {
     unset($_SESSION['caution']);
 
 echo "<SCRIPT LANGUAGE='JavaScript'>
-    self.parent.location.href='gestion_contrat.php?msg=ajouter'
+    self.parent.location.href='gestion_contrat.php?contrat=".$iddernier."';
 </SCRIPT> ";
 
 }

@@ -27,7 +27,11 @@ if(!empty($_POST['pseudo']) AND !empty($_POST['MotDePasse'])) {
 
 
     if($resultat[0] == 0 ) {
-        header("location: login.html");
+
+        echo "<SCRIPT LANGUAGE='JavaScript'>
+    alert('login ou mot de passe incorrect');
+    self.parent.location.href='login.html';
+    </SCRIPT> ";
     }
 
     if (($resultat[0] != 0) && ($resultat[1] == 0)  ) {
@@ -53,6 +57,9 @@ if(!empty($_POST['pseudo']) AND !empty($_POST['MotDePasse'])) {
 
 
 }else{
+    echo "<SCRIPT LANGUAGE='JavaScript'>
+    alert('le mot de passe ou login est incorrect');
+    </SCRIPT> ";
     header("location: login.html");
 
 }

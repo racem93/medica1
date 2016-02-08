@@ -10,6 +10,7 @@ if(!isset($_SESSION['admin']))
 
 include_once("config/MyPDO.class.php");
 $connect=new MyPDO();
+$connect->query("SET NAMES 'utf8'");
 
 $id_lcommande=$_GET['id'];
 $req2="select * from ligne_commande where id=$id_lcommande";

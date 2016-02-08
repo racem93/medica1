@@ -3,6 +3,7 @@
     <?php
 include_once("config/MyPDO.class.php");
 $connect=new MyPDO();
+    //$connect->query("SET NAMES 'utf8'");
 $req1="SELECT MAX(`ref_lit`)AS max_lit,MAX(`ref_moteur_p`)AS max_moteur_p, MAX(`ref_moteur_s`)AS max_moteur_s, MAX(`ref_telecommande`) AS max_telecommande FROM `lit`";
 $oPDOStatement=$connect->query($req1); // Le résultat est un objet de la classe PDOStatement
 $oPDOStatement->setFetchMode(PDO::FETCH_OBJ);

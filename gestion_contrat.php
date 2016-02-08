@@ -50,7 +50,7 @@ if (isset($_GET["msg"])) {
                             <th class="center-text" width="10%">REF. DU CONTRAT</th>
                             <th class="center-text">NOM CLIENT</th>
                             <th class="center-text">NOM BENIFICAIRE</th>
-                            <th class="center-text">TOTAL CAUTION</th>
+                            <th class="center-text">TOTAL TTC</th>
 
                             <th class="center-text">Etat</th>
 
@@ -67,6 +67,7 @@ if (isset($_GET["msg"])) {
                             $ref_contrat=$row->ref;
                             $nom_client=$row->nom_client;
                             $date_commande1=$row->date_commande;
+                            $total_ttc=$row->total_ttc;
                             $total_caution=$row->total_caution;
 
                             $nom_ben=$row->nom_ben;
@@ -91,7 +92,7 @@ if (isset($_GET["msg"])) {
                             <td class="center-text"><?php echo $ref_contrat; ?></td>
                             <td class="center-text"><?php echo $nom_client; ?></td>
                             <td class="center-text"><?php echo $nom_ben;  ?></td>
-                            <td class="center-text"><?php echo $total_caution; ?></td>
+                            <td class="center-text"><?php echo $total_ttc; ?>&nbsp;DT</td>
 
                             <?php
                             if ($b==1) {

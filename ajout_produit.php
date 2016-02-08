@@ -5,6 +5,7 @@ if (isset($_POST["produit"])) {
     extract($_POST);
     include_once("config/MyPDO.class.php");
     $connect = new MyPDO();
+    $connect->query("SET NAMES 'utf8'");
     $msg1="";$a=0;
     $msg2="";$b=0;
     $msg3="";$c=0;

@@ -13,6 +13,7 @@ if (isset($_POST["lit"])){
     extract($_POST);
     include_once("config/MyPDO.class.php");
     $connect=new MyPDO();
+    $connect->query("SET NAMES 'utf8'");
     if (($etat_base=="fonctionne")&&($etat_variable=="fonctionne")&&($etat_panneaux=="fonctionne")&&($etat_barriere=="fonctionne")&&($etat_moteur=="fonctionne")&&($etat_perroquet=="fonctionne")&&($etat_releve=="fonctionne")&&($etat_telecommande=="fonctionne"))
     {$etat_lit=1;}
     else $etat_lit=0;
@@ -34,6 +35,7 @@ if (isset($_GET["id"])) {
     $id = $_GET['id'];
     include_once("config/MyPDO.class.php");
     $connect = new MyPDO();
+    $connect->query("SET NAMES 'utf8'");
     $req1 = "SELECT * FROM `lit` WHERE  id= $id";
     $oPDOStatement = $connect->query($req1); // Le résultat est un objet de la classe PDOStatement
     $oPDOStatement->setFetchMode(PDO::FETCH_OBJ);

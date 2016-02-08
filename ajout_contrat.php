@@ -2,6 +2,7 @@
 <?php extract($_POST);
 include_once("config/MyPDO.class.php");
 $connect=new MyPDO();
+$connect->query("SET NAMES 'utf8'");
 $req1="SELECT * FROM `produit`";
 $oPDOStatement=$connect->query($req1); // Le résultat est un objet de la classe PDOStatement
 $oPDOStatement->setFetchMode(PDO::FETCH_OBJ);
@@ -233,9 +234,16 @@ if (isset($_GET["msg"])) {
             <div class="box-content">
                 <div class="form-inline">
                 <div class="row">
-                    <div class="col-md-1"></div>
-                    <div class="col-md-1"><label >TRANSPORT</label></div>
-                    <div class="col-md-5"><input type="text" name="transport" class="form-control"  id="exampleInputEmail1" value="0" style="width: 100px"  >&nbsp;Nb.KM
+                    <div class="col-md-4" align="center"><label >Nombre du KM</label>
+                    <br><input type="number" name="transport" class="form-control"  id="exampleInputEmail1" value="0" style="width: 100px" autofocus required>&nbsp;</div>
+                        <div class="col-md-4" align="center"><label >Frais de mise en oeuvre</label>
+                        <br><input type="text" name="frais" class="form-control"  id="exampleInputEmail1" value="15" style="width: 100px" autofocus required  <?php if (isset($_SESSION['user1'])) {echo "disabled";} ?>  >&nbsp;DT
+                            <?php if (isset($_SESSION['user1'])){ ?>
+                            <input type="hidden" name="frais" class="form-control"  id="exampleInputEmail1" value="15" style="width: 100px" autofocus required>
+                            <?php } ?>
+                    </div>
+                    <div class="col-md-4" align="center"><label >Nombre d'etage</label>
+                        <br><input type="number" name="etage" class="form-control"  id="exampleInputEmail1" value="0" style="width: 100px" autofocus required  >&nbsp;
                     </div>
                 </div>
                     </div>

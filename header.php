@@ -10,6 +10,7 @@ if(!isset($_SESSION['admin']))
 <?php include 'config.php';
  include_once("config/MyPDO.class.php");
                     $connect=new MyPDO();
+$connect->query("SET NAMES 'utf8'");
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -70,6 +71,19 @@ if(!isset($_SESSION['admin']))
     <!-- The fav icon -->
     <link rel="shortcut icon" href="img/favicon.jpg">
 
+    <?php if (isset($_GET["contrat"])) {
+
+
+        echo "<script type='text/javascript'>
+
+        function autoClick() {
+            document.getElementById('iframe').click();
+        }
+
+    </script>";
+    }
+    ?>
+
 
 <?php if (isset($_GET["comm"])) {
 
@@ -86,13 +100,18 @@ if(!isset($_SESSION['admin']))
 
 </head>
 
-<body <?php if (isset($_GET["comm"])) { echo 'onLoad="autoClick();"'; } ?> > <!--onLoad="autoClick();"!-->
+<body <?php if ((isset($_GET["contrat"]))||(isset($_GET["comm"]))) { echo 'onLoad="autoClick();"'; } ?> > <!--onLoad="autoClick();"!-->
 <?php if (!isset($no_visible_elements) || !$no_visible_elements) { ?>
     <!-- topbar starts -->
 <?php if (isset($_GET["comm"])) {
         $id=$_GET["comm"];
         ?>
     <a href="details_contrat.php?id=<?php echo $id; ?>" id="iframe"></a>
+    <?php } ?>
+    <?php if (isset($_GET["contrat"])) {
+        $id=$_GET["contrat"];
+        ?>
+        <a href="contrat_pdf.php?id=<?php echo $id; ?>" id="iframe"></a>
     <?php } ?>
     <div class="navbar navbar-default" role="navigation">
 

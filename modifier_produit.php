@@ -15,6 +15,7 @@ if (isset($_POST["produit"])){
     extract($_POST);
     include_once("config/MyPDO.class.php");
     $connect=new MyPDO();
+    $connect->query("SET NAMES 'utf8'");
 
     $msg1="";$a=0;
     $msg2="";$b=0;
@@ -80,6 +81,7 @@ if (isset($_GET["id"])) {
     $id = $_GET['id'];
     include_once("config/MyPDO.class.php");
     $connect = new MyPDO();
+    $connect->query("SET NAMES 'utf8'");
     $req1 = "SELECT * FROM `produit` WHERE  id= $id";
     $oPDOStatement = $connect->query($req1); // Le résultat est un objet de la classe PDOStatement
     $oPDOStatement->setFetchMode(PDO::FETCH_OBJ);

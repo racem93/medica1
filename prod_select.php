@@ -4,6 +4,7 @@ session_start();
 
 include_once("config/MyPDO.class.php");
 $connect=new MyPDO();
+$connect->query("SET NAMES 'utf8'");
 ?>
 <html xmlns="http://www.w3.org/1999/html">
 <head>
