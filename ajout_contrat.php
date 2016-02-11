@@ -15,8 +15,8 @@ while ($row2 = $oPDOStatement2->fetch()) {
     $max_commande = $row2->max_commande+1;
 }
 if ($max_commande<10) {$max_commande="000".$max_commande;}
-elseif (($max_commande<100)&&($max_commande>=10)) {$max_lit="00".$max_commande;}
-elseif (($max_commande<1000)&&($max_commande>=100)) {$max_lit="0".$max_commande;}
+elseif (($max_commande<100)&&($max_commande>=10)) {$max_commande="00".$max_commande;}
+elseif (($max_commande<1000)&&($max_commande>=100)) {$max_commande="0".$max_commande;}
 ?>
 
 <?php require('header.php'); ?>

@@ -19,8 +19,10 @@ if (isset($_POST["contrat"])) {
     if ($etage==2) {
         $frais=$frais*1.5;
     }
-    elseif ($etage==3) { $frais=$frais*1.75;}
-    elseif ($etage >=4) {$frais=$frais*2;}
+    elseif ($etage==3) { $frais=$frais*2;}
+    elseif ($etage ==4) {$frais=$frais*2.5;}
+    elseif ($etage ==5) {$frais=$frais*3;}
+    elseif ($etage >=6) {$frais=$frais*3.5;}
     $transport=$transport*0.6+$frais;
 }
 if (isset($_POST["ajout"])) {
